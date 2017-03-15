@@ -116,8 +116,7 @@ class Individual:
         
     def mutate(self):
         for i in range(len(self.DNA)):
-            rand_int = np.random.rand_sample(1)[0]
-            if(rand_int < mutation_rate):
+            if(random.random() < mutation_rate):
                 self.DNA[i] = np.random.randint(2)
                 
     def crossover(self,mother, father):
@@ -167,6 +166,7 @@ class Population:
         new_pop = []
         for i in self.runner_list:
             i.make_score()
+        self.runner_list.sort(key = lambda x : x.score,reverse=True)
         print("the best is : %d" % self.runner_list[0].score)
         for i in range(self.pop_size):
             new_pop.append(self.tournament(10))
@@ -183,10 +183,11 @@ class Population:
         selected.sort(key = lambda x : x.score,reverse=True)
         r = Individual(dna_size,cst_genome)
         r.crossover(selected[0],selected[1])
+        r.mutate()
         return r
 
-pop = Population(100)
-for i in range(15):
+pop = Population(10)
+for i in range(100):
     pop.evolve()
 
         
