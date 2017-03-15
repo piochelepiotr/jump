@@ -77,6 +77,18 @@ def predict(arg, W1, W2):
     intermediate = matrix_sigmoid(np.dot(arg,W1))
     return np.argmax(matrix_sigmoid(np.dot(intermediate,W2)))
 
+def predict2(arg, W1, W2):
+    intermediate = matrix_sigmoid(np.dot(arg,W1))
+    return matrix_sigmoid(np.dot(intermediate,W2))
+
+def choose(probas):
+    sumDouble = sum(probas)
+    rand = random.random()*sumDouble
+    for i in range(len(probas)-1,0,-1):
+        sumDouble -= probas[i]
+        if rand > sumDouble:
+            return i
+    return 0
     
 # a modifier pour négatifs à virgule 
 def bin_to_double(bin_list):
@@ -173,8 +185,8 @@ class Population:
         r.crossover(selected[0],selected[1])
         return r
 
-pop = Population(10)
-for i in range(5):
+pop = Population(100)
+for i in range(15):
     pop.evolve()
 
         
