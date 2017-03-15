@@ -135,13 +135,15 @@ class Individual:
             self.DNA += list(parent1[Loci_crossover[cut_point]:Loci_crossover[cut_point+1]])
             parent1, parent2 = parent2, parent1     # swapping parents        
             
-    def make_score(self):
+    def make_score(self,grid):
         i = 0
         go_on = True
         (W1,W2) = genome_to_weights(self.DNA,self.genome)
-        arg = np.zeros(shape=(1,1))
+        arg = cells[i]
+        for j in turns_predict:
+            arg += cells[i]
         while(go_on):
-            arg[0][0] = int(path[i])
+            arg = arg[grid.width:] + grid.cells[i+turns_predict]
             action = predict(arg, W1, W2)
             if(not(action == int(path[i]) or int(path[i]) == 1)):
                 go_on = False
