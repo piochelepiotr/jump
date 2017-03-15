@@ -6,6 +6,7 @@ Created on Tue Mar 14 15:38:00 2017
 """
 
 import numpy as np
+import random
 import math
 
 
@@ -17,23 +18,29 @@ import math
 n_inputs = 1
 n_outputs = 3
 n_hidden = 5
-path = "01212101210120"
+path = "012121012101200120001212002010102010200100200102001000012121020001021020120102"
+first_pow = 5
 
 gene_size = 10
 dna_size = gene_size * (n_inputs + n_outputs )*n_hidden
 mutation_rate = 0.05
 crossover_ratio = 0.5
-cst_genome = list(range(0,dna_size,gene_size))
+cst_genome = list(range(0,dna_size+1,gene_size))
 number_crossover = 1
 
-#creates a neural network
-W1 = np.random.normal(size=(n_inputs, n_hidden))
-W2 = np.random.normal(size = (n_hidden,n_outputs))
 
 
 
 def sigmoid(x):
-  return 1 / (1 + math.exp(-x))
+    return 1 / (1 + math.exp(-x))
+
+def matrix_sigmoid(M):
+    (w,h) = M.shape
+    Mp = np.zeros(shape=(w,h))
+    for i in range(w):
+        for j in range(h):
+            Mp[i][j] = sigmoid(M[i][j])
+    return Mp
   
 #function to display a matrix
 
@@ -49,27 +56,48 @@ def display_matrix(M):
                 print(' ',end="")
         print()
 
+def genome_to_weight(dna,genome,w,h):
+    W = np.random.normal(size=(w,h))
+    n = 0
+    for i in range(w):
+        for j in range(h):
+            W[i][j] = bin_to_double(dna[genome[n]:genome[n+1]])
+            n = n+1
+    return W
+        
+def genome_to_weights(dna,genome):
+    #creates a neural network
+    W1 = genome_to_weight(dna,genome,n_inputs,n_hidden)
+    W2 = genome_to_weight(dna[n_inputs*n_hidden:],genome,n_hidden,n_outputs)
+    return (W1,W2)
+    
+
 
 def predict(arg, W1, W2):
-    intermediate = np.fromiter(map(sigmoid, np.dot(arg,W1)), dtype = float)
-    print(intermediate)
-    for x in map(sigmoid,np.dot(intermediate,W2)):
-        print(x)
-    return np.argmax(np.fromiter(map(sigmoid,np.dot(intermediate,W2)), dtype = float))
+    intermediate = matrix_sigmoid(np.dot(arg,W1))
+    return np.argmax(matrix_sigmoid(np.dot(intermediate,W2)))
 
     
 # a modifier pour négatifs à virgule 
-def binToInt(bin_list):
-    sumInt = sum([x*(2**i) for (i,x) in enumerate(bin_list)])
-    n = len(bin_list)
-    return sumInt - bin_list[n-1] * (2**n)
+def bin_to_double(bin_list):
+    if len(bin_list) == 0:
+        return 0
+    n = 2**first_pow
+    sumDouble = -n*bin_list[0]
+    for i in bin_list[1:]:
+        n /= 2
+        sumDouble += n*i
+    return sumDouble
 
+def pop_compare(x,y):
+    return x.score > y.score
 
 class Individual:
-    def __init__(self, entity_id, dna_size, genome):
-        self.entity_id = entity_id
+    def __init__(self, dna_size, genome):
         self.dna_size = dna_size
         self.genome = genome
+        self.DNA = None
+        self.score = 0
     
     def generate_random(self):
         self.DNA = np.random.randint(2,size = self.dna_size)
@@ -82,7 +110,7 @@ class Individual:
                 
     def crossover(self,mother, father):
         #   computing random crossover points
-        Loci_crossover = np.random.sample(range(1,self.dna_size), number_crossover)
+        Loci_crossover = random.sample(range(1,self.dna_size), number_crossover)
         Loci_crossover = [0] + sorted(Loci_crossover)
         Loci_crossover.append(self.dna_size)
         # print Loci_crossover
@@ -95,7 +123,22 @@ class Individual:
         for cut_point in range(len(Loci_crossover)-1):
             self.DNA += list(parent1[Loci_crossover[cut_point]:Loci_crossover[cut_point+1]])
             parent1, parent2 = parent2, parent1     # swapping parents        
-
+            
+    def make_score(self):
+        i = 0
+        go_on = True
+        (W1,W2) = genome_to_weights(self.DNA,self.genome)
+        arg = np.zeros(shape=(1,1))
+        while(go_on):
+            arg[0][0] = int(path[i])
+            action = predict(arg, W1, W2)
+            if(not(action == int(path[i]) or int(path[i]) == 1)):
+                go_on = False
+            else:
+                i+=1
+                if i == len(path):
+                    go_on = False
+        self.score = i
         
 class Population:
     
@@ -104,23 +147,35 @@ class Population:
     def __init__(self, pop_size):
         self.pop_size = pop_size
         for i in range(pop_size):
-            r = Individual(i,dna_size, cst_genome)
+            r = Individual(dna_size, cst_genome)
             r.generate_random()
             self.runner_list.append(r)
+
+    def evolve(self):
+        new_pop = []
+        for i in self.runner_list:
+            i.make_score()
+        print("the best is : %d" % self.runner_list[0].score)
+        for i in range(self.pop_size):
+            new_pop.append(self.tournament(10))
+        self.runner_list = new_pop
+    
+    def tournament(self,n):
+        a = list(range(self.pop_size))
+        selected = []
+        for i in range(n):
+            i = random.randint(0,len(a)-1)
+            b = a[i]
+            selected.append(self.runner_list[b])
+            a.remove(b)
+        selected.sort(key = lambda x : x.score,reverse=True)
+        r = Individual(dna_size,cst_genome)
+        r.crossover(selected[0],selected[1])
+        return r
+
+pop = Population(10)
+for i in range(5):
+    pop.evolve()
+
         
-    
-        
-def genome_to_weights(genome):
-    return 0
-    
-    
-def score(individual):
-    i = 0
-    go_on = True
-    while(go_on):
-        action = predict(int(path[i]), W1, W2)
-        if(not(action == path[i] or path[i] == 1)):
-            go_on = False
-        else:
-            i+=1
-    return i
+
