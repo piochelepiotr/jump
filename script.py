@@ -15,31 +15,29 @@ import math
 #    0 : duck, 1 : do nothing 2 : jump
 
 # constants
-grid_length = 20
-grid_width = 5
-n_inputs = 1
+grid_length = 50
+grid_width = 3
+turns_predict = 3
+n_inputs = grid_width*turns_predict + 1
 n_outputs = 3
-n_hidden = 5
-path = "012121012101200120001212002010102010200100200102001000012121020001021020120102"
+n_hidden = 15
 first_pow = 5
 
 gene_size = 10
 dna_size = gene_size * (n_inputs + n_outputs )*n_hidden
-mutation_rate = 0.05
+mutation_rate = 0.03
 crossover_ratio = 0.5
 cst_genome = list(range(0,dna_size+1,gene_size))
-number_crossover = 1
+number_crossover = 24
 
 
 class Grid:
-    #cells
-    #(length, width)
     def __init__(self, grid_width,grid_length):
-        self.grid_width = grid_width
-        self.grid_length = grid_length
-        cells = np.random.randint(1, 2, size = (grid_length, grid_width))
+        self.width = grid_width
+        self.length = grid_length
+        cells = np.random.randint(0, 2, size = (grid_length, grid_width))
         pos = int(grid_width/2) #start in the middle
-        for i in range(grid_width):
+        for i in range(grid_length):
             cells[i][pos] = 0
             if(pos==0):
                 move = random.randint(0,1) #can only go 
@@ -50,20 +48,41 @@ class Grid:
             pos += move           
             cells[i][pos] = 0
         self.cells = cells
-        
-grid = np.zeros((grid_width,grid_length))
+    def display(self):
+        for pos in range(self.width):
+            for i in range(self.length):
+                print(self.cells[i][pos],end='')
+            print()
+        print()
+            
 
+def print_dna_diff(dna,diff):
+    for i in range(150):
+        if dna[i] != diff[i]:
+            print('\x1b[6;30;42m',end='')
+        print(dna[i],end='')
+        if dna[i] != diff[i]:
+            print('\x1b[0m',end='')
+    print()
+
+def print_dna(dna):
+    for i in range(150):
+        print(dna[i],end='')
+    print()
 
 def sigmoid(x):
     return 1 / (1 + math.exp(-x))
 
 def matrix_sigmoid(M):
-    (w,h) = M.shape
-    Mp = np.zeros(shape=(w,h))
-    for i in range(w):
-        for j in range(h):
-            Mp[i][j] = sigmoid(M[i][j])
-    return Mp
+    try:
+        (w,h) = M.shape
+        Mp = np.zeros(shape=(w,h))
+        for i in range(w):
+            for j in range(h):
+                Mp[i][j] = sigmoid(M[i][j])
+        return Mp
+    except:
+        return np.array([sigmoid(M[i]) for i in range(len(M))])
   
 #function to display a matrix
 
@@ -160,19 +179,25 @@ class Individual:
             
     def make_score(self,grid):
         i = 0
+        pos = int(grid.width/2)
         go_on = True
         (W1,W2) = genome_to_weights(self.DNA,self.genome)
-        arg = cells[i]
-        for j in turns_predict:
-            arg += cells[i]
+        arg = grid.cells[i]
+        for j in range(turns_predict-1):
+            arg = np.concatenate([arg,grid.cells[j]])
         while(go_on):
-            arg = arg[grid.width:] + grid.cells[i+turns_predict]
-            action = predict(arg, W1, W2)
-            if(not(action == int(path[i]) or int(path[i]) == 1)):
+            arg = np.concatenate([arg[grid.width:],grid.cells[i+turns_predict]])
+            action = predict(np.concatenate([arg,np.array([pos])]), W1, W2)-1
+            pos = pos + action
+            if pos < 0 or pos >= grid.width:
                 go_on = False
-            else:
+            elif grid.cells[i][pos] == 1:
+                go_on = False
+            elif grid.cells[i+1][pos] == 1:
+                go_on = False
+            if go_on:
                 i+=1
-                if i == len(path):
+                if i >= grid.length-turns_predict:
                     go_on = False
         self.score = i
         
@@ -180,22 +205,35 @@ class Population:
     
     runner_list = []
   
-    def __init__(self, pop_size):
+    def __init__(self, pop_size,grid):
         self.pop_size = pop_size
         for i in range(pop_size):
             r = Individual(dna_size, cst_genome)
             r.generate_random()
             self.runner_list.append(r)
+            self.grid = grid
+        for i in self.runner_list:
+            i.make_score(grid)
+        self.runner_list.sort(key = lambda x : x.score,reverse=True)
+        print_dna(self.runner_list[0].DNA.tolist())
 
     def evolve(self):
         new_pop = []
-        for i in self.runner_list:
-            i.make_score()
-        self.runner_list.sort(key = lambda x : x.score,reverse=True)
         print("the best is : %d" % self.runner_list[0].score)
         for i in range(self.pop_size):
-            new_pop.append(self.tournament(10))
+            #new_pop.append(self.tournament(10))
+            new_pop.append(self.bests())
+        for i in new_pop:
+            i.make_score(grid)
+        new_pop.sort(key = lambda x : x.score,reverse=True)
+        print_dna_diff(new_pop[0].DNA,self.runner_list[0].DNA)
         self.runner_list = new_pop
+
+    def bests(self):
+        r = Individual(dna_size,cst_genome)
+        r.crossover(self.runner_list[0],self.runner_list[1])
+        r.mutate()
+        return r
     
     def tournament(self,n):
         a = list(range(self.pop_size))
@@ -211,9 +249,10 @@ class Population:
         r.mutate()
         return r
 
-#pop = Population(10)
-#for i in range(100):
-#    pop.evolve()
-
+grid = Grid(grid_width,grid_length)
+pop = Population(100,grid)
+for i in range(50):
+    pop.evolve()
+grid.display()
         
 
