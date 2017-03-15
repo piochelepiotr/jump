@@ -15,6 +15,8 @@ import math
 #    0 : duck, 1 : do nothing 2 : jump
 
 # constants
+grid_length = 20
+grid_width = 5
 n_inputs = 1
 n_outputs = 3
 n_hidden = 5
@@ -29,6 +31,27 @@ cst_genome = list(range(0,dna_size+1,gene_size))
 number_crossover = 1
 
 
+class Grid:
+    #cells
+    #(length, width)
+    def __init__(self, grid_width,grid_length):
+        self.grid_width = grid_width
+        self.grid_length = grid_length
+        cells = np.random.randint(1, 2, size = (grid_length, grid_width))
+        pos = int(grid_width/2) #start in the middle
+        for i in range(grid_width):
+            cells[i][pos] = 0
+            if(pos==0):
+                move = random.randint(0,1) #can only go 
+            elif(pos == grid_width-1):
+                move = random.randint(-1,0)
+            else:
+                move = random.randint(-1,1)
+            pos += move           
+            cells[i][pos] = 0
+        self.cells = cells
+        
+grid = np.zeros((grid_width,grid_length))
 
 
 def sigmoid(x):
@@ -186,9 +209,9 @@ class Population:
         r.mutate()
         return r
 
-pop = Population(10)
-for i in range(100):
-    pop.evolve()
+#pop = Population(10)
+#for i in range(100):
+#    pop.evolve()
 
         
 
