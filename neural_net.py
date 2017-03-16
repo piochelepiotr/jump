@@ -240,11 +240,10 @@ class Population:
             self.grids = grids
         for i in self.runner_list:
             i.make_score(grids)
-        self.runner_list.sort(key = lambda x : x.score,reverse=True)
-        print_dna(self.runner_list[0].DNA.tolist())
-        print()
 
     def evolve(self,generation):
+        if generation == 0:
+            self.runner_list.sort(key = lambda x : x.score,reverse=True)
         new_pop = []
         for i in range(number_kept):
             new_pop.append(self.runner_list[i])
@@ -253,7 +252,7 @@ class Population:
         for i in new_pop:
             i.make_score(self.grids)
         new_pop.sort(key = lambda x : x.score,reverse=True)
-        print_dna_diff(new_pop[0].DNA,self.runner_list[0].DNA)
+        #print_dna_diff(new_pop[0].DNA,self.runner_list[0].DNA)
         #print("     best is : %d / %d" % (self.runner_list[0].score,number_grids*(self.grids[0].length-turns_predict)))
         self.runner_list = new_pop
 
@@ -285,18 +284,19 @@ for i in range(number_grids):
 pop = Population(pop_size,grids)
 
 def display_result(grid,i,pos):
+    pos_player = int(grid_display/2)
+    Obs.record(('player', (pos_player*block_size,(pos+1)*block_size, 3, block_size, 'shape=monstre.jpg')), Window='Field')
     for j in range(grid_display):
-        if j+i >= grid.length:
-            return
         for k in range(grid.width):
-            if j == 0 and k == pos:
+            if j+i-pos_player >= grid.length-turns_predict or j+i-pos_player < 0:
+                Obs.record(('obstacle_'+str(j)+'_'+str(k), (j*block_size,(k+1)*block_size, 1, block_size, 'shape=brick.png')), Window='Field')
+            elif j == pos_player and k == pos:
                 Obs.record(('obstacle_'+str(j)+'_'+str(k), (j*block_size,(k+1)*block_size, -1, block_size, 'shape=rectangle')), Window='Field')
-            elif grid.cells[j+i][k] == 1:
-                Obs.record(('obstacle_'+str(j)+'_'+str(k), (j*block_size,(k+1)*block_size, 1, block_size, 'shape=rectangle')), Window='Field')
+            elif grid.cells[j+i-pos_player][k] == 1:
+                Obs.record(('obstacle_'+str(j)+'_'+str(k), (j*block_size,(k+1)*block_size, 1, block_size, 'shape=brick.png')), Window='Field')
             else:
                 Obs.record(('obstacle_'+str(j)+'_'+str(k), (j*block_size,(k+1)*block_size, 2, block_size, 'shape=rectangle')), Window='Field')
         
-    Obs.record(('player', (0,(pos+1)*block_size, 3, block_size, 'shape=rectangle')), Window='Field')
 
 pos_in_solution = 0
 solution_pos = []
@@ -311,8 +311,9 @@ def one_generation():
     if pos_in_solution == 0:
         print("Score : %d" % pop.runner_list[0].score)
         grids[0] = Grid(grid_width,grid_length)
-        pop.evolve(generation)
-        generation = generation + 1
+        for i in range(10):
+            pop.evolve(generation)
+            generation = generation + 1
         (pos_in_solution,solution_pos) = pop.runner_list[0].make_score_one_grid(grids[0])
         return True
     display_result(grids[0],pop.runner_list[0].score - pos_in_solution,solution_pos[pop.runner_list[0].score - pos_in_solution])
@@ -322,6 +323,7 @@ def one_generation():
     return True
 
 def Start():
+    generation = 0
     pos_in_solution = 0
     Obs.setOutputDir('___Results')    # curves, average values and screenshots will be stored there
     Obs.recordInfo('Background', 'grey')    # windows will have this background by default
