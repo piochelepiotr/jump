@@ -3,7 +3,7 @@ from time import sleep
 from random import randint
 
 import sys
-sys.path.append('../../..')
+sys.path.append('')
 
 import Evolife.QtGraphics.Evolife_Window as EW
 import Evolife.Ecology.Observer as EO
