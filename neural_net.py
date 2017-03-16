@@ -250,12 +250,11 @@ class Population:
             new_pop.append(self.runner_list[i])
         for i in range(self.pop_size-number_kept):
             new_pop.append(self.tournament(10))
-            #new_pop.append(self.bests())
         for i in new_pop:
             i.make_score(self.grids)
         new_pop.sort(key = lambda x : x.score,reverse=True)
         print_dna_diff(new_pop[0].DNA,self.runner_list[0].DNA)
-        print("     best is : %d / %d" % (self.runner_list[0].score,number_grids*(self.grids[0].length-turns_predict)))
+        #print("     best is : %d / %d" % (self.runner_list[0].score,number_grids*(self.grids[0].length-turns_predict)))
         self.runner_list = new_pop
 
     def bests(self):
@@ -310,12 +309,12 @@ def one_generation():
     global grid_width
     global grid_length
     if pos_in_solution == 0:
+        print("Score : %d" % pop.runner_list[0].score)
         grids[0] = Grid(grid_width,grid_length)
         pop.evolve(generation)
         generation = generation + 1
         (pos_in_solution,solution_pos) = pop.runner_list[0].make_score_one_grid(grids[0])
         return True
-    #print("pos : %d et len = %d" %(pop.runner_list[0].
     display_result(grids[0],pop.runner_list[0].score - pos_in_solution,solution_pos[pop.runner_list[0].score - pos_in_solution])
     pos_in_solution -= 1
     Obs.StepId += 1
