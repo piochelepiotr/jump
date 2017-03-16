@@ -1,0 +1,171 @@
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"><HEAD>
+<TITLE>JL Dessalles - Evolife
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFCC00">
+<br>
+<!-- []
+<a href="http://www.telecom-paristech.fr" target="_blank"><IMG SRC="http://www.telecom-paristech.fr/fileadmin/maquette/images/logo-haut-droit.png" ALIGN="LEFT" Width="90" style="padding-right: 15px"></a>
+<a href="http://www.telecom-paristech.fr" target="_blank">
+Telecom ParisTech
+</a>
+ -->
+<HR WIDTH="100%" ALIGN="LEFT">
+<P>
+<font size="+2"><p align="center"><font face="Comic Sans MS"><a href="http://evolife.dessalles.fr">Evolife</a></font></p></font>
+<p align="center"><a href="http://www.dessalles.fr" target="_blank">Jean-Louis Dessalles</a></p>
+<HR WIDTH="100%" ALIGN="LEFT">
+<IMG SRC="Images/Courbes.jpg" ALIGN="RIGHT"  style="padding-left: 15px">
+<ol><li><a href="http://evolife.dessalles.fr/Description.html">Overall description</a></li>
+<li><a href="http://evolife.dessalles.fr/Execution.html">How to execute Evolife</a> (+ download)</li>
+<li><a href="http://evolife.dessalles.fr/Sources.html">Evolife source files</a></li>
+<li><a href="http://evolife.dessalles.fr/Classes.html">Evolife classes</a></li>
+<li><a href="http://evolife.dessalles.fr/Functions.html">Evolife functions</a></li>
+<li><a href="http://evolife.dessalles.fr/Working.html">How Evolife works</a></li>
+<li><a href="http://evolife.dessalles.fr/Create_Scenario.html">Create your own Evolife scenario</a></li>
+<li><a href="http://evolife.dessalles.fr/Components.html">Use Evolife&rsquo;s components separately (graphics, ecology, genetic algorithm)</a></li></ol>
+<P>
+
+<HR WIDTH="100%" ALIGN="LEFT">
+<br>
+ 
+<h2><div id="H0">
+8. Use <font face="Comic Sans MS">Evolife</font>&rsquo;s components separately (graphics, ecology, genetic algorithm)
+</div></h2>
+Some examples illustrating how to use some of <font face="Comic Sans MS">Evolife</font>&rsquo;s components are available in the directory Other. They include:
+<ul>
+<table border="0" width=" "><caption><i> </i></caption><TR>
+<TD><font size="-1"><font face="Courier">Ants</font></font>
+</TD>
+<TD>moving ants foraging for food
+</TD>
+<TD>animated graphics</TD>
+</TR>
+<TR>
+<TD><font size="-1"><font face="Courier">CellularAutomaton</font></font>
+</TD>
+<TD>a basic implementation of 1-D C.A.
+</TD>
+<TD>just drawing</TD>
+</TR>
+<TR>
+<TD><font size="-1"><font face="Courier">Cocktail</font></font>
+</TD>
+<TD>the cocktail party effect
+</TD>
+<TD>animated graphics</TD>
+</TR>
+<TR>
+<TD><font size="-1"><font face="Courier">Segregationism</font></font>
+</TD>
+<TD>Thomas Schelling&rsquo;s famous experiment
+</TD>
+<TD>animated graphics</TD>
+</TR>
+<TR>
+<TD><font size="-1"><font face="Courier">SegregationismGA</font></font>
+</TD>
+<TD>Thomas Schelling&rsquo;s famous experiment
+</TD>
+<TD>same + GA</TD>
+</TR>
+<TR>
+<TD><font size="-1"><font face="Courier">Swallows</font></font>
+</TD>
+<TD>Collective decision
+</TD>
+<TD>animated graphics</TD>
+</TR>
+<TR>
+<TD><font size="-1"><font face="Courier">EcologyExample.py</font></font>
+</TD>
+<TD>Just a living population
+</TD>
+<TD>ecology, no GA</TD>
+</TR>
+<TR>
+<TD><font size="-1"><font face="Courier">GAExample.py</font></font>
+</TD>
+<TD><font face="Comic Sans MS">Evolife</font> void scenario, waiting for being customized
+</TD>
+<TD>GA</TD>
+</TR>
+<TR>
+<TD><font size="-1"><font face="Courier">GraphicExample.py</font></font>
+</TD>
+<TD>To show how to use <font face="Comic Sans MS">Evolife</font>&rsquo;s graphics.
+</TD>
+<TD>animated graphics</TD>
+</TR>
+</table>
+</ul>
+<br>
+To see how to use <font face="Comic Sans MS">Evolife</font>&rsquo;s graphic, look at <font size="-1"><font face="Courier">GraphicExample.py</font></font> in <font size="-1"><font face="Courier">Other</font></font>.
+<br>
+To see how to introduce a genetic algorithm in a non-GA application, look at the difference between <font size="-1"><font face="Courier">Segregationism.py</font></font> and <font size="-1"><font face="Courier">SegregationismGA.py</font></font>. The main difference is in the name of inherited classes. Note that reproduction significantly slows down execution.
+<P>
+The six first examples in the above list can be executed in their respective directories by executing <font size="-1"><font face="Courier">starter</font></font>.
+<br>
+This is a snapshot of the <font size="-1"><font face="Courier">Swallows.py</font></font> program.
+<P>
+<p align="center"><IMG SRC="Images/SwallowScr.png" Width="444"></p>
+<P>
+In all these example, you can see that the interface with <font face="Comic Sans MS">Evolife</font>&rsquo;s graphics is achieved using the function <font size="-1"><font face="Courier">Start</font></font>:
+<br>
+<font size="-1"><font face="Courier">Evolife.QtGraphics.Start(OneStep, MyObserver, Capabilities)</font></font>
+<ul><li><font size="-1"><font face="Courier">OneStep</font></font> is a function of yours that will be called repeatedly at each time step. <font size="-1"><font face="Courier">OneStep</font></font> should call <font size="-1"><font face="Courier">MyObserver.season()</font></font> to increment time step.</li>
+<li><font size="-1"><font face="Courier">MyObserver</font></font> will provide data from your simulation (see below).</li>
+<li><font size="-1"><font face="Courier">Capabilities</font></font> should be a string of letters taken from:<ul></li>
+<li><font size="-1"><font face="Courier">C</font></font> = Curves</li>
+<li><font size="-1"><font face="Courier">F</font></font> = Field (2D seasonal display) (excludes R)</li>
+<li><font size="-1"><font face="Courier">G</font></font> = Genome display</li>
+<li><font size="-1"><font face="Courier">L</font></font> = Log Terminal (not implemented)</li>
+<li><font size="-1"><font face="Courier">N</font></font> = Social network display (connectome)</li>
+<li><font size="-1"><font face="Courier">P</font></font> = Photo (allows to take screenshots)</li>
+<li><font size="-1"><font face="Courier">R</font></font> = Region (2D ongoing display) (excludes F)</ul></li></ul>
+<P>
+Your programme may define a class <font size="-1"><font face="Courier">MyObserver</font></font> that inherits 
+<br>
+<font size="-1"><font face="Courier">Evolife.Ecology.Observer.Observer</font></font>
+<P>
+Your <font size="-1"><font face="Courier">MyObserver</font></font> class may redefine the following functions :
+<P>
+1. <font size="-1"><font face="Courier">get_data(Slot)</font></font>. This function is called from <font size="-1"><font face="Courier">Evolife_window.py</font></font>. The main slots are:
+<ul><li><font size="-1"><font face="Courier">Positions</font></font>. This slot is used to display agents on a 2-D field or region. In this case, <font size="-1"><font face="Courier">get_data</font></font> should return a list (or a tuple) containing tuples:<br><font size="-1"><font face="Courier">((Name1, Coord1), (Name2, Coord2). . .)</font></font> or simply <font size="-1"><font face="Courier">(Coord1, Coord2. . .)</font></font>.<br>The first format is required for animation: by resending new coordinates for <font size="-1"><font face="Courier">(NameX)</font></font>, the corresponding object moves.<br>Coord is a tuple with up to 8 values (missing values are replaced by defaults):<br><font size="-1"><font face="Courier">Coord  = (x, y, colour, size, ToX, ToY, ToColour, ToThickness)</font></font>.<br>The first four values define a &lsquo;blob&rsquo;, and the four last define an optional line drawn from the blob (see <font size="-1"><font face="Courier">GraphicExample.py</font></font>).<br><font size="-1"><font face="Courier">Colours</font></font> are <a href="Colors.html" target="_blank">Evolife Colours</a> or numbers between 1 and something like 45. When <font size="-1"><font face="Courier">colour < 0</font></font>, the agent is removed from display.<br>When using <font size="-1"><font face="Courier">Field</font></font>, <font size="-1"><font face="Courier">get_data(&rsquo;Positions&rsquo;)</font></font> should return all coordinates of all agents (missing agents will be removed from display).<br>When using <font size="-1"><font face="Courier">Region</font></font>, you need only to provide coordinates for agents that have changed location. Give a negative colour to remove an agent from display.</li>
+<li><font size="-1"><font face="Courier">Network</font></font>. This slot is used to display social links. <font size="-1"><font face="Courier">get_data</font></font> should return a list (or a tuple) containing tuples <font size="-1"><font face="Courier">(Name, [(Friend1,Strength),...])</font></font>, where <font size="-1"><font face="Courier">Name</font></font> defines an agent, <font size="-1"><font face="Courier">Friend1</font></font> its best friend and <font size="-1"><font face="Courier">Strength</font></font> the intensity of the link (may be 0 if irrelevant).</li>
+<li><font size="-1"><font face="Courier">DNA</font></font>. This slot is used to display the genomes of a whole group (one line per individual). <font size="-1"><font face="Courier">get_data(&rsquo;DNA&rsquo;)</font></font> should return a list (or tuple) containing tuples like <font size="-1"><font face="Courier">(0,0,1,0,1...)</font></font> that indicate the genome of one individual.</li>
+<li><font size="-1"><font face="Courier">Image</font></font>. This slot is used to display images.</li></ul>
+2. <font size="-1"><font face="Courier">get_info(Slot)</font></font>. Possible slots (see <font size="-1"><font face="Courier">Evolife_window.py</font></font>) are:
+<ul><li><font size="-1"><font face="Courier">ScenarioName</font></font>. Should return a string.</li>
+<li><font size="-1"><font face="Courier">CurveNames</font></font>. Should return a tuple or list of couples <font size="-1"><font face="Courier">(Colour, CurveName)</font></font> where <font size="-1"><font face="Courier">Colour</font></font> is a string (one of Evolife&rsquo;s colours) or a number between 1 and something like 45, and <font size="-1"><font face="Courier">CurveName</font></font> is a string that provides semantics to the curve (but see below).</li>
+<li><font size="-1"><font face="Courier">WindowLegends</font></font>. Should return a string which will be displayed in the "Legend" window. Useful to describe the content of windows (Field, Social Network, Trajectories)</li>
+<li><font size="-1"><font face="Courier">GenePattern</font></font>. Should return a mask <font size="-1"><font face="Courier">(0,0,0,0,0,1,1,1,1...)</font></font> that provides gene boundaries. This pattern and all elements returned by <font size="-1"><font face="Courier">get_data(&rsquo;DNA&rsquo;)</font></font> should have the same length.</li>
+<li><font size="-1"><font face="Courier">Best</font></font>. Should return the phenotype of the best individual. Typically a path (successive positions).</li>
+<li><font size="-1"><font face="Courier">Icon</font></font>. Should returns the path to an icon for the windows of your application.</li>
+<li><font size="-1"><font face="Courier">EvolifeMainDir</font></font>. Should return the path to your application.</li>
+<li><font size="-1"><font face="Courier">OutputDir</font></font>. Should return the path to the location where results are to be stored.</li>
+<li><font size="-1"><font face="Courier">ResultFile</font></font>. Should return the path to the file where curves are dumped.</li>
+<li><font size="-1"><font face="Courier">ResultHeader</font></font>. First lines that should appear in curve dump.</li>
+<li><font size="-1"><font face="Courier">ResultOffset</font></font>. Should return an integer indicating the number of lines to be ignored when computing statistics.</li></ul>
+3. <font size="-1"><font face="Courier">GetPlotOrders</font></font>. This function should return a list containing couples: <font size="-1"><font face="Courier">[(Curve_id, (x,y)),...]</font></font> where <font size="-1"><font face="Courier">Curve_id</font></font> is an <a href="Colors.html" target="_blank">Evolife Colour name</a> or a number indicating the colour (between 1 and something like 45), and <font size="-1"><font face="Courier">(x,y)</font></font> are the coordinates of the next point to plot on the curve. 
+<br>
+<font size="-1"><font face="Courier">x</font></font> is typically equal to <font size="-1"><font face="Courier">MyObserver.StepId</font></font>, which represent the current year. 
+<br>
+<font size="-1"><font face="Courier">StepId</font></font> can be incremented by calling <font size="-1"><font face="Courier">MyObserver.season()</font></font>.
+<P>
+The preceding functions need only be implemented when the corresponding capabilities are indicated when calling Start.
+<P>
+As an alternative to <font size="-1"><font face="Courier">CurveNames</font></font>, you may use the <font size="-1"><font face="Courier">curve</font></font> function:
+<P>
+<font size="-1"><font face="Courier">&nbsp;&nbsp;&nbsp;&nbsp;self.curve()&nbsp;&nbsp;&nbsp;&nbsp;# resets curve definitions<br>&nbsp;&nbsp;&nbsp;&nbsp;self.curve(Name, Colour, Description)&nbsp;&nbsp;&nbsp;&nbsp;# defines a new curve<br>&nbsp;&nbsp;&nbsp;&nbsp;self.curve(Name)&nbsp;&nbsp;&nbsp;&nbsp;# returns the colour of an already defined function</font></font>
+<P>
+<font size="-1"><font face="Courier">Colour</font></font> is an <a href="Colors.html" target="_blank">Evolife Colour</a> or a number.
+For instance, the slot <font size="-1"><font face="Courier">GetPlotOrders</font></font> may return something like:
+<P>
+<font size="-1"><font face="Courier">def get_info(self, Slot):<br>&nbsp;&nbsp;&nbsp;&nbsp;if Slot == &lsquo;PlotOrders&rsquo;:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return [(self.curve(&rsquo;my curve&rsquo;), (self.StepId, some_value))]<br>&nbsp;&nbsp;&nbsp;&nbsp;...</font></font>
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<P>
+<HR WIDTH="100%" ALIGN="LEFT">
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;</div></BODY></HTML>

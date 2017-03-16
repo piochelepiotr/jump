@@ -1,0 +1,4 @@
+Date;DisplayPeriod;Evaporation;Exploration;FoodQuantity;FoodSourceSize;Icon;LandSize;NPDeposit;NbFoodSources;PPMax;PopulationSize;Saturation;ScenarioName;SniffingDistance;TimeLimit;Title;LastStep;Year (each ant moves once a year on average)
+		x
+		Amount of food collected
+160315090338;50;5;30;100;2;ants-1.gif;100;50;3;1000;30;1000;Ants;2;500000;Evolife_Ants;1114;81

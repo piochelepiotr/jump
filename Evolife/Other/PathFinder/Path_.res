@@ -1,0 +1,2 @@
+Date	Altitudes	Deposit	DepositVariation	DisplayPeriod	Endpoint	Evaporation	Exploration	ForwardDeposit	ForwardThreshold	Ground	Icon	NoStartpoints	Noise	PheromoneAttractiveness	PopulationSize	Saturation	ScenarioName	SlopeAversion	SniffingDistance	Startpoint	TargetAttractiveness	TimeLimit	Title	
+131112093232	landscape_1.dat	100	20	100	95x95	1	10	10	30	Landscape_1.png	Walker.gif	1	1	5	1	1000	Path	4	3	5x5	1	30000	Evolife_Walker	4400	2152

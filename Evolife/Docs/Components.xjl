@@ -1,0 +1,139 @@
+%include(header.xjl)
+ 
+%h2
+	8. Use %f+Comic Sans MS(Evolife)'s components separately (graphics, ecology, genetic algorithm)
+Some examples illustrating how to use some of %f+Comic Sans MS(Evolife)'s components are available in the directory Other. They include:
+<ul>
+%Table+ + +0
+	%Tableligne
+		%code(Ants)
+		%nc(moving ants foraging for food)
+		%nc(animated graphics)
+	%Tableligne
+		%code(CellularAutomaton)
+		%nc(a basic implementation of 1-D C.A.)
+		%nc(just drawing)
+	%Tableligne
+		%code(Cocktail)
+		%nc(the cocktail party effect)
+		%nc(animated graphics)
+	%Tableligne
+		%code(Segregationism)
+		%nc(Thomas Schelling's famous experiment)
+		%nc(animated graphics)
+	%Tableligne
+		%code(SegregationismGA)
+		%nc(Thomas Schelling's famous experiment)
+		%nc(same + GA)
+	%Tableligne
+		%code(Swallows)
+		%nc(Collective decision)
+		%nc(animated graphics)
+	%Tableligne
+		%code(EcologyExample.py)
+		%nc(Just a living population)
+		%nc(ecology, no GA)
+	%Tableligne
+		%code(GAExample.py)
+		%nc(%f+Comic Sans MS(Evolife) void scenario, waiting for being customized)
+		%nc(GA)
+	%Tableligne
+		%code(GraphicExample.py)
+		%nc(To show how to use %f+Comic Sans MS(Evolife)'s graphics.)
+		%nc(animated graphics)
+</ul>
+
+To see how to use %f+Comic Sans MS(Evolife)'s graphic, look at %code(GraphicExample.py) in %code(Other).
+
+To see how to introduce a genetic algorithm in a non-GA application, look at the difference between %code(Segregationism.py) and %code(SegregationismGA.py). The main difference is in the name of inherited classes. Note that reproduction significantly slows down execution.
+
+
+The six first examples in the above list can be executed in their respective directories by executing %code(starter).
+
+This is a snapshot of the %code(Swallows.py) program.
+
+
+%ic+444(SwallowScr.png)
+
+
+In all these example, you can see that the interface with %f+Comic Sans MS(Evolife)'s graphics is achieved using the function %code(Start):
+
+%code(Evolife.QtGraphics.Start(OneStep, MyObserver, Capabilities))
+%list
+	%code(OneStep) is a function of yours that will be called repeatedly at each time step. %code(OneStep) should call %code(MyObserver.season()) to increment time step.
+	%code(MyObserver) will provide data from your simulation (see below).
+	%code(Capabilities) should be a string of letters taken from:<ul>
+	%code(C) = Curves
+	%code(F) = Field (2D seasonal display) (excludes R)
+	%code(G) = Genome display
+	%code(L) = Log Terminal (not implemented)
+	%code(N) = Social network display (connectome)
+	%code(P) = Photo (allows to take screenshots)
+	%code(R) = Region (2D ongoing display) (excludes F)</ul>
+
+
+Your programme may define a class %code(MyObserver) that inherits 
+
+%code(Evolife.Ecology.Observer.Observer)
+
+
+Your %code(MyObserver) class may redefine the following functions :
+
+
+1. %code(get_data(Slot)). This function is called from %code(Evolife_window.py). The main slots are:
+%list
+	%code(Positions). This slot is used to display agents on a 2-D field or region. In this case, %code(get_data) should return a list (or a tuple) containing tuples:<br>%code(((Name1, Coord1), (Name2, Coord2). . .)) or simply %code((Coord1, Coord2. . .)).<br>The first format is required for animation: by resending new coordinates for %code((NameX)), the corresponding object moves.<br>Coord is a tuple with up to 8 values (missing values are replaced by defaults):<br>%code(Coord  = (x, y, colour, size, ToX, ToY, ToColour, ToThickness)).<br>The first four values define a 'blob', and the four last define an optional line drawn from the blob (see %code(GraphicExample.py)).<br>%code(Colours) are %l+Colors.html(Evolife Colours) or numbers between 1 and something like 45. When %code(colour < 0), the agent is removed from display.<br>When using %code(Field), %code(get_data('Positions')) should return all coordinates of all agents (missing agents will be removed from display).<br>When using %code(Region), you need only to provide coordinates for agents that have changed location. Give a negative colour to remove an agent from display.
+	%code(Network). This slot is used to display social links. %code(get_data) should return a list (or a tuple) containing tuples %code((Name, [(Friend1,Strength),...])), where %code(Name) defines an agent, %code(Friend1) its best friend and %code(Strength) the intensity of the link (may be 0 if irrelevant).
+	%code(DNA). This slot is used to display the genomes of a whole group (one line per individual). %code(get_data('DNA')) should return a list (or tuple) containing tuples like %code((0,0,1,0,1...)) that indicate the genome of one individual.
+	%code(Image). This slot is used to display images.
+2. %code(get_info(Slot)). Possible slots (see %code(Evolife_window.py)) are:
+%list
+	%code(ScenarioName). Should return a string.
+	%code(CurveNames). Should return a tuple or list of couples %code((Colour, CurveName)) where %code(Colour) is a string (one of Evolife's colours) or a number between 1 and something like 45, and %code(CurveName) is a string that provides semantics to the curve (but see below).
+	%code(WindowLegends). Should return a string which will be displayed in the "Legend" window. Useful to describe the content of windows (Field, Social Network, Trajectories)
+	%code(GenePattern). Should return a mask %code((0,0,0,0,0,1,1,1,1...)) that provides gene boundaries. This pattern and all elements returned by %code(get_data('DNA')) should have the same length.
+	%code(Best). Should return the phenotype of the best individual. Typically a path (successive positions).
+	%code(Icon). Should returns the path to an icon for the windows of your application.
+	%code(EvolifeMainDir). Should return the path to your application.
+	%code(OutputDir). Should return the path to the location where results are to be stored.
+	%code(ResultFile). Should return the path to the file where curves are dumped.
+	%code(ResultHeader). First lines that should appear in curve dump.
+	%code(ResultOffset). Should return an integer indicating the number of lines to be ignored when computing statistics.
+3. %code(GetPlotOrders). This function should return a list containing couples: %code([(Curve_id, (x,y)),...]) where %code(Curve_id) is an %l+Colors.html(Evolife Colour name) or a number indicating the colour (between 1 and something like 45), and %code((x,y)) are the coordinates of the next point to plot on the curve. 
+
+%code(x) is typically equal to %code(MyObserver.StepId), which represent the current year. 
+
+%code(StepId) can be incremented by calling %code(MyObserver.season()).
+
+
+The preceding functions need only be implemented when the corresponding capabilities are indicated when calling Start.
+
+
+As an alternative to %code(CurveNames), you may use the %code(curve) function:
+
+
+%code
+		self.curve()	# resets curve definitions
+		self.curve(Name, Colour, Description)	# defines a new curve
+		self.curve(Name)	# returns the colour of an already defined function
+
+
+%code(Colour) is an %l+Colors.html(Evolife Colour) or a number.
+For instance, the slot %code(GetPlotOrders) may return something like:
+
+
+%code
+	def get_info(self, Slot):
+		if Slot == 'PlotOrders':
+			return [(self.curve('my curve'), (self.StepId, some_value))]
+		...
+
+
+	
+
+
+<HR WIDTH="100%" ALIGN="LEFT">
+
+
+	
+

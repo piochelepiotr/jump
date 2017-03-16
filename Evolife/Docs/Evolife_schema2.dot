@@ -1,0 +1,36 @@
+digraph Evolife {
+bgcolor="#FFCF80";
+compound=true
+node  [shape=ellipse,style=filled,fillcolor="Red",fontname=Helvetica,fontcolor=White]; 
+subgraph clusterEcology { 
+	DNA -> Genome -> EvolifeIndividual; 
+	Phenome -> EvolifeIndividual; 
+	Alliances -> EvolifeIndividual; 
+	Gene; Phene; Club;
+	Individual -> EvolifeIndividual;
+	Club -> Alliances [style=dotted];
+	Phene -> Phenome [style=dotted];
+	Gene -> Genome [style=dotted];
+	EvolifeIndividual -> EvolifeGroup -> EvolifePopulation [style=dotted];
+	Group -> EvolifeGroup;
+	Population -> EvolifePopulation;
+	}
+subgraph clusterScenario { 
+	Gene_Def; 
+	Genetic_Map -> Default_Scenario; 
+	Parameters -> Default_Scenario -> Void_Scenario
+	{rank=same; Parameters; Gene_Def}
+	Gene_Def -> Genetic_Map [style=dotted];
+	}
+subgraph clusterObserver { 
+	Examiner; 
+	Storage -> Meta_Examiner -> Observer
+	Generic_Observer -> Observer
+	Observer -> Evolife_Observer
+	Storage -> Examiner [style=dotted];
+	Examiner -> Meta_Examiner [style=dotted];
+	Storage -> Base_Examiner; 
+	Base_Examiner -> Examiner [style=dotted];
+	}
+Population -> Parameters [ltail=clusterEcology, lhead=clusterScenario, color="#FFCF80"];
+}

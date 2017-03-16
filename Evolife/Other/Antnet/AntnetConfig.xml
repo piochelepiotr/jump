@@ -1,0 +1,114 @@
+<Config>
+	<Parameter>
+		<Name>Scenario</Name>
+		<Description><info><![CDATA[This is a configuration file editor designed to choose parameter values before launching Evolife simulations.<br><br>Its use is rather intuitive. You may click directly on values you want to change, or navigate with arrows and use the [F2] key to edit values.<br><br>Pay attention to explanations displayed in this panel.]]></info></Description>
+		<Parameter>
+			<Name>CurrentScenario</Name>
+			<Parameter>
+				<Name>ScenarioName</Name>
+				<Description><info><![CDATA[Simulmates a foraging ant colony]]></info></Description>
+				<Value>AntNet</Value>
+			</Parameter>
+			<Parameter>
+				<Name>ScenarioFileName</Name>
+				<Value>Antnet.evo</Value>
+			</Parameter>
+		</Parameter>
+	</Parameter>
+	<Parameter>
+		<Name>Ecology</Name>
+		<Parameter>
+			<Name>PopulationSize</Name>
+			<Description><info><![CDATA[total number of ants]]></info></Description>
+			<Value>100</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Ants</Name>
+			<Parameter>
+				<Name>AgeMax</Name>
+				<Description><info><![CDATA[Age at which ants are reborn]]></info></Description>
+				<Value>10</Value>
+			</Parameter>
+			<Parameter>
+				<Name>AntInfluence</Name>
+				<Description><info><![CDATA[Maximal influence of a visiting ant on probability (in %)]]></info></Description>
+				<Value>30</Value>
+			</Parameter>
+		</Parameter>
+	</Parameter>
+	<Parameter>
+		<Name>Network</Name>
+		<Description><info><![CDATA[Properties of the communication network]]></info></Description>
+		<Parameter>
+			<Name>DisplaySize</Name>
+			<Description><info><![CDATA[Physical size of the display (in pixels)]]></info></Description>
+			<Value>100</Value>
+		</Parameter>
+		<Parameter>
+			<Name>RandomNetwork</Name>
+			<Description><info><![CDATA[If non zero, the network is randomly generated]]></info></Description>
+			<Value>1</Value>
+		</Parameter>
+		<Parameter>
+			<Name>NumberOfNodes</Name>
+			<Description><info><![CDATA[Number of nodes for random network generation.]]></info></Description>
+			<Value>60</Value>
+		</Parameter>
+		<Parameter>
+			<Name>NetworkFileName</Name>
+			<Description><info><![CDATA[Name of the file providing the network description (if non random).<br><br>file format: <br>Name1 x1 y1 <br>Name2 x2 y2 <br>... <br>Link NameA NameB C (C = capacity) <br>... <br>('Link' = keyword)]]></info></Description>
+			<Value>Network1.ntw</Value>
+		</Parameter>
+		<Parameter>
+			<Name>LoadDecay</Name>
+			<Description><info><![CDATA[Spontaneous Load attenuation per time unit (in %)]]></info></Description>
+			<Value>20</Value>
+		</Parameter>
+	</Parameter>
+	<Parameter>
+		<Name>Simulation</Name>
+		<Parameter>
+			<Name>TimeLimit</Name>
+			<Description><info><![CDATA[Max number of simulation steps]]></info></Description>
+			<Value>500000</Value>
+		</Parameter>
+		<Parameter>
+			<Name>ApplicationDir</Name>
+			<Description><info><![CDATA[Directory where the simulation can be found]]></info></Description>
+			<Value>.</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Target</Name>
+			<Description><info><![CDATA[Programme to be executed]]></info></Description>
+			<Value>Antnet.py</Value>
+		</Parameter>
+		<Parameter>
+			<Name>RunConfigFile</Name>
+			<Description><info><![CDATA[Parameter values that will be read by the programme]]></info></Description>
+			<Value>_Params.evo</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Title</Name>
+			<Description><info><![CDATA[Name of the present Configuration Editor]]></info></Description>
+			<Value>Evolife_AntNet</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Icon</Name>
+			<Description><info><![CDATA[local path to window icon]]></info></Description>
+			<Value>ants-1.gif</Value>
+		</Parameter>
+	</Parameter>
+	<Parameter>
+		<Name>Display</Name>
+		<Parameter>
+			<Name>DisplayPeriod</Name>
+			<Description><info><![CDATA[Controls the number of steps when the ant is moving between two nodes. Increase to speed up display (can also be changed with the ruler at execution time)]]></info></Description>
+			<Value>30</Value>
+		</Parameter>
+		<Parameter>
+			<Name>MessageDisplay</Name>
+			<Description><info><![CDATA[Frequency of message display]]></info></Description>
+			<Value>20</Value>
+		</Parameter>
+	</Parameter>
+</Config>

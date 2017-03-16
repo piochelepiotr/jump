@@ -1,0 +1,25 @@
+
+
+======
+ ANTS
+======
+
+Studying Collective Foraging strategy:
+Though individual ants adopt erratic paths to look for food,
+the ant colony may discover optimal paths to get to food 
+and exploit food sources.
+
+Press <Space> to pause the simulation
+Press <Esc> or <Q> to quit the simulation
+
+
+
+=================
+ Segregationism
+=================
+
+Though individual agents show only slight preference for being surrounded by similar agent,
+homogeneous patches emerge.
+
+Press <Space> to pause the simulation
+Press <Esc> or <Q> to quit the simulation

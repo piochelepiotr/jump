@@ -1,0 +1,47 @@
+%include(header.xjl)
+ 
+%h2
+	6. How %f+Comic Sans MS(Evolife) works
+%f+Comic Sans MS(Evolife) is launched by executing Starter.bat (or starter.sh)and then by clicking on the [Run] button (see How to execute %f+Comic Sans MS(Evolife)).
+
+ 
+
+First, %f+Comic Sans MS(Evolife) reads a configuration file exported from the Configuration Editor, Evolife%f+Comic Sans MS(Evolife).evo by default (note that configuration files are perfectly readable and can be edited by hand, but the Configuration Editor is much more convenient).
+
+When %f+Comic Sans MS(Evolife) is executed from the Configuration Editor, it imports the scenario it is supposed to simulate. The name of the scenario, e.g. 'Beehive', is retrieved from the configuration file which contains a line starting with S_Beehive. The scenario is supposed to be written in a file like S_Beehive.py in the directory Scenarii (see Create your own %f+Comic Sans MS(Evolife) scenario).
+
+
+
+%f+Comic Sans MS(Evolife) first creates an 'observer', which contains a few global constants and performs statistics as the simulation runs.
+
+%f+Comic Sans MS(Evolife) then creates a population of individuals. The population is structured in groups. Individuals interact and procreate within groups, and migrate between groups. Each individual is characterized by its genotype (class Genome), its phenotype (class Phenome) and its social network (class Alliances) (see %f+Comic Sans MS(Evolife) classes).
+
+%f+Comic Sans MS(Evolife) then starts the main window, defined in Evolife_Window.py (see %f+Comic Sans MS(Evolife) %l0+Sources.html(source files)).
+
+
+%ic+333(Curves.png)
+
+
+When the %image+55(Run.png) button is clicked on (or the key %code(R) is pressed), %f+Comic Sans MS(Evolife) starts the simulation. 
+%#
+	It creates a simulation thread, defined in Simulation_Thread.py, by executing the line:
+	%code
+		self.simulation = Simulation(self.OneStep,functioning_mode, self.ReturnFromThread)
+The function stored in %code(self.OneStep) is the function called from the application (in basic %f+Comic Sans MS(Evolife): %code(Population.py)) that executes one step of the simulation (typically, one complete year, with interactions, reproduction, selection and migration). Then control is given to the function %code(self.ReturnFromThread) (defined in %code(Evolife_Window.py)), which interprets the results produced by the simulation and plots curves. If %code(self.OneStep) returns %code(False), then the simulation stops, otherwise it resumes.
+
+
+The %f+Comic Sans MS(Evolife) window provides various buttons and keyboard shortcuts, as defined in the Help file.
+
+
+When %f+Comic Sans MS(Evolife) quits, it creates various files. See %l0+Execution.html(How to execute %f+Comic Sans MS(Evolife)).
+ 
+
+
+
+
+
+<HR WIDTH="100%" ALIGN="LEFT">
+
+
+	
+

@@ -1,0 +1,46 @@
+%include(header.xjl)
+ 
+%h2
+	4. %f+Comic Sans MS(Evolife) Classes
+In the figure below, solid lines represent inheritance links. Dotted lines indicate that a class is used in another. The schema reveals the organization of %f+Comic Sans MS(Evolife) in well-separated modules.
+
+
+%ic(Classes1.gif)
+
+
+The first module is centred on %code(Individual). An Individual inherits its genes from %code(Genome). Note that genes (defined in %code(Genome)) are logical segments located on the DNA. Therefore %code(Genome) inherits from DNA. Individuals have also a phenotype, defined in %code(Phenome). An individual remembers its social links, which are stored in %code(Alliances). Individuals gather in groups (class %code(Group)), in which they interact and reproduce. Individuals may move from group to group. %code(Population) defines a set of groups.
+
+
+%code(Storage), %code(Base_Examiner), %code(Examiner) and %code(Meta_Examiner) are used to store numbers (simulation results) and perform statistics.  %code(Evolife_Observer) is aware of the kind of data that are processed (genomes, scores, ...).
+
+
+Any particular scenario should inherit from %code(Default_Scenario) (as indicated for %code(Void_Scenario) in the figure). Besides particular functions defined in the scenario, %code(Default_Scenario) provides access to simulation parameters (through inheritance from %code(Parameters)) and to the logical definition of genes on the DNA string (through inheritance from %code(Genetic_Map)).
+
+
+The following figures describe the organization of the graphic modules.
+
+ 
+%ic+600(Classes2.gif)
+
+
+The graphic module offers various windows that are used to control and visualize simulations. Some of them can be easily reused independently from %f+Comic Sans MS(Evolife) (e.g. %code(Image_Area), %code(Draw_Area), %code(Plot_Area), %code(Ground)). %code(Plot_Area) displays curves showing the evolution of simulation results through time (e.g. average value of genes). %code(Genome_Area) displays the genome of all agents in the population. %code(Field_Area) displays agents on a 2-D space. %code(Network_Area) displays social links between agents.
+
+In the logic of QT, areas (QT’s scenes) require a view to be displayed. This is the role of the widget %code(AreaView) and its descendents. %code(Active_Frame) adds keyboard shortcuts, so that the same keyboard actions will be available from any %code(Satellite_window) (windows that display genomes, trajectories, field, ...).
+
+
+The next figure illustrates the organization of the control windows, which constitutes the fifth and last module (the new classes are defined in %code(Evolife_Window.py)).
+
+
+%ic+500(Classes3.gif)
+
+
+%f+Comic Sans MS(Evolife)'s main window is %code(Evolife_Frame). The class %code(Evolife_Batch) is an alternative to it, which can be used in batch mode when no display is wanted. %code(Simulation_Control) offers an interface with %code(Simulation) (the simulation thread, when used (not used in the 2012 version and later)). %code(Simulation_Control_Frame) offers control buttons, such as %code([Run]) and %code([Step]). %code(Simulation_Frame) adds a graphic zone that displays curves. It can be reused in other programmes. %code(Evolife_Frame) inherits from it, adding concepts such as a genome window or a trajectory window, which are specific to %f+Comic Sans MS(Evolife).
+
+
+ 
+
+<HR WIDTH="100%" ALIGN="LEFT">
+
+
+	
+

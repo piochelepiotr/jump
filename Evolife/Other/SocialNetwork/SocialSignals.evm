@@ -1,0 +1,26 @@
+AgeMax	1000
+ApplicationDir	.
+BatchMode	1
+BottomCompetence	0
+CostlySignal	1
+DisplayPeriod	10
+Icon	social-media-social-networking-connections.jpg
+ImitationStrength	70
+Infancy	15
+JoiningBonus	20
+LearnHorizon	60
+LearningConservatism	20
+LearningSpeed	1
+MaxFollowers	3
+MaxGurus	10
+MemorySpan	30
+NbAgents	100
+NbRuns	1000
+RunConfigFile	_Params.evo
+ScenarioFileName	CostlySignal.evo
+ScenarioName	CostlySignal
+SignallingCost	40 80 120
+Target	SocialNetwork.py
+TimeLimit	3000
+Title	Evolife_Social_Network
+

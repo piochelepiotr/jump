@@ -1,0 +1,22 @@
+digraph Evolife {
+color = "White"
+bgcolor="#FFCF80";
+/* label="Evolife files"; */
+node  [style=filled,fillcolor="Red",fontname=Helvetica,fontcolor=White]; 
+/*Void_Scenario [shape = ellipse];*/
+Main [shape = box];
+Scenarii  [shape=record,label="{Scenarii| {Parameters\nMyScenario\nDefault_Scenario\nS_... [predefinite scenarios]}}"];
+Scenarii -> Main  [style=dotted];
+Ecology  [shape=record,label="{Ecology| {Population\nGroup\nIndividual\nAlliances\nPhenotype |<here> Observer}}"];
+Main -> Ecology;
+Genetics [shape=record,label="{Genetics| {Genome\nDNA |<here> Genetic_Map}}"]
+Main -> Genetics;
+Tools [shape=record,label="{Tools| Tools}"]
+Main ->Tools;
+{rank=sink; Tools}
+Graphics [shape=record,label="{QtGraphics| {Evolife_Window\nEvolife_Graphic\nCurves\nPlot_Area\nEvolife_Batch\nTxtWin |<here> TreeExplorer}}"]
+Main -> Graphics;
+/* Void_Scenario -> Ecology  [style=dotted];
+Void_Scenario -> Graphics  [style=dotted]; */
+/*{rank=same; Void_Scenario; Main} */
+}

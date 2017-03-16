@@ -1,0 +1,24 @@
+%include(header.xjl)
+ 
+%f+Comic Sans MS(%l0+http://www.dessalles.fr/Evolife(Evolife)) has been developed to study various evolutionary phenomena:
+%liste
+	Genetic algorithms
+	Natural evolution and behavioural ecology
+It is written in Python (%l+http://www.python.org/(http://www.python.org/)) and should thus run on various platforms.
+
+The current version requires the %l+http://www.riverbankcomputing.co.uk/software/pyqt/download(PtQt4 package).
+
+ 
+
+ 
+
+%l0+Execution.html(Download Evolife latest version)
+
+ 
+
+
+<HR WIDTH="100%" ALIGN="LEFT">
+
+
+	
+

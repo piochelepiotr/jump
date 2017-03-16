@@ -1,0 +1,72 @@
+<Config>
+	<Parameter>
+		<Name>PARAMETERS</Name>
+		<Description><info><![CDATA[This is a configuration file editor designed to choose parameter values before launching Evolife simulations.<br><br>Its use is rather intuitive. You may click directly on values you want to change, or navigate with arrows and use the [F2] key to edit values.<br><br>Pay attention to explanations displayed in this panel.]]></info></Description>
+	</Parameter>
+	<Parameter>
+		<Name>Scenario</Name>
+		<Parameter>
+			<Name>CurrentScenario</Name>
+			<Parameter>
+				<Name>ScenarioName</Name>
+				<Value>CellularAutomaton</Value>
+			</Parameter>
+			<Parameter>
+				<Name>ScenarioFileName</Name>
+				<Value>CellularAutomaton.evo</Value>
+			</Parameter>
+		</Parameter>
+		<Parameter Scenario="CellularAutomaton">
+			<Name>CellularAutomaton</Name>
+			<Description><info><![CDATA[Classical 1-D cellular automaton]]></info></Description>
+		</Parameter>
+	</Parameter>
+	<Parameter>
+		<Name>Simulation</Name>
+		<Parameter>
+			<Name>DisplayPeriod</Name>
+			<Description><info><![CDATA[Display period]]></info></Description>
+			<Value>5</Value>
+		</Parameter>
+		<Parameter>
+			<Name>TimeLimit</Name>
+			<Description><info><![CDATA[Max number of simulation steps]]></info></Description>
+			<Value>256</Value>
+		</Parameter>
+		<Parameter>
+			<Name>ApplicationDir</Name>
+			<Description><info><![CDATA[Directory where the simulation can be found]]></info></Description>
+			<Value>.</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Target</Name>
+			<Description><info><![CDATA[Programme to be executed]]></info></Description>
+			<Value>CellularAutomaton.py</Value>
+		</Parameter>
+		<Parameter>
+			<Name>RunConfigFile</Name>
+			<Description><info><![CDATA[Parameter values that will be read by the programme]]></info></Description>
+			<Value>_Params.evo</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Title</Name>
+			<Description><info><![CDATA[Name of the present Configuration Editor]]></info></Description>
+			<Value>Evolife_Cellular_Automaton</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Icon</Name>
+			<Description><info><![CDATA[local path to window icon]]></info></Description>
+			<Value>ElementaryCARule030_700.gif</Value>
+		</Parameter>
+	</Parameter>
+	<Parameter>
+		<Name>StartingPattern</Name>
+		<Description><info><![CDATA[Starting pattern: can be any Python expression (no spaces)]]></info></Description>
+		<Value>P='0'*127+'1'+'0'*128</Value>
+	</Parameter>
+	<Parameter>
+		<Name>Rule</Name>
+		<Description><info><![CDATA[Rule]]></info></Description>
+		<Value>195</Value>
+	</Parameter>
+</Config>

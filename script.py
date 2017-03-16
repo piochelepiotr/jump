@@ -15,27 +15,29 @@ import math
 #    0 : duck, 1 : do nothing 2 : jump
 
 # constants
+number_kept = 10
 grid_length = 50
 grid_width = 3
 turns_predict = 3
 n_inputs = grid_width*turns_predict + 1
 n_outputs = 3
-n_hidden = 15
-first_pow = 5
+n_hidden = 10
+first_pow = 0
+number_grids = 10
 
 gene_size = 10
 dna_size = gene_size * (n_inputs + n_outputs )*n_hidden
-mutation_rate = 0.03
+mutation_rate = 0.08
 crossover_ratio = 0.5
 cst_genome = list(range(0,dna_size+1,gene_size))
-number_crossover = 24
+number_crossover = 40
 
 
 class Grid:
     def __init__(self, grid_width,grid_length):
         self.width = grid_width
         self.length = grid_length
-        cells = np.random.randint(0, 2, size = (grid_length, grid_width))
+        cells = np.random.randint(1, 2, size = (grid_length, grid_width))
         pos = int(grid_width/2) #start in the middle
         for i in range(grid_length):
             cells[i][pos] = 0
@@ -63,12 +65,10 @@ def print_dna_diff(dna,diff):
         print(dna[i],end='')
         if dna[i] != diff[i]:
             print('\x1b[0m',end='')
-    print()
 
 def print_dna(dna):
     for i in range(150):
         print(dna[i],end='')
-    print()
 
 def sigmoid(x):
     return 1 / (1 + math.exp(-x))
@@ -177,7 +177,7 @@ class Individual:
             self.DNA += list(parent1[Loci_crossover[cut_point]:Loci_crossover[cut_point+1]])
             parent1, parent2 = parent2, parent1     # swapping parents        
             
-    def make_score(self,grid):
+    def make_score_one_grid(self,grid):
         i = 0
         pos = int(grid.width/2)
         go_on = True
@@ -199,34 +199,43 @@ class Individual:
                 i+=1
                 if i >= grid.length-turns_predict:
                     go_on = False
-        self.score = i
+        return i
+
+    def make_score(self,grids):
+        score = 0
+        for grid in grids:
+            score += self.make_score_one_grid(grid)
+        self.score = score
         
 class Population:
     
     runner_list = []
   
-    def __init__(self, pop_size,grid):
+    def __init__(self, pop_size,grids):
         self.pop_size = pop_size
         for i in range(pop_size):
             r = Individual(dna_size, cst_genome)
             r.generate_random()
             self.runner_list.append(r)
-            self.grid = grid
+            self.grids = grids
         for i in self.runner_list:
-            i.make_score(grid)
+            i.make_score(grids)
         self.runner_list.sort(key = lambda x : x.score,reverse=True)
         print_dna(self.runner_list[0].DNA.tolist())
+        print()
 
     def evolve(self):
         new_pop = []
-        print("the best is : %d" % self.runner_list[0].score)
-        for i in range(self.pop_size):
-            #new_pop.append(self.tournament(10))
-            new_pop.append(self.bests())
+        for i in range(number_kept):
+            new_pop.append(self.runner_list[i])
+        for i in range(self.pop_size-number_kept):
+            new_pop.append(self.tournament(10))
+            #new_pop.append(self.bests())
         for i in new_pop:
-            i.make_score(grid)
+            i.make_score(self.grids)
         new_pop.sort(key = lambda x : x.score,reverse=True)
         print_dna_diff(new_pop[0].DNA,self.runner_list[0].DNA)
+        print("     best is : %d / %d" % (self.runner_list[0].score,number_grids*(self.grids[0].length-turns_predict)))
         self.runner_list = new_pop
 
     def bests(self):
@@ -249,10 +258,13 @@ class Population:
         r.mutate()
         return r
 
-grid = Grid(grid_width,grid_length)
-pop = Population(100,grid)
-for i in range(50):
+grids = []
+for i in range(number_grids):
+    grids += [Grid(grid_width,grid_length)]
+pop = Population(100,grids)
+for i in range(1500):
     pop.evolve()
+print()
 grid.display()
         
 

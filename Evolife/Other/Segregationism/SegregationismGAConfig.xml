@@ -1,0 +1,133 @@
+<Config>
+	<Parameter>
+		<Name>PARAMETERS</Name>
+		<Description><info><![CDATA[This is a configuration file editor designed to choose parameter values before launching Evolife simulations.<br><br>Its use is rather intuitive. You may click directly on values you want to change, or navigate with arrows and use the [F2] key to edit values.<br><br>Pay attention to explanations displayed in this panel.]]></info></Description>
+	</Parameter>
+	<Parameter>
+		<Name>Ecology</Name>
+		<Parameter>
+			<Name>PopulationSize</Name>
+			<Description><info><![CDATA[Population Size]]></info></Description>
+			<Value>500</Value>
+		</Parameter>
+		<Parameter>
+			<Name>LandSize</Name>
+			<Description><info><![CDATA[Size of one side of the grid (<i>i.e.</i>how many agents can fit on one row)]]></info></Description>
+			<Value>30</Value>
+		</Parameter>
+		<Parameter>
+			<Name>NbColours</Name>
+			<Description><info><![CDATA[Number of different agent types (colours)]]></info></Description>
+			<Value>2</Value>
+		</Parameter>
+		<Parameter>
+			<Name>NeighbourhoodRadius</Name>
+			<Description><info><![CDATA[Distance at which neighbours are considered]]></info></Description>
+			<Value>1</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Tolerance</Name>
+			<Description><info><![CDATA[Proportion of individuals that are different above which one decides to move]]></info></Description>
+			<Value>60</Value>
+		</Parameter>
+	</Parameter>
+	<Parameter>
+		<Name>Scenario</Name>
+		<Parameter>
+			<Name>ScenarioName</Name>
+			<Description><info><![CDATA[Shelling's famous experiment]]></info></Description>
+			<Value>SegregationismGA</Value>
+		</Parameter>
+		<Parameter>
+			<Name>ScenarioFileName</Name>
+			<Value>SegregationismGA.evo</Value>
+		</Parameter>
+	</Parameter>
+	<Parameter>
+		<Name>Genetic Algorithm</Name>
+		<Description><info><![CDATA[Parameters used in the Genetic Algorithm]]></info></Description>
+		<Parameter>
+			<Name>Selectivity</Name>
+			<Description><info><![CDATA[Selectivity]]></info></Description>
+			<Value>20</Value>
+		</Parameter>
+		<Parameter>
+			<Name>GeneLength</Name>
+			<Description><info><![CDATA[GeneLength]]></info></Description>
+			<Value>8</Value>
+		</Parameter>
+		<Parameter>
+			<Name>SelectionPressure</Name>
+			<Description><info><![CDATA[SelectionPressure]]></info></Description>
+			<Value>0</Value>
+		</Parameter>
+		<Parameter>
+			<Name>GeneCoding</Name>
+			<Description><info><![CDATA[GeneCoding]]></info></Description>
+			<Value>Weighted</Value>
+		</Parameter>
+		<Parameter>
+			<Name>ReproductionRate</Name>
+			<Description><info><![CDATA[ReproductionRate]]></info></Description>
+			<Value>30</Value>
+		</Parameter>
+		<Parameter>
+			<Name>NbCrossover</Name>
+			<Description><info><![CDATA[NbCrossover]]></info></Description>
+			<Value>1</Value>
+		</Parameter>
+		<Parameter>
+			<Name>MutationRate</Name>
+			<Description><info><![CDATA[MutationRate]]></info></Description>
+			<Value>5</Value>
+		</Parameter>
+	</Parameter>
+	<Parameter>
+		<Name>Simulation</Name>
+		<Parameter>
+			<Name>DisplayPeriod</Name>
+			<Description><info><![CDATA[Display period]]></info></Description>
+			<Value>20</Value>
+		</Parameter>
+		<Parameter>
+			<Name>TimeLimit</Name>
+			<Description><info><![CDATA[Max number of simulation steps]]></info></Description>
+			<Value>300000</Value>
+		</Parameter>
+		<Parameter>
+			<Name>DotSize</Name>
+			<Description><info><![CDATA[Size of dots representing individuals in display]]></info></Description>
+			<Value>7</Value>
+		</Parameter>
+		<Parameter>
+			<Name>ApplicationDir</Name>
+			<Description><info><![CDATA[Directory where the simulation can be found]]></info></Description>
+			<Value>.</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Target</Name>
+			<Description><info><![CDATA[Programme to be executed]]></info></Description>
+			<Value>SegregationismGA.py</Value>
+		</Parameter>
+		<Parameter>
+			<Name>RunConfigFile</Name>
+			<Description><info><![CDATA[Parameter file that will be read by the programme]]></info></Description>
+			<Value>_Params.evo</Value>
+		</Parameter>
+		<Parameter>
+			<Name>ResultDir</Name>
+			<Description><info><![CDATA[Directory where results will be stored]]></info></Description>
+			<Value>./___Results</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Title</Name>
+			<Description><info><![CDATA[Name of the present Configuration Editor]]></info></Description>
+			<Value>Evolife_Segregationism</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Icon</Name>
+			<Description><info><![CDATA[local path to window icon]]></info></Description>
+			<Value>settler.jpg</Value>
+		</Parameter>
+	</Parameter>
+</Config>

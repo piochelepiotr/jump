@@ -1,0 +1,64 @@
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"><HEAD>
+<TITLE>JL Dessalles - Evolife
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFCC00">
+<br>
+<!-- []
+<a href="http://www.telecom-paristech.fr" target="_blank"><IMG SRC="http://www.telecom-paristech.fr/fileadmin/maquette/images/logo-haut-droit.png" ALIGN="LEFT" Width="90" style="padding-right: 15px"></a>
+<a href="http://www.telecom-paristech.fr" target="_blank">
+Telecom ParisTech
+</a>
+ -->
+<HR WIDTH="100%" ALIGN="LEFT">
+<P>
+<font size="+2"><p align="center"><font face="Comic Sans MS"><a href="http://evolife.dessalles.fr">Evolife</a></font></p></font>
+<p align="center"><a href="http://www.dessalles.fr" target="_blank">Jean-Louis Dessalles</a></p>
+<HR WIDTH="100%" ALIGN="LEFT">
+<IMG SRC="Images/Courbes.jpg" ALIGN="RIGHT"  style="padding-left: 15px">
+<ol><li><a href="http://evolife.dessalles.fr/Description.html">Overall description</a></li>
+<li><a href="http://evolife.dessalles.fr/Execution.html">How to execute Evolife</a> (+ download)</li>
+<li><a href="http://evolife.dessalles.fr/Sources.html">Evolife source files</a></li>
+<li><a href="http://evolife.dessalles.fr/Classes.html">Evolife classes</a></li>
+<li><a href="http://evolife.dessalles.fr/Functions.html">Evolife functions</a></li>
+<li><a href="http://evolife.dessalles.fr/Working.html">How Evolife works</a></li>
+<li><a href="http://evolife.dessalles.fr/Create_Scenario.html">Create your own Evolife scenario</a></li>
+<li><a href="http://evolife.dessalles.fr/Components.html">Use Evolife&rsquo;s components separately (graphics, ecology, genetic algorithm)</a></li></ol>
+<P>
+
+<HR WIDTH="100%" ALIGN="LEFT">
+<br>
+ 
+<h2><div id="H0">
+4. <font face="Comic Sans MS">Evolife</font> Classes
+</div></h2>
+In the figure below, solid lines represent inheritance links. Dotted lines indicate that a class is used in another. The schema reveals the organization of <font face="Comic Sans MS">Evolife</font> in well-separated modules.
+<P>
+<p align="center"><IMG SRC="Images/Classes1.gif" ></p>
+<P>
+The first module is centred on <font size="-1"><font face="Courier">Individual</font></font>. An Individual inherits its genes from <font size="-1"><font face="Courier">Genome</font></font>. Note that genes (defined in <font size="-1"><font face="Courier">Genome</font></font>) are logical segments located on the DNA. Therefore <font size="-1"><font face="Courier">Genome</font></font> inherits from DNA. Individuals have also a phenotype, defined in <font size="-1"><font face="Courier">Phenome</font></font>. An individual remembers its social links, which are stored in <font size="-1"><font face="Courier">Alliances</font></font>. Individuals gather in groups (class <font size="-1"><font face="Courier">Group</font></font>), in which they interact and reproduce. Individuals may move from group to group. <font size="-1"><font face="Courier">Population</font></font> defines a set of groups.
+<P>
+<font size="-1"><font face="Courier">Storage</font></font>, <font size="-1"><font face="Courier">Base_Examiner</font></font>, <font size="-1"><font face="Courier">Examiner</font></font> and <font size="-1"><font face="Courier">Meta_Examiner</font></font> are used to store numbers (simulation results) and perform statistics.  <font size="-1"><font face="Courier">Evolife_Observer</font></font> is aware of the kind of data that are processed (genomes, scores, ...).
+<P>
+Any particular scenario should inherit from <font size="-1"><font face="Courier">Default_Scenario</font></font> (as indicated for <font size="-1"><font face="Courier">Void_Scenario</font></font> in the figure). Besides particular functions defined in the scenario, <font size="-1"><font face="Courier">Default_Scenario</font></font> provides access to simulation parameters (through inheritance from <font size="-1"><font face="Courier">Parameters</font></font>) and to the logical definition of genes on the DNA string (through inheritance from <font size="-1"><font face="Courier">Genetic_Map</font></font>).
+<P>
+The following figures describe the organization of the graphic modules.
+<br>
+ 
+<p align="center"><IMG SRC="Images/Classes2.gif" Width="600"></p>
+<P>
+The graphic module offers various windows that are used to control and visualize simulations. Some of them can be easily reused independently from <font face="Comic Sans MS">Evolife</font> (e.g. <font size="-1"><font face="Courier">Image_Area</font></font>, <font size="-1"><font face="Courier">Draw_Area</font></font>, <font size="-1"><font face="Courier">Plot_Area</font></font>, <font size="-1"><font face="Courier">Ground</font></font>). <font size="-1"><font face="Courier">Plot_Area</font></font> displays curves showing the evolution of simulation results through time (e.g. average value of genes). <font size="-1"><font face="Courier">Genome_Area</font></font> displays the genome of all agents in the population. <font size="-1"><font face="Courier">Field_Area</font></font> displays agents on a 2-D space. <font size="-1"><font face="Courier">Network_Area</font></font> displays social links between agents.
+<br>
+In the logic of QT, areas (QT&acirc;€™s scenes) require a view to be displayed. This is the role of the widget <font size="-1"><font face="Courier">AreaView</font></font> and its descendents. <font size="-1"><font face="Courier">Active_Frame</font></font> adds keyboard shortcuts, so that the same keyboard actions will be available from any <font size="-1"><font face="Courier">Satellite_window</font></font> (windows that display genomes, trajectories, field, ...).
+<P>
+The next figure illustrates the organization of the control windows, which constitutes the fifth and last module (the new classes are defined in <font size="-1"><font face="Courier">Evolife_Window.py</font></font>).
+<P>
+<p align="center"><IMG SRC="Images/Classes3.gif" Width="500"></p>
+<P>
+<font face="Comic Sans MS">Evolife</font>&rsquo;s main window is <font size="-1"><font face="Courier">Evolife_Frame</font></font>. The class <font size="-1"><font face="Courier">Evolife_Batch</font></font> is an alternative to it, which can be used in batch mode when no display is wanted. <font size="-1"><font face="Courier">Simulation_Control</font></font> offers an interface with <font size="-1"><font face="Courier">Simulation</font></font> (the simulation thread, when used (not used in the 2012 version and later)). <font size="-1"><font face="Courier">Simulation_Control_Frame</font></font> offers control buttons, such as <font size="-1"><font face="Courier">[Run]</font></font> and <font size="-1"><font face="Courier">[Step]</font></font>. <font size="-1"><font face="Courier">Simulation_Frame</font></font> adds a graphic zone that displays curves. It can be reused in other programmes. <font size="-1"><font face="Courier">Evolife_Frame</font></font> inherits from it, adding concepts such as a genome window or a trajectory window, which are specific to <font face="Comic Sans MS">Evolife</font>.
+<P>
+ 
+<br>
+<HR WIDTH="100%" ALIGN="LEFT">
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;</div></BODY></HTML>

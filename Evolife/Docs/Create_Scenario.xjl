@@ -1,0 +1,80 @@
+%include(header.xjl)
+ 
+%h2
+	7. Create you own %f+Comic Sans MS(Evolife) scenario
+
+%f+Comic Sans MS(Evolife) allows you to study an evolving population, either to implement a genetic algorithm or to perform some ecological study. If you do not need all of this, consider %l0+Components(section 8) about using only some of %f+Comic Sans MS(Evolife)'s components.
+
+
+%f+Comic Sans MS(Evolife) scenarios vary:
+%liste+ol
+	by parameters and values defined in the configuration file (%code(xxx.evo)) that you load with %code(starter).
+	by different default functions implemented in %code(Default_Scenario.py) (in %code(Scenarii)) that you can redefine.
+
+
+There are several possibilities to create your own scenario by rewriting functions from %code(Default_Scenario.py):
+%liste
+	Customize %code(GAExample.py), located in the directory %code(Other). The program imports everything it needs from %f+Comic Sans MS(Evolife), and reads the configuration file %code(GA.evo).
+	Customize %code(S_MyScenario.py), located in the directory %code(Scenarii).
+	Write your own scenario from scratch (or rather, by copying and customizing an existing scenario).
+
+
+You may look in %code(Scenarii) for the scenario that is closest to what you wish to do. Let's mention:
+%liste
+	%code(S_SumBits.py):	a simple genetic algorithm
+	%code(S_Labyrinth.py):	a genetic algorithm with phenotype
+	%code(S_Favourable.py):	a simple ecological simulation
+	%code(S_Void.py):	a void scenario that you can customize
+
+
+You may cut-and-paste and rewrite all functions inherited from %code(Default_Scenario) (defined in %code(Default_Scenario.py)). These include:
+%list
+	%s(-) %code(initialization(self)): allows to define local variables
+	%s(-) %code(genemap(self)):  initialises the genes on the gene map (see %code(Genetic_map.py))
+	%s(-) %code(phenemap(self)):   defines a list of phenotypic character names (see %code(Phenotype.py))
+	+ %code(season(self, year)):   makes periodic actions like resetting parameters
+	+ %code(behaviour(self, BestIndiv, AvgIndiv)):   defines a behaviour to be displayed
+	+ %code(life_game(self, members)): defines a round of interactions %s(-) calls the five following functions<ul>
+	%s(-) %code(start_game(self, members)): group-level initialization before starting interactions<ul>
+	%s(-) %code(prepare(self, indiv)): individual initialization before starting interactions</ul>
+	%s(-) %code(interaction(self, Indiv, Partner)): defines a single interaction<ul>
+	%s(-) %code(partner(self, Indiv, members)): select a partner among %code(members) that will interact with %code(Indiv)</ul>
+	%s(-) %code(end_game(self, members)): an occasion for a closing round after all interactions
+	%s(-) %code(evaluation(self, Indiv)): defines how the score of an individual is computed
+	%s(-) %code(lives(self, members)): converts scores into life points</ul>
+	+ %code(couples(self, members)): returns a list of couples for procreation (individuals may appear in several couples!). Calls the following function):<ul>
+	%s(-) %code(parents(self, candidates)):	selects two parents from a list of candidates (candidate = %code((indiv, NbOfPotentialChildren)))</ul>
+	+ %code(new_agent(self, child, parents)): initializes newborns
+	+ %code(remove_agent(self, agent)): action to be performed when an agent dies
+	+ %code(update_positions(self, members, groupID)):              assigns a position to agents
+	* %code(default_view(self)): says which windows should be open at start up
+	* %code(legends(self)): returns a string to be displayed at the bottom ot the Legend window.
+	* %code(display_(self)):   says which statistics are displayed each year
+	* %code(local_display_(self)):   allows to display locally defined values
+	* %code(wallpaper(self, Window)):              if one wants to display different backgrounds in windows
+
+
+Functions marked with '%s(-)' are called from within the scenario.
+
+Functions marked with '+' are called from %code(Group.py).
+
+Functions marked with '*' are called from %code(Observer.py).
+
+
+You may then run the scenario by choosing MyScenario.evo from the Configuration Editor.
+%h3
+	To create a scenario from scratch
+%list+ol
+	Suppose you want to run a simulation of beehive. Create a new file, e.g. %code(S_Beehive.py) (or any appropriate name starting with %code(S_)) in the directory %code(Scenarii) by copying an existing scenario (pick the one that seems to resemble your own project most closely, e.g. %code(S_SexRatio.py)).
+	Customize %code(S_Beehive.py) by rewriting any functions inherited from %code(Default_Scenario)  (some have been listed in the preceding section).
+	Create a %code(Beehive.evo) configuration file at an appropriate location (typically in the %code(Expe) directory). This file should include many of the parameter-value pairs that %f+Comic Sans MS(Evolife) is looking for, such as %code(PopulationSize) or %code(MutationRate).
+	You can edit the new parameter-value pairs you introduced in the %code(.evo) configuration file using the confituration editor (%code(starter)). Your parameters will be merely added at the bottom after you have loaded %code(Beehive.evo). If you want a cleaner aspect, you should edit the appropriate  %code(.xml) file loaded by %code(starter). Then restart the Configuration Editor by executing %code(./starter).  After setting all relevant parameters to the desired values, you can run %f+Comic Sans MS(Evolife) with your scenario by clicking on %code([Run]).
+
+
+
+
+<HR WIDTH="100%" ALIGN="LEFT">
+
+
+	
+

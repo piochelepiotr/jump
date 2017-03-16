@@ -1,0 +1,30 @@
+%include(header.xjl)
+ 
+%h2
+	1. Overall description
+%f+Comic Sans MS(Evolife) has been developed by %l+http://www.dessalles.fr(Jean-Louis Dessalles) for scientific and didactic purposes. Initially written in C++, it has been entirely rewritten in %l+http://www.python.org/(Python) to improve readability.
+
+
+The core of %f+Comic Sans MS(Evolife) is a genetic algorithm (GA). In a GA, 'individuals' represent variant tentative solutions to a problem. Individuals' behaviour is controlled by a binary vector called %i(genome) or DNA. They live, and reproduce 'sexually' (though sexes are usually not differentiated). Reproduction is achieved by hybridizing genomes through crossover. Each 'year', best individuals are selected for reproduction. %f+Comic Sans MS(Evolife) implements two modes of selection:
+%liste
+	ranking: individuals are ranked according to their score, and are granted a number of potential children that is an increasing (non-linear) function of their rank.
+	differential death: individuals get life points (generally in relation to their %i(score)) that protect them from life hazards, and thus increase their life expectancy (and their opportunities to reproduce).
+The first method is more in line with typical GA, whereas the second one looks more ecological.
+
+Scores depend on a 'problem' to be solved. A few problems are already coded in the package, such as:
+%liste
+	the %i(binary sum): the (somewhat trivial) problem is to maximize the number of 1 in the genome. This problem is given for didactic purposes, to demonstrate the respective roles of mutation and crossover in speeding evolution toward the optimum.
+	the %i(labyrinth): the GA's job is to go out of a maze. Users can control the evaluation function. The labyrinth can be displayed with the current best trajectory.
+	the %i(favourable) mutation: very Darwinian in its spirit, this scenario allows to understand the conditions under which favourable mutation spread in an evolving population.
+
+
+%f+Comic Sans MS(Evolife) is modular, which means that its code can be understood locally without full understanding of the whole programme.
+
+ 
+
+
+<HR WIDTH="100%" ALIGN="LEFT">
+
+
+	
+

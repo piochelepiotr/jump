@@ -1,0 +1,97 @@
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"><HEAD>
+<TITLE>JL Dessalles - Evolife
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFCC00">
+<br>
+<!-- []
+<a href="http://www.telecom-paristech.fr" target="_blank"><IMG SRC="http://www.telecom-paristech.fr/fileadmin/maquette/images/logo-haut-droit.png" ALIGN="LEFT" Width="90" style="padding-right: 15px"></a>
+<a href="http://www.telecom-paristech.fr" target="_blank">
+Telecom ParisTech
+</a>
+ -->
+<HR WIDTH="100%" ALIGN="LEFT">
+<P>
+<font size="+2"><p align="center"><font face="Comic Sans MS"><a href="http://evolife.dessalles.fr">Evolife</a></font></p></font>
+<p align="center"><a href="http://www.dessalles.fr" target="_blank">Jean-Louis Dessalles</a></p>
+<HR WIDTH="100%" ALIGN="LEFT">
+<IMG SRC="Images/Courbes.jpg" ALIGN="RIGHT"  style="padding-left: 15px">
+<ol><li><a href="http://evolife.dessalles.fr/Description.html">Overall description</a></li>
+<li><a href="http://evolife.dessalles.fr/Execution.html">How to execute Evolife</a> (+ download)</li>
+<li><a href="http://evolife.dessalles.fr/Sources.html">Evolife source files</a></li>
+<li><a href="http://evolife.dessalles.fr/Classes.html">Evolife classes</a></li>
+<li><a href="http://evolife.dessalles.fr/Functions.html">Evolife functions</a></li>
+<li><a href="http://evolife.dessalles.fr/Working.html">How Evolife works</a></li>
+<li><a href="http://evolife.dessalles.fr/Create_Scenario.html">Create your own Evolife scenario</a></li>
+<li><a href="http://evolife.dessalles.fr/Components.html">Use Evolife&rsquo;s components separately (graphics, ecology, genetic algorithm)</a></li></ol>
+<P>
+
+<HR WIDTH="100%" ALIGN="LEFT">
+<br>
+ 
+<h2><div id="H0">
+7. Create you own <font face="Comic Sans MS">Evolife</font> scenario
+</div></h2>
+<br>
+<font face="Comic Sans MS">Evolife</font> allows you to study an evolving population, either to implement a genetic algorithm or to perform some ecological study. If you do not need all of this, consider <a href="Components">section 8</a> about using only some of <font face="Comic Sans MS">Evolife</font>&rsquo;s components.
+<P>
+<font face="Comic Sans MS">Evolife</font> scenarios vary:
+<ol><li>by parameters and values defined in the configuration file (<font size="-1"><font face="Courier">xxx.evo</font></font>) that you load with <font size="-1"><font face="Courier">starter</font></font>.</li>
+<li>by different default functions implemented in <font size="-1"><font face="Courier">Default_Scenario.py</font></font> (in <font size="-1"><font face="Courier">Scenarii</font></font>) that you can redefine.</li></ol>
+<P>
+There are several possibilities to create your own scenario by rewriting functions from <font size="-1"><font face="Courier">Default_Scenario.py</font></font>:
+<ul><li>Customize <font size="-1"><font face="Courier">GAExample.py</font></font>, located in the directory <font size="-1"><font face="Courier">Other</font></font>. The program imports everything it needs from <font face="Comic Sans MS">Evolife</font>, and reads the configuration file <font size="-1"><font face="Courier">GA.evo</font></font>.</li>
+<li>Customize <font size="-1"><font face="Courier">S_MyScenario.py</font></font>, located in the directory <font size="-1"><font face="Courier">Scenarii</font></font>.</li>
+<li>Write your own scenario from scratch (or rather, by copying and customizing an existing scenario).</li></ul>
+<P>
+You may look in <font size="-1"><font face="Courier">Scenarii</font></font> for the scenario that is closest to what you wish to do. Let&rsquo;s mention:
+<ul><li><font size="-1"><font face="Courier">S_SumBits.py</font></font>:&nbsp;&nbsp;&nbsp;&nbsp;a simple genetic algorithm</li>
+<li><font size="-1"><font face="Courier">S_Labyrinth.py</font></font>:&nbsp;&nbsp;&nbsp;&nbsp;a genetic algorithm with phenotype</li>
+<li><font size="-1"><font face="Courier">S_Favourable.py</font></font>:&nbsp;&nbsp;&nbsp;&nbsp;a simple ecological simulation</li>
+<li><font size="-1"><font face="Courier">S_Void.py</font></font>:&nbsp;&nbsp;&nbsp;&nbsp;a void scenario that you can customize</li></ul>
+<P>
+You may cut-and-paste and rewrite all functions inherited from <font size="-1"><font face="Courier">Default_Scenario</font></font> (defined in <font size="-1"><font face="Courier">Default_Scenario.py</font></font>). These include:
+<ul><li>&#8211; <font size="-1"><font face="Courier">initialization(self)</font></font>: allows to define local variables</li>
+<li>&#8211; <font size="-1"><font face="Courier">genemap(self)</font></font>:  initialises the genes on the gene map (see <font size="-1"><font face="Courier">Genetic_map.py</font></font>)</li>
+<li>&#8211; <font size="-1"><font face="Courier">phenemap(self)</font></font>:   defines a list of phenotypic character names (see <font size="-1"><font face="Courier">Phenotype.py</font></font>)</li>
+<li>+ <font size="-1"><font face="Courier">season(self, year)</font></font>:   makes periodic actions like resetting parameters</li>
+<li>+ <font size="-1"><font face="Courier">behaviour(self, BestIndiv, AvgIndiv)</font></font>:   defines a behaviour to be displayed</li>
+<li>+ <font size="-1"><font face="Courier">life_game(self, members)</font></font>: defines a round of interactions &#8211; calls the five following functions<ul></li>
+<li>&#8211; <font size="-1"><font face="Courier">start_game(self, members)</font></font>: group-level initialization before starting interactions<ul></li>
+<li>&#8211; <font size="-1"><font face="Courier">prepare(self, indiv)</font></font>: individual initialization before starting interactions</ul></li>
+<li>&#8211; <font size="-1"><font face="Courier">interaction(self, Indiv, Partner)</font></font>: defines a single interaction<ul></li>
+<li>&#8211; <font size="-1"><font face="Courier">partner(self, Indiv, members)</font></font>: select a partner among <font size="-1"><font face="Courier">members</font></font> that will interact with <font size="-1"><font face="Courier">Indiv</font></font></ul></li>
+<li>&#8211; <font size="-1"><font face="Courier">end_game(self, members)</font></font>: an occasion for a closing round after all interactions</li>
+<li>&#8211; <font size="-1"><font face="Courier">evaluation(self, Indiv)</font></font>: defines how the score of an individual is computed</li>
+<li>&#8211; <font size="-1"><font face="Courier">lives(self, members)</font></font>: converts scores into life points</ul></li>
+<li>+ <font size="-1"><font face="Courier">couples(self, members)</font></font>: returns a list of couples for procreation (individuals may appear in several couples!). Calls the following function):<ul></li>
+<li>&#8211; <font size="-1"><font face="Courier">parents(self, candidates)</font></font>:&nbsp;&nbsp;&nbsp;&nbsp;selects two parents from a list of candidates (candidate = <font size="-1"><font face="Courier">(indiv, NbOfPotentialChildren)</font></font>)</ul></li>
+<li>+ <font size="-1"><font face="Courier">new_agent(self, child, parents)</font></font>: initializes newborns</li>
+<li>+ <font size="-1"><font face="Courier">remove_agent(self, agent)</font></font>: action to be performed when an agent dies</li>
+<li>+ <font size="-1"><font face="Courier">update_positions(self, members, groupID)</font></font>:              assigns a position to agents</li>
+<li>* <font size="-1"><font face="Courier">default_view(self)</font></font>: says which windows should be open at start up</li>
+<li>* <font size="-1"><font face="Courier">legends(self)</font></font>: returns a string to be displayed at the bottom ot the Legend window.</li>
+<li>* <font size="-1"><font face="Courier">display_(self)</font></font>:   says which statistics are displayed each year</li>
+<li>* <font size="-1"><font face="Courier">local_display_(self)</font></font>:   allows to display locally defined values</li>
+<li>* <font size="-1"><font face="Courier">wallpaper(self, Window)</font></font>:              if one wants to display different backgrounds in windows</li></ul>
+<P>
+Functions marked with &lsquo;&#8211;&rsquo; are called from within the scenario.
+<br>
+Functions marked with &lsquo;+&rsquo; are called from <font size="-1"><font face="Courier">Group.py</font></font>.
+<br>
+Functions marked with &lsquo;*&rsquo; are called from <font size="-1"><font face="Courier">Observer.py</font></font>.
+<P>
+You may then run the scenario by choosing MyScenario.evo from the Configuration Editor.
+<h3><div id="H1">
+To create a scenario from scratch
+</div></h3>
+<ol><li>Suppose you want to run a simulation of beehive. Create a new file, e.g. <font size="-1"><font face="Courier">S_Beehive.py</font></font> (or any appropriate name starting with <font size="-1"><font face="Courier">S_</font></font>) in the directory <font size="-1"><font face="Courier">Scenarii</font></font> by copying an existing scenario (pick the one that seems to resemble your own project most closely, e.g. <font size="-1"><font face="Courier">S_SexRatio.py</font></font>).</li>
+<li>Customize <font size="-1"><font face="Courier">S_Beehive.py</font></font> by rewriting any functions inherited from <font size="-1"><font face="Courier">Default_Scenario</font></font>  (some have been listed in the preceding section).</li>
+<li>Create a <font size="-1"><font face="Courier">Beehive.evo</font></font> configuration file at an appropriate location (typically in the <font size="-1"><font face="Courier">Expe</font></font> directory). This file should include many of the parameter-value pairs that <font face="Comic Sans MS">Evolife</font> is looking for, such as <font size="-1"><font face="Courier">PopulationSize</font></font> or <font size="-1"><font face="Courier">MutationRate</font></font>.</li>
+<li>You can edit the new parameter-value pairs you introduced in the <font size="-1"><font face="Courier">.evo</font></font> configuration file using the confituration editor (<font size="-1"><font face="Courier">starter</font></font>). Your parameters will be merely added at the bottom after you have loaded <font size="-1"><font face="Courier">Beehive.evo</font></font>. If you want a cleaner aspect, you should edit the appropriate  <font size="-1"><font face="Courier">.xml</font></font> file loaded by <font size="-1"><font face="Courier">starter</font></font>. Then restart the Configuration Editor by executing <font size="-1"><font face="Courier">./starter</font></font>.  After setting all relevant parameters to the desired values, you can run <font face="Comic Sans MS">Evolife</font> with your scenario by clicking on <font size="-1"><font face="Courier">[Run]</font></font>.</li></ol>
+<P>
+
+<br>
+<HR WIDTH="100%" ALIGN="LEFT">
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;</div></BODY></HTML>

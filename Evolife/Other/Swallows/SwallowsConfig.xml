@@ -1,0 +1,87 @@
+<Config>
+	<Parameter>
+		<Name>PARAMETERS</Name>
+		<Description><info><![CDATA[This is a configuration file editor designed to choose parameter values before launching Evolife simulations.<br><br>Its use is rather intuitive. You may click directly on values you want to change, or navigate with arrows and use the [F2] key to edit values.<br><br>Pay attention to explanations displayed in this panel.]]></info></Description>
+	</Parameter>
+	<Parameter>
+		<Name>Scenario</Name>
+		<Parameter>
+			<Name>CurrentScenario</Name>
+			<Parameter>
+				<Name>ScenarioName</Name>
+				<Value>Swallows</Value>
+			</Parameter>
+			<Parameter>
+				<Name>ScenarioFileName</Name>
+				<Value>Swallows.evo</Value>
+			</Parameter>
+		</Parameter>
+		<Parameter Scenario="Swallows">
+			<Name>Swallows</Name>
+			<Description><info><![CDATA[Study of collective decision]]></info></Description>
+		</Parameter>
+	</Parameter>
+	<Parameter>
+		<Name>Simulation</Name>
+		<Parameter>
+			<Name>TimeLimit</Name>
+			<Description><info><![CDATA[Number of steps before pausing]]></info></Description>
+			<Value>1000</Value>
+		</Parameter>
+		<Parameter>
+			<Name>DisplayPeriod</Name>
+			<Description><info><![CDATA[Display period]]></info></Description>
+			<Value>1</Value>
+		</Parameter>
+		<Parameter>
+			<Name>ApplicationDir</Name>
+			<Description><info><![CDATA[Directory where the simulation can be found]]></info></Description>
+			<Value>.</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Target</Name>
+			<Description><info><![CDATA[Programme to be executed]]></info></Description>
+			<Value>Swallows.py</Value>
+		</Parameter>
+		<Parameter>
+			<Name>RunConfigFile</Name>
+			<Description><info><![CDATA[Parameter values that will be read by the programme]]></info></Description>
+			<Value>_Params.evo</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Title</Name>
+			<Description><info><![CDATA[Name of the present Configuration Editor]]></info></Description>
+			<Value>Evolife_Swallows</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Icon</Name>
+			<Description><info><![CDATA[local path to window icon]]></info></Description>
+			<Value>swallow.gif</Value>
+		</Parameter>
+	</Parameter>
+	<Parameter>
+		<Name>NbAgents</Name>
+		<Description><info><![CDATA[Number of swallows]]></info></Description>
+		<Value>400</Value>
+	</Parameter>
+	<Parameter>
+		<Name>TimeSlope</Name>
+		<Description><info><![CDATA[Maximal time derivative of the probability of perching * 1000]]></info></Description>
+		<Value>20</Value>
+	</Parameter>
+	<Parameter>
+		<Name>GroupSlope</Name>
+		<Description><info><![CDATA[Maximal derivative of the probability of joining a perched group]]></info></Description>
+		<Value>1</Value>
+	</Parameter>
+	<Parameter>
+		<Name>GroupOffset</Name>
+		<Description><info><![CDATA[Minimum size of a group worth joinning]]></info></Description>
+		<Value>8</Value>
+	</Parameter>
+	<Parameter>
+		<Name>Inertia</Name>
+		<Description><info><![CDATA[Minimum time spent on the wire]]></info></Description>
+		<Value>2</Value>
+	</Parameter>
+</Config>

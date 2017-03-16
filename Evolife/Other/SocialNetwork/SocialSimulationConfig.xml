@@ -1,0 +1,285 @@
+<Config>
+	<Parameter>
+		<Name>PARAMETERS</Name>
+		<Description><info><![CDATA[This is a configuration file editor designed to choose parameter values before launching Evolife simulations.<br><br>Its use is rather intuitive. You may click directly on values you want to change, or navigate with arrows and use the [F2] key to edit values.<br><br>Pay attention to explanations displayed in this panel.]]></info></Description>
+	</Parameter>
+	<Parameter>
+		<Name>Scenario</Name>
+		<Parameter>
+			<Name>ScenarioName</Name>
+			<Value>Affiliation</Value>
+		</Parameter>
+		<Parameter>
+			<Name>ScenarioFileName</Name>
+			<Value>Affiliation_typical.evo</Value>
+		</Parameter>
+	</Parameter>
+	<Parameter>
+		<Name>Ecology</Name>
+		<Parameter>
+			<Name>NbAgents</Name>
+			<Description><info><![CDATA[NbAgents]]></info></Description>
+			<Value>100</Value>
+		</Parameter>
+		<Parameter>
+			<Name>AgeMax</Name>
+			<Description><info><![CDATA[after that age, the agent is reborn]]></info></Description>
+			<Value>200</Value>
+		</Parameter>
+	</Parameter>
+	<Parameter>
+		<Name>Sociology</Name>
+		<Parameter>
+			<Name>MaxFriends</Name>
+			<Description><info><![CDATA[Maximum number of friends]]></info></Description>
+			<Value>1</Value>
+		</Parameter>
+		<Parameter Scenario="Affiliation">
+			<Name>MaxFollowers</Name>
+			<Description><info><![CDATA[Maximum number of followers]]></info></Description>
+			<Value>6</Value>
+		</Parameter>
+		<Parameter Scenario="Affiliation">
+			<Name>SampleSize</Name>
+			<Description><info><![CDATA[Number of candidates to choose a friend from]]></info></Description>
+			<Value>5</Value>
+		</Parameter>
+		<Parameter Scenario="SocialSignals SocialRunaway">
+			<Name>RankEffect</Name>
+			<Description><info><![CDATA[Coefficient in% affecting time devoted to friends depending on rank]]></info></Description>
+			<Value>80</Value>
+		</Parameter>
+		<Parameter Scenario="SocialSignals SocialRunaway">
+			<Name>SocialOverlap</Name>
+			<Description><info><![CDATA[When 100, additional friends do not diminish time devoted to previous friends]]></info></Description>
+			<Value>100</Value>
+		</Parameter>
+		<Parameter Scenario="SocialSignals Values SocialRunaway">
+			<Name>SocialSymmetry</Name>
+			<Description><info><![CDATA[Forces symmetrical ranks in friendship negotiation]]></info></Description>
+			<Value>0</Value>
+		</Parameter>
+		<Parameter Scenario="SocialSignals">
+			<Name>Transparency</Name>
+			<Description><info><![CDATA[For tests: if not 0, true competence is seen during interactions]]></info></Description>
+			<Value>0</Value>
+		</Parameter>
+		<Parameter>
+			<Name>NbFeatures</Name>
+			<Description><info><![CDATA[Number of features that can be displayed]]></info></Description>
+			<Value>1</Value>
+		</Parameter>
+	</Parameter>
+	<Parameter>
+		<Name>Interactions</Name>
+		<Parameter>
+			<Name>SignallingCost</Name>
+			<Description><info><![CDATA[Proportional cost of investment in signalling]]></info></Description>
+			<Value>80</Value>
+		</Parameter>
+		<Parameter Scenario="SocialRunaway">
+			<Name>SignallingCostThreshold</Name>
+			<Description><info><![CDATA[Quality below this threshold pays high costs]]></info></Description>
+			<Value>20</Value>
+		</Parameter>
+		<Parameter Scenario="SocialRunaway">
+			<Name>SignallingCostVertices</Name>
+			<Description><info><![CDATA[Series of points defining polygonal curve of maximal signalling cost depending on signaller's quality.<br>(format: (x1,y1),(x2,y2)...). Possibility of using the name CostThreshold]]></info></Description>
+			<Value>(0, 100), (SignallingCostThreshold, 25), (100, 25)</Value>
+		</Parameter>
+		<Parameter Scenario="Affiliation SocialRunaway">
+			<Name>JoiningBonus</Name>
+			<Description><info><![CDATA[Bonus for attracting a disciple]]></info></Description>
+			<Value>20</Value>
+		</Parameter>
+		<Parameter Scenario="SocialSignals">
+			<Name>CompetenceImpact</Name>
+			<Description><info><![CDATA[In the SocialSignals scenario, the relevant factor is CompetenceImpact/Signalling cost.]]></info></Description>
+			<Value>100</Value>
+		</Parameter>
+		<Parameter Scenario="SocialSignals Affiliation">
+			<Name>BottomCompetence</Name>
+			<Description><info><![CDATA[minimum competence of individuals]]></info></Description>
+			<Value>0</Value>
+		</Parameter>
+		<Parameter Scenario="SocialRunaway">
+			<Name>CompetenceThreshold</Name>
+			<Description><info><![CDATA[Quality below this threshold cannot send maximum signal.]]></info></Description>
+			<Value>0</Value>
+		</Parameter>
+		<Parameter Scenario="SocialRunaway">
+			<Name>CompetenceMin</Name>
+			<Description><info><![CDATA[Min value of maximum signal (typically for low quality values.]]></info></Description>
+			<Value>100</Value>
+		</Parameter>
+		<Parameter Scenario="SocialRunaway">
+			<Name>CompetenceVertices</Name>
+			<Description><info><![CDATA[Series of points defining polygonal curve of maximum signal depending on quality.<br>(format: (x1,y1),(x2,y2)...)]]></info></Description>
+			<Value>(0,CompetenceMin), (CompetenceThreshold, CompetenceMin), (CompetenceThreshold, 100), (100,100)</Value>
+		</Parameter>
+		<Parameter Scenario="SocialRunaway">
+			<Name>PenaltyImpact</Name>
+			<Description><info><![CDATA[Maximul amplitude of penalty.]]></info></Description>
+			<Value>100</Value>
+		</Parameter>
+		<Parameter Scenario="SocialRunaway">
+			<Name>PenaltyThreshold</Name>
+			<Description><info><![CDATA[Quality below this threshold induces high penalty in friends]]></info></Description>
+			<Value>10</Value>
+		</Parameter>
+		<Parameter Scenario="SocialRunaway">
+			<Name>PenaltytVertices</Name>
+			<Description><info><![CDATA[Series of points defining polygonal curve of penalty depending on friend's quality.<br>(format: (x1,y1),(x2,y2)...). Possibility of using the name PenaltyThreshold.]]></info></Description>
+			<Value>(0, 100), (PenaltyThreshold, 0), (100, 0)</Value>
+		</Parameter>
+		<Parameter Scenario="Values">
+			<Name>Evaluation</Name>
+			<Description><info><![CDATA[If set to 'avg', success is measured by the average quality of friends.<br>If set to 'max', success is measured by the best quality among friends<br>If set to '2max', success is measured by the second best quality among friends<br>If set to 'min', success is measured by the worst quality among friends<br>If set to 'sum', success is measured by the sum of friends' qualities]]></info></Description>
+			<Value>2max</Value>
+		</Parameter>
+		<Parameter Scenario="SocialSignals SocialRunaway Values">
+			<Name>Transitivity</Name>
+			<Description><info><![CDATA[If non zero, judges not only friend's signal, but also the friend's friend's signal.]]></info></Description>
+			<Value>0</Value>
+		</Parameter>
+		<Parameter Scenario="Dummy">
+			<Name>Tolerance</Name>
+			<Description><info><![CDATA[What competence, compared with my own (in %) do I require in my friends.]]></info></Description>
+			<Value>97</Value>
+		</Parameter>
+		<Parameter>
+			<Name>EraseNetwork</Name>
+			<Description><info><![CDATA[If non zero, erases social network before each learning step.]]></info></Description>
+			<Value>0</Value>
+		</Parameter>
+		<Parameter>
+			<Name>NbRunPerYear</Name>
+			<Description><info><![CDATA[number of runs each year (to slow down display)]]></info></Description>
+			<Value>100</Value>
+		</Parameter>
+		<Parameter>
+			<Name>NbInteractions</Name>
+			<Description><info><![CDATA[number of social interactions per learning episode]]></info></Description>
+			<Value>500</Value>
+		</Parameter>
+		<Parameter Scenario="Values">
+			<Name>SlowToFastRatio</Name>
+			<Description><info><![CDATA[Ratio of slow interactions (trying to establish long lasting friendship) to fast interactions (following partners based on look) - in %]]></info></Description>
+			<Value>10</Value>
+		</Parameter>
+	</Parameter>
+	<Parameter>
+		<Name>Learning</Name>
+		<Parameter>
+			<Name>MemorySpan</Name>
+			<Description><info><![CDATA[memory of past success]]></info></Description>
+			<Value>15</Value>
+		</Parameter>
+		<Parameter>
+			<Name>LearningConservatism</Name>
+			<Description><info><![CDATA[Importance in % of immediate past solution]]></info></Description>
+			<Value>0</Value>
+		</Parameter>
+		<Parameter>
+			<Name>LearnHorizon</Name>
+			<Description><info><![CDATA[Beyond that portion in % of TimeLimit, individuals are born adults]]></info></Description>
+			<Value>100</Value>
+		</Parameter>
+		<Parameter>
+			<Name>LearningSpeed</Name>
+			<Description><info><![CDATA[Max additive exploration (for adults)]]></info></Description>
+			<Value>3</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Infancy</Name>
+			<Description><info><![CDATA[Percent of AgeMax during which learning is faster]]></info></Description>
+			<Value>20</Value>
+		</Parameter>
+		<Parameter>
+			<Name>ImitationStrength</Name>
+			<Description><info><![CDATA[Influence of neighbours in %]]></info></Description>
+			<Value>3</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Toric</Name>
+			<Description><info><![CDATA[If 1, learning space is circular (toric): maximal feature values are next to smallest values.]]></info></Description>
+			<Value>0</Value>
+		</Parameter>
+		<Parameter>
+			<Name>LearningProbability</Name>
+			<Description><info><![CDATA[Proportion of agents that learn each year, in %]]></info></Description>
+			<Value>3</Value>
+		</Parameter>
+	</Parameter>
+	<Parameter>
+		<Name>Simulation</Name>
+		<Parameter>
+			<Name>BatchMode</Name>
+			<Description><info><![CDATA[set BatchMode to 1 to prevent display]]></info></Description>
+			<Value>0</Value>
+		</Parameter>
+		<Parameter>
+			<Name>TimeLimit</Name>
+			<Description><info><![CDATA[Max number of simulation steps]]></info></Description>
+			<Value>500</Value>
+		</Parameter>
+		<Parameter>
+			<Name>ApplicationDir</Name>
+			<Description><info><![CDATA[Directory where the simulation can be found]]></info></Description>
+			<Value>.</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Target</Name>
+			<Description><info><![CDATA[Programme to be executed]]></info></Description>
+			<Value>Affiliation.py</Value>
+		</Parameter>
+		<Parameter>
+			<Name>RunConfigFile</Name>
+			<Description><info><![CDATA[Parameter values that will be read by the programme]]></info></Description>
+			<Value>_Params.evo</Value>
+		</Parameter>
+		<Parameter>
+			<Name>DumpStart</Name>
+			<Description><info><![CDATA[Points located below this x-value are discarded from the computation of average values.<br>Average values thus reflect the stable regime.]]></info></Description>
+			<Value>300</Value>
+		</Parameter>
+	</Parameter>
+	<Parameter>
+		<Name>Display</Name>
+		<Parameter>
+			<Name>DisplayPeriod</Name>
+			<Description><info><![CDATA[Display period]]></info></Description>
+			<Value>10</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Title</Name>
+			<Description><info><![CDATA[Name of the present Configuration Editor]]></info></Description>
+			<Value>Evolife_Affiliation</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Icon</Name>
+			<Description><info><![CDATA[local path to window icon]]></info></Description>
+			<Value>social-media-social-networking-connections.jpg</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Links</Name>
+			<Description><info><![CDATA[If non zero, links are displayed on Field window]]></info></Description>
+			<Value>0</Value>
+		</Parameter>
+		<Parameter Scenario="Values">
+			<Name>NbBins</Name>
+			<Description><info><![CDATA[Number of bins for cluster detection]]></info></Description>
+			<Value>5</Value>
+		</Parameter>
+		<Parameter Scenario="Values_dummy">
+			<Name>BinWidth</Name>
+			<Description><info><![CDATA[Width of bins for cluster detection]]></info></Description>
+			<Value>10</Value>
+		</Parameter>
+		<Parameter Scenario="Values">
+			<Name>NbClusters</Name>
+			<Description><info><![CDATA[Number of clusters to be displayed]]></info></Description>
+			<Value>3</Value>
+		</Parameter>
+	</Parameter>
+</Config>

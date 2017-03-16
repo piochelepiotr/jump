@@ -1,0 +1,53 @@
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"><HEAD>
+<TITLE>JL Dessalles - Evolife
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFCC00">
+<br>
+<!-- []
+<a href="http://www.telecom-paristech.fr" target="_blank"><IMG SRC="http://www.telecom-paristech.fr/fileadmin/maquette/images/logo-haut-droit.png" ALIGN="LEFT" Width="90" style="padding-right: 15px"></a>
+<a href="http://www.telecom-paristech.fr" target="_blank">
+Telecom ParisTech
+</a>
+ -->
+<HR WIDTH="100%" ALIGN="LEFT">
+<P>
+<font size="+2"><p align="center"><font face="Comic Sans MS"><a href="http://evolife.dessalles.fr">Evolife</a></font></p></font>
+<p align="center"><a href="http://www.dessalles.fr" target="_blank">Jean-Louis Dessalles</a></p>
+<HR WIDTH="100%" ALIGN="LEFT">
+<IMG SRC="Images/Courbes.jpg" ALIGN="RIGHT"  style="padding-left: 15px">
+<ol><li><a href="http://evolife.dessalles.fr/Description.html">Overall description</a></li>
+<li><a href="http://evolife.dessalles.fr/Execution.html">How to execute Evolife</a> (+ download)</li>
+<li><a href="http://evolife.dessalles.fr/Sources.html">Evolife source files</a></li>
+<li><a href="http://evolife.dessalles.fr/Classes.html">Evolife classes</a></li>
+<li><a href="http://evolife.dessalles.fr/Functions.html">Evolife functions</a></li>
+<li><a href="http://evolife.dessalles.fr/Working.html">How Evolife works</a></li>
+<li><a href="http://evolife.dessalles.fr/Create_Scenario.html">Create your own Evolife scenario</a></li>
+<li><a href="http://evolife.dessalles.fr/Components.html">Use Evolife&rsquo;s components separately (graphics, ecology, genetic algorithm)</a></li></ol>
+<P>
+
+<HR WIDTH="100%" ALIGN="LEFT">
+<br>
+ 
+<h2><div id="H0">
+1. Overall description
+</div></h2>
+<font face="Comic Sans MS">Evolife</font> has been developed by <a href="http://www.dessalles.fr" target="_blank">Jean-Louis Dessalles</a> for scientific and didactic purposes. Initially written in C++, it has been entirely rewritten in <a href="http://www.python.org/" target="_blank">Python</a> to improve readability.
+<P>
+The core of <font face="Comic Sans MS">Evolife</font> is a genetic algorithm (GA). In a GA, &lsquo;individuals&rsquo; represent variant tentative solutions to a problem. Individuals&rsquo; behaviour is controlled by a binary vector called <i>genome</i> or DNA. They live, and reproduce &lsquo;sexually&rsquo; (though sexes are usually not differentiated). Reproduction is achieved by hybridizing genomes through crossover. Each &lsquo;year&rsquo;, best individuals are selected for reproduction. <font face="Comic Sans MS">Evolife</font> implements two modes of selection:
+<ul><li>ranking: individuals are ranked according to their score, and are granted a number of potential children that is an increasing (non-linear) function of their rank.</li>
+<li>differential death: individuals get life points (generally in relation to their <i>score</i>) that protect them from life hazards, and thus increase their life expectancy (and their opportunities to reproduce).</li></ul>
+The first method is more in line with typical GA, whereas the second one looks more ecological.
+<br>
+Scores depend on a &lsquo;problem&rsquo; to be solved. A few problems are already coded in the package, such as:
+<ul><li>the <i>binary sum</i>: the (somewhat trivial) problem is to maximize the number of 1 in the genome. This problem is given for didactic purposes, to demonstrate the respective roles of mutation and crossover in speeding evolution toward the optimum.</li>
+<li>the <i>labyrinth</i>: the GA&rsquo;s job is to go out of a maze. Users can control the evaluation function. The labyrinth can be displayed with the current best trajectory.</li>
+<li>the <i>favourable</i> mutation: very Darwinian in its spirit, this scenario allows to understand the conditions under which favourable mutation spread in an evolving population.</li></ul>
+<P>
+<font face="Comic Sans MS">Evolife</font> is modular, which means that its code can be understood locally without full understanding of the whole programme.
+<br>
+ 
+<P>
+<HR WIDTH="100%" ALIGN="LEFT">
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;</div></BODY></HTML>

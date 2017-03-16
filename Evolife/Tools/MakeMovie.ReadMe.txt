@@ -1,0 +1,15 @@
+
+To make an Evolife movie
+========================
+
+- Run the simulation (with all the desired windows open) in Film mode (shortcut 'V').
+- Edit (if necessary) and run Evolife/Tools/MakeMovie.py
+  This creates ___CF_00001.png files.
+  These files can be concatenated into an animated gif file with ImageMagick
+  through the command Evolife/Tools/MakeGif.bat
+  or:   convert.bat -delay 1 ___CF_0*.png -loop 1 EvolifeMovie.gif
+  or:	c:convert -delay 1 ___CF_0*.png -loop 1 EvolifeMovie.gif
+- create a mp4 or mpeg file: (assuming frames numbered with six digits, 10 frames/s)
+  c:ffmpeg -r 10 -i ___CF_%06d.png -c:v libx264 -s wvga -aspect 16:9 out.mp4
+  Then compress the video out.mp4 using program such as Any Video Converter.
+  

@@ -1,0 +1,26 @@
+%titre(JL Dessalles - Evolife)
+%background(#FFCC00)
+%#
+	%Link+http://www.telecom-paristech.fr(%ImageLeft+90(http://www.telecom-paristech.fr/fileadmin/maquette/images/logo-haut-droit.png))
+	%Link+http://www.telecom-paristech.fr
+		Telecom ParisTech
+<HR WIDTH="100%" ALIGN="LEFT">
+
+
+%large+2(%center(%f+Comic Sans MS(%l0+http://evolife.dessalles.fr(Evolife))))
+%center(%l+http://www.dessalles.fr(Jean-Louis Dessalles))
+<HR WIDTH="100%" ALIGN="LEFT">
+%ir(Courbes.jpg)
+%liste+ol
+	%l0+http://evolife.dessalles.fr/Description.html(Overall description)
+	%l0+http://evolife.dessalles.fr/Execution.html(How to execute Evolife) (+ download)
+	%l0+http://evolife.dessalles.fr/Sources.html(Evolife source files)
+	%l0+http://evolife.dessalles.fr/Classes.html(Evolife classes)
+	%l0+http://evolife.dessalles.fr/Functions.html(Evolife functions)
+	%l0+http://evolife.dessalles.fr/Working.html(How Evolife works)
+	%l0+http://evolife.dessalles.fr/Create_Scenario.html(Create your own Evolife scenario)
+	%l0+http://evolife.dessalles.fr/Components.html(Use Evolife's components separately (graphics, ecology, genetic algorithm))
+
+
+
+<HR WIDTH="100%" ALIGN="LEFT">

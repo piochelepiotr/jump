@@ -1,0 +1,23 @@
+
+
+Emergence of segregationism
+===========================
+
+Though individual agents show only slight preference for being surrounded by similar agent,
+homogeneous patches emerge.
+Thomas Schelling (1971) studied the dynamics of residential segregation
+to elucidate the conditions under which individual decisions about where to live
+will interact to produce neighbourhoods that are segregated by race.
+His model shows that this can occur even though individuals do not act
+in a coordinated fashion to bring about these segregated outcomes.
+Schelling proposed a prototype model in which individual agents are of two types,
+say red and blue, and are placed randomly on the squares of a checkerboard.
+The neighbourhood of an agent is defined to be the eight squares adjoining his location.
+Each agent has preferences over the composition of his neighbourhood,
+defined as the proportion of reds and blues. In each period, the most dissatisfied
+agent moves to an empty square provided a square is available that he prefers
+to his current location. The process continues until no one wants to move.
+
+The typical outcome is a highly segregated state, although nobody actually
+prefers segregation to integration.
+

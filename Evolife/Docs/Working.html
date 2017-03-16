@@ -1,0 +1,68 @@
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"><HEAD>
+<TITLE>JL Dessalles - Evolife
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFCC00">
+<br>
+<!-- []
+<a href="http://www.telecom-paristech.fr" target="_blank"><IMG SRC="http://www.telecom-paristech.fr/fileadmin/maquette/images/logo-haut-droit.png" ALIGN="LEFT" Width="90" style="padding-right: 15px"></a>
+<a href="http://www.telecom-paristech.fr" target="_blank">
+Telecom ParisTech
+</a>
+ -->
+<HR WIDTH="100%" ALIGN="LEFT">
+<P>
+<font size="+2"><p align="center"><font face="Comic Sans MS"><a href="http://evolife.dessalles.fr">Evolife</a></font></p></font>
+<p align="center"><a href="http://www.dessalles.fr" target="_blank">Jean-Louis Dessalles</a></p>
+<HR WIDTH="100%" ALIGN="LEFT">
+<IMG SRC="Images/Courbes.jpg" ALIGN="RIGHT"  style="padding-left: 15px">
+<ol><li><a href="http://evolife.dessalles.fr/Description.html">Overall description</a></li>
+<li><a href="http://evolife.dessalles.fr/Execution.html">How to execute Evolife</a> (+ download)</li>
+<li><a href="http://evolife.dessalles.fr/Sources.html">Evolife source files</a></li>
+<li><a href="http://evolife.dessalles.fr/Classes.html">Evolife classes</a></li>
+<li><a href="http://evolife.dessalles.fr/Functions.html">Evolife functions</a></li>
+<li><a href="http://evolife.dessalles.fr/Working.html">How Evolife works</a></li>
+<li><a href="http://evolife.dessalles.fr/Create_Scenario.html">Create your own Evolife scenario</a></li>
+<li><a href="http://evolife.dessalles.fr/Components.html">Use Evolife&rsquo;s components separately (graphics, ecology, genetic algorithm)</a></li></ol>
+<P>
+
+<HR WIDTH="100%" ALIGN="LEFT">
+<br>
+ 
+<h2><div id="H0">
+6. How <font face="Comic Sans MS">Evolife</font> works
+</div></h2>
+<font face="Comic Sans MS">Evolife</font> is launched by executing Starter.bat (or starter.sh)and then by clicking on the [Run] button (see How to execute <font face="Comic Sans MS">Evolife</font>).
+<br>
+ 
+<br>
+First, <font face="Comic Sans MS">Evolife</font> reads a configuration file exported from the Configuration Editor, Evolife<font face="Comic Sans MS">Evolife</font>.evo by default (note that configuration files are perfectly readable and can be edited by hand, but the Configuration Editor is much more convenient).
+<br>
+When <font face="Comic Sans MS">Evolife</font> is executed from the Configuration Editor, it imports the scenario it is supposed to simulate. The name of the scenario, e.g. &lsquo;Beehive&rsquo;, is retrieved from the configuration file which contains a line starting with S_Beehive. The scenario is supposed to be written in a file like S_Beehive.py in the directory Scenarii (see Create your own <font face="Comic Sans MS">Evolife</font> scenario).
+<P>
+
+<font face="Comic Sans MS">Evolife</font> first creates an &lsquo;observer&rsquo;, which contains a few global constants and performs statistics as the simulation runs.
+<br>
+<font face="Comic Sans MS">Evolife</font> then creates a population of individuals. The population is structured in groups. Individuals interact and procreate within groups, and migrate between groups. Each individual is characterized by its genotype (class Genome), its phenotype (class Phenome) and its social network (class Alliances) (see <font face="Comic Sans MS">Evolife</font> classes).
+<br>
+<font face="Comic Sans MS">Evolife</font> then starts the main window, defined in Evolife_Window.py (see <font face="Comic Sans MS">Evolife</font> <a href="Sources.html">source files</a>).
+<P>
+<p align="center"><IMG SRC="Images/Curves.png" Width="333"></p>
+<P>
+When the <IMG SRC="Images/Run.png" Width="55"> button is clicked on (or the key <font size="-1"><font face="Courier">R</font></font> is pressed), <font face="Comic Sans MS">Evolife</font> starts the simulation. 
+<!-- []
+It creates a simulation thread, defined in Simulation_Thread.py, by executing the line:
+<font size="-1"><font face="Courier">self.simulation = Simulation(self.OneStep,functioning_mode, self.ReturnFromThread)</font></font>
+ -->
+The function stored in <font size="-1"><font face="Courier">self.OneStep</font></font> is the function called from the application (in basic <font face="Comic Sans MS">Evolife</font>: <font size="-1"><font face="Courier">Population.py</font></font>) that executes one step of the simulation (typically, one complete year, with interactions, reproduction, selection and migration). Then control is given to the function <font size="-1"><font face="Courier">self.ReturnFromThread</font></font> (defined in <font size="-1"><font face="Courier">Evolife_Window.py</font></font>), which interprets the results produced by the simulation and plots curves. If <font size="-1"><font face="Courier">self.OneStep</font></font> returns <font size="-1"><font face="Courier">False</font></font>, then the simulation stops, otherwise it resumes.
+<P>
+The <font face="Comic Sans MS">Evolife</font> window provides various buttons and keyboard shortcuts, as defined in the Help file.
+<P>
+When <font face="Comic Sans MS">Evolife</font> quits, it creates various files. See <a href="Execution.html">How to execute <font face="Comic Sans MS">Evolife</font></a>.
+ 
+<P>
+
+<P>
+<HR WIDTH="100%" ALIGN="LEFT">
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;</div></BODY></HTML>

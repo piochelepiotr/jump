@@ -1,0 +1,82 @@
+<Config>
+	<Parameter>
+		<Name>Scenario</Name>
+		<Description><info><![CDATA[This is a configuration file editor designed to choose parameter values before launching Evolife simulations.<br><br>Its use is rather intuitive. You may click directly on values you want to change, or navigate with arrows and use the [F2] key to edit values.<br><br>Pay attention to explanations displayed in this panel.]]></info></Description>
+		<Parameter>
+			<Name>CurrentScenario</Name>
+			<Parameter>
+				<Name>ScenarioName</Name>
+				<Description><info><![CDATA[Simulates a worm]]></info></Description>
+				<Value>Worm</Value>
+			</Parameter>
+			<Parameter>
+				<Name>ScenarioFileName</Name>
+				<Value>Worm.evo</Value>
+			</Parameter>
+		</Parameter>
+	</Parameter>
+	<Parameter>
+		<Name>Params</Name>
+		<Parameter>
+			<Name>Rule</Name>
+			<Description><info><![CDATA[Can be "random" or a number where each digit is between 0 and 5. For interesting rules, see "possible_worms.txt"]]></info></Description>
+			<Value>1040102</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Speed</Name>
+			<Description><info><![CDATA[Speed of the worm (100 is default)]]></info></Description>
+			<Value>150</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Size</Name>
+			<Description><info><![CDATA[Size of the grid]]></info></Description>
+			<Value>15</Value>
+		</Parameter>
+	</Parameter>
+	<Parameter>
+		<Name>Simulation</Name>
+		<Parameter>
+			<Name>TimeLimit</Name>
+			<Description><info><![CDATA[Max number of simulation steps]]></info></Description>
+			<Value>11000</Value>
+		</Parameter>
+		<Parameter>
+			<Name>ApplicationDir</Name>
+			<Description><info><![CDATA[Directory where the simulation can be found]]></info></Description>
+			<Value>.</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Target</Name>
+			<Description><info><![CDATA[Programme to be executed]]></info></Description>
+			<Value>Worm.py</Value>
+		</Parameter>
+		<Parameter>
+			<Name>RunConfigFile</Name>
+			<Description><info><![CDATA[Parameter values that will be read by the programme]]></info></Description>
+			<Value>_Params.evo</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Title</Name>
+			<Description><info><![CDATA[Name of the present Configuration Editor]]></info></Description>
+			<Value>Evolife_Worm</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Icon</Name>
+			<Description><info><![CDATA[local path to window icon]]></info></Description>
+			<Value>worm.png</Value>
+		</Parameter>
+	</Parameter>
+	<Parameter>
+		<Name>Display</Name>
+		<Parameter>
+			<Name>DisplayPeriod</Name>
+			<Description><info><![CDATA[Controls the number of steps when the worm is moving between two nodes. Increase to speed up display (can also be changed with the ruler at execution time)]]></info></Description>
+			<Value>1</Value>
+		</Parameter>
+		<Parameter>
+			<Name>MessageDisplay</Name>
+			<Description><info><![CDATA[Frequency of message display]]></info></Description>
+			<Value>20</Value>
+		</Parameter>
+	</Parameter>
+</Config>

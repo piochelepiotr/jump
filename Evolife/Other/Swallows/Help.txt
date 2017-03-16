@@ -1,0 +1,6 @@
+Studying Collective Decision:
+Though individual agents may have a tendency to
+take a decision (e.g. to migrate away) that smootly
+increses with time, the collective takes a sharp decision.
+
+Press <R> to launch the simulation

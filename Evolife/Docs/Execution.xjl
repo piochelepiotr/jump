@@ -1,0 +1,122 @@
+%include(header.xjl)
+ 
+%h2
+	2. How to execute %f+Comic Sans MS(Evolife)
+%h3
+	Installation
+The latest version of %f+Comic Sans MS(Evolife) can be downloaded from: %large+2(%l0+Evolife.zip(Evolife.zip))
+
+%#
+	%small((older versions: %l0+Evolife-2014-4.zip(Evolife-2014-11.zip) %l0+Evolife-2014-4.zip(Evolife-2014-4.zip) ))
+%liste
+	You may extract the %f+Comic Sans MS(Evolife) directory into an appropriate location.
+	If you don't know how to extract files from the archive (normally, you do it by merely clicking on it), you may copy-paste the following lines into a terminal window at the appropriate location:<br>%code(python)<br>%code(import zipfile, sys)<br> %code(zipfile.ZipFile(%s(quote)Evolife.zip%s(quote)).extractall())<br>%code(exit())<br><br>
+
+
+%f+Comic Sans MS(Evolife) is written in Python (%l+http://www.python.org/(http://www.python.org/)) and should therefore run on various platforms. You should install Python first. The current version of %f+Comic Sans MS(Evolife) should run without too much trouble with old versions of Python (Python 2.6 or 2.7). It is however designed to run with %b(Python 3) (tested with Python 3.4) (please report any problem you may notice).
+
+
+%f+Comic Sans MS(Evolife)'s graphics uses the %l+http://www.riverbankcomputing.co.uk/software/pyqt/download(PyQT4 package).
+
+%#
+	%small
+		Optional, but useful: library %l+http://psyco.sourceforge.net/(psyco), once installed, makes %f+Comic Sans MS(Evolife) run three time faster on certain versions of Python. For python 2.6, you get psyco from %l+http://www.voidspace.org.uk/python/modules.shtml#psyco(there). Psyco does not seem to be available for higher versions of python.
+%h3
+	Execution
+%liste
+	%f+red(%b(On Unix or Linux: The first time, execute the command: %code(python first.py) from %f+Comic Sans MS(Evolife)'s folder.))
+	Then, %f+Comic Sans MS(Evolife) is launched by executing the command %code(./starter) from %f+Comic Sans MS(Evolife)'s directory.
+	On MsWindows: Run %code(Starter.bat) from %f+Comic Sans MS(Evolife)'s directory.
+
+
+%code(Starter) shows a configuration editor that allows you to choose a scenario and to modify parameters, before running %f+Comic Sans MS(Evolife) by clicking the %code([Run]) button.
+
+%ic(TreeExplore.jpg)
+%center
+	%i(The %f+Comic Sans MS(Evolife) Configuration Editor)
+
+
+The configuration editor provides a short description of each parameter at the bottom of the window.
+
+The %code([Load]) button loads an existing scenario. You may modify any parameter value. It is recommended to start from an existing scenario when creating a new one. If you need to add new parameters or modify the names of existing ones, simply edit the %code(EvolifeConfigTree.xml) file before executing %code(Stater.bat).
+
+The %code([Run]) button executes %f+Comic Sans MS(Evolife). To do so, parameter values are stored in %code(Evolife.evo), and %code(Main.py) is executed (or any program specified as %code(Target) in the %code(Run Settings) section of %code(Starter)). If you execute %code(Main.py) directly (sometimes useful to display an error when you customize %f+Comic Sans MS(Evolife)), it will read Evolife.evo.
+
+Configuration files (%code(.evo) files) are text files containing parameter-value pairs (one pair per line, separated by tab). 
+
+
+%il(PuceRouge.jpg)
+You may modify any Python source under %f+Comic Sans MS(Evolife)'s directory, but you will most probably start by modifying the scenarios (see below).
+
+	If you experience difficulties with %b(tabs) in your Python editor, you may execute %code(./Detabify.py) (located in %f+Comic Sans MS(Evolife)'s directory) to replace all tabs by four spaces in all Python source files.
+
+
+%il(PuceRouge.jpg)
+Predefined scenarios are located in the %code(Scenarii) directory. You may choose to add your own scenario in this directory. Alternatively, you may rename and modify %code(S_Void.py). When writing your scenario, you can redefine any of the functions found in %code(Default_Scenario.py). To do so, you may cut and paste functions from various scenarios in the Scenarii directory into your scenario.
+
+
+%il(PuceRouge.jpg)
+As it stands, %code(Main.py) gives control to the %f+Comic Sans MS(Evolife) main window and the simulation is run from there. However, the simulation is kept separate from the window system. For specific applications or tests, you may prefer to run the simulation without any graphic visualization. To do so, set the %code(BatchMode) parameter in the Configuration Editor (%code(Starter)). In that case, no display takes place and results are stored in unique files in the directory %code(___Results).
+
+
+
+%il(PuceRouge.jpg)
+Output results of %f+Comic Sans MS(Evolife) are stored in the following files, placed by default in the %code(___Results) directory:
+%liste
+	%code(%code(<)scen%code(>).csv) or %code(%code(<)scen%code(>)_081016235225.csv) (where %code(%code(<)Scen%code(>)) is the name of the scenario): contains the results of a single experiment. The longer name appears in batch mode only, indicating that the simulation was launched on October 16%sup(th), 2008, at 11h52 pm. This file contains the coordinates of the various curves that would have been displayed by %f+Comic Sans MS(Evolife) if not in batch mode. This file can be executed using Microsoft-Excel or equivalent.
+	%code(%code(<)scen%code(>).res) or %code(%code(<)scen%code(>)_081016235225.res) (where %code(%code(<)Scen%code(>)) is the name of the scenario): contains the average results of a single experiment. Such files may be concatenated to average over several experiments.
+	Images generated when you click on the %code([Photo]) button or when in Film mode (shortcut %code(v)) are stored in the %code(___Results) directory as well.
+When %i(not) in batch mode, running several instances of %f+Comic Sans MS(Evolife) simultaneously will cause these output files to be overwritten by the last terminating instance.
+
+
+You may visualize a stored curve file (%code(<scen>.csv) or %code(<scen>_081016235225.csv)) using the %code(Plot.py) program (on the %code(Evolife) directory).
+
+Type %code(Plot.py) from the %code(Evolife) directory to redisplay the last experiment.
+
+
+The file %code(Evolife_.evo) (on the Evolife directory) contains the values of parameters %i(actually used) in the simulation (note the trailing underscore).
+
+
+%il(PuceRouge.jpg)
+Buttons
+%liste
+	%code([Genome]): Displays the genomes of the population<ul>- Each horizontal line represents the genome of one individual<br>- Vertical patterns result from correlations between individuals</ul> 
+	%code([Photo]): Enters Photo Mode:<ul>- Prints a few data on the console<br>- Saves a screenshot for each opened window. Screenshots are saved automatically depending on Display Period, in %code(.png) files. These files can be assembled into animated gifs e.g. using ImageMagick. If you enter Film mode (by pressing key %code(v)), photos are taken automatically at each display period.<br>- Saves the current plots in %code(Evolife.csv) (which may be opened with Excel). This file is also created when exiting %f+Comic Sans MS(Evolife).</ul>
+	%code([Run]): Runs the simulation in continuous mode
+	%code([Step]): Runs the simulation stepwise
+	%code([T]): Displays trajectories (when applicable)
+	%code([A]): Displays alliances (social links between individuals, sorted by competence) (when applicable)
+	%code([F]): Displays agents' positions on a 2-D field
+	%code([L]): Log messages (not implemented)
+	%code([Help]): Displays this help file
+	%code([Legend]): Displays legend for curves
+%il(PuceRouge.jpg)
+Shortcuts
+%liste
+	%code(%code(<)Esc%code(>)): quits the active window (and the application if main window is active) (like %code(q))
+	%code(%code(<)F1%code(>)): displays this help file
+	%code(%code(<)space%code(>)): runs the simulation one step forward (like %code(s))
+	%code(a):displays alliances (social links between individuals, sorted by competence) (when applicable)
+	%code(c): runs the simulation in continuous mode (like %code(r))
+	%code(d): displays legend for curves
+	%code(f): displays a 2-D field on which agents may be located
+	%code(g): displays genomes
+	%code(h): displays this help file
+	%code(l): displays log messages (not implemented)
+	%code(m): alternatively brings main window or satellite windows to foreground
+	%code(q): quits the active window (and the application if main window is active) (like %code(<)Esc%code(>))
+	%code(r): runs the simulation in continuous mode (like %code(c))
+	%code(s): runs the simulation one step forward (like %code(%code(<)space%code(>)))
+	%code(t): displays trajectories (when applicable)
+	%code(v): enters film mode. One picture per opened window is recorded
+	%code(z): shrinks satellite windows (genomes, alliances, labyrinth...) (dezoom)
+	%code(-): shrinks satellite windows (genomes, alliances, labyrinth...) (dezoom)
+	%code(+): expands satellite windows (genomes, alliances, labyrinth...) (zoom)
+(These shortcuts are available from any window of the application.)
+
+
+<HR WIDTH="100%" ALIGN="LEFT">
+
+
+	
+

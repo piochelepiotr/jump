@@ -1,0 +1,160 @@
+<Config>
+	<Parameter>
+		<Name>Scenario</Name>
+		<Description><info><![CDATA[This is a configuration file editor designed to choose parameter values before launching Evolife simulations.<br><br>Its use is rather intuitive. You may click directly on values you want to change, or navigate with arrows and use the [F2] key to edit values.<br><br>Pay attention to explanations displayed in this panel.]]></info></Description>
+		<Parameter>
+			<Name>CurrentScenario</Name>
+			<Parameter>
+				<Name>ScenarioName</Name>
+				<Description><info><![CDATA[Simulmates emerging path formation]]></info></Description>
+				<Value>Path</Value>
+			</Parameter>
+			<Parameter>
+				<Name>ScenarioFileName</Name>
+				<Value>Walker_8ways.evo</Value>
+			</Parameter>
+		</Parameter>
+	</Parameter>
+	<Parameter>
+		<Name>Simulation</Name>
+		<Parameter>
+			<Name>DisplayPeriod</Name>
+			<Description><info><![CDATA[Display period]]></info></Description>
+			<Value>30</Value>
+		</Parameter>
+		<Parameter>
+			<Name>TimeLimit</Name>
+			<Description><info><![CDATA[Max number of simulation steps]]></info></Description>
+			<Value>90000</Value>
+		</Parameter>
+		<Parameter>
+			<Name>ApplicationDir</Name>
+			<Description><info><![CDATA[Directory where the simulation can be found]]></info></Description>
+			<Value>.</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Target</Name>
+			<Description><info><![CDATA[End point with format 20x30 where 20 and 30 are in % of width and height]]></info></Description>
+			<Value>Walker.py</Value>
+		</Parameter>
+		<Parameter>
+			<Name>RunConfigFile</Name>
+			<Description><info><![CDATA[Parameter values that will be read by the programme]]></info></Description>
+			<Value>_Params.evo</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Title</Name>
+			<Description><info><![CDATA[Name of the present Configuration Editor]]></info></Description>
+			<Value>Evolife_Walker</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Icon</Name>
+			<Description><info><![CDATA[local path to window icon]]></info></Description>
+			<Value>Walker.gif</Value>
+		</Parameter>
+	</Parameter>
+	<Parameter>
+		<Name>Ecology</Name>
+		<Parameter>
+			<Name>PopulationSize</Name>
+			<Description><info><![CDATA[total number of walkers]]></info></Description>
+			<Value>32</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Landscape</Name>
+			<Description><info><![CDATA[Landscape on which path will be found]]></info></Description>
+			<Parameter>
+				<Name>Ground</Name>
+				<Description><info><![CDATA[Image showing ground]]></info></Description>
+				<Value>Landscape_2.png</Value>
+			</Parameter>
+			<Parameter>
+				<Name>Altitudes</Name>
+				<Description><info><![CDATA[Array giving altitudes on ground (may have lower resolution than ground image]]></info></Description>
+				<Value>Landscape_2.dat</Value>
+			</Parameter>
+			<Parameter>
+				<Name>Startpoint</Name>
+				<Description><info><![CDATA[Start point with format 20x30 where 20 and 30 are in % of width and height]]></info></Description>
+				<Value>5x5</Value>
+			</Parameter>
+			<Parameter>
+				<Name>Endpoint</Name>
+				<Description><info><![CDATA[End point with format 20x30 where 20 and 30 are in % of width and height]]></info></Description>
+				<Value>95x95</Value>
+			</Parameter>
+			<Parameter>
+				<Name>NoStartpoints</Name>
+				<Description><info><![CDATA[If set to 1, (vertical) symmetrical points of start point and target are added]]></info></Description>
+				<Value>8</Value>
+			</Parameter>
+		</Parameter>
+		<Parameter>
+			<Name>Noise</Name>
+			<Description><info><![CDATA[Additive noise (in %)]]></info></Description>
+			<Value>1</Value>
+		</Parameter>
+	</Parameter>
+	<Parameter>
+		<Name>Behaviour</Name>
+		<Description><info><![CDATA[Agents' behaviour depends on three parameters. <li>Target attractiveness (TA)</li><li>Pheromon attractiveness (PA)</li><li>Slope aversion (SA)</li><br>Preference = TA + PA*pheromone - SA*slope</br>]]></info></Description>
+		<Parameter>
+			<Name>TargetAttractiveness</Name>
+			<Description><info><![CDATA[Target attractiveness: this factor controls the negative contribution of the angle to target]]></info></Description>
+			<Value>5</Value>
+		</Parameter>
+		<Parameter>
+			<Name>SlopeAversion</Name>
+			<Description><info><![CDATA[Aversion to slope: This factor controls the negative contribution of altitude variations]]></info></Description>
+			<Value>1</Value>
+		</Parameter>
+		<Parameter>
+			<Name>SniffingDistance</Name>
+			<Description><info><![CDATA[distance from which pheromone is perceived]]></info></Description>
+			<Value>4</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Exploration</Name>
+			<Description><info><![CDATA[Probability (in %) that the walker moves randomly]]></info></Description>
+			<Value>1</Value>
+		</Parameter>
+	</Parameter>
+	<Parameter>
+		<Name>Pheromone</Name>
+		<Parameter>
+			<Name>PheromoneAttractiveness</Name>
+			<Description><info><![CDATA[Pheromone attractiveness: This factor controls the contribution of pheromone relative to saturation]]></info></Description>
+			<Value>10</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Deposit</Name>
+			<Description><info><![CDATA[Amount of pheromone that is laid down on the path after completion]]></info></Description>
+			<Value>80</Value>
+		</Parameter>
+		<Parameter>
+			<Name>ForwardDeposit</Name>
+			<Description><info><![CDATA[Amount of pheromone that is laid down when going forward]]></info></Description>
+			<Value>10</Value>
+		</Parameter>
+		<Parameter>
+			<Name>ForwardThreshold</Name>
+			<Description><info><![CDATA[Amount of pheromone that makes walking easy]]></info></Description>
+			<Value>20</Value>
+		</Parameter>
+		<Parameter>
+			<Name>DepositVariation</Name>
+			<Description><info><![CDATA[Variation of deposit when path is longer or shorter than previous one (in %)]]></info></Description>
+			<Value>80</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Evaporation</Name>
+			<Description><info><![CDATA[Relative pheromone decrease <b>per thousand</b> per time unit]]></info></Description>
+			<Value>10</Value>
+		</Parameter>
+		<Parameter>
+			<Name>Saturation</Name>
+			<Description><info><![CDATA[Maximum amount of pheromon that a cell can carry]]></info></Description>
+			<Value>300</Value>
+		</Parameter>
+	</Parameter>
+</Config>

@@ -1,0 +1,694 @@
+%include(header.xjl)
+ 
+%h2
+	5. %f+Comic Sans MS(Evolife) Functions (in alphabetic order)
+%Table+File & function
+	%tableligne
+		Alliances.py %nc(accepts(self, F_perf))
+	%tableligne
+		Alliances.py %nc(accepts(self, performance, conservative=True))
+	%tableligne
+		Individual.py %nc(accident(self))
+	%tableligne
+		Alliances.py %nc(acquaintable(self, Offer, Partner, PartnerOffer))
+	%tableligne
+		Alliances.py %nc(acquaintable(self, Partner, Deal))
+	%tableligne
+		Evolife_Graphic.py %nc(adaptscale(self, Layout))
+	%tableligne
+		Curves.py %nc(add(self, Pos, Draw=True))
+	%tableligne
+		Parameters.py %nc(addParameter(self, Param, Value))
+	%tableligne
+		Learner.py %nc(adult(self))
+	%tableligne
+		Alliances.py %nc(affiliable(self, F_perf, conservative=True))
+	%tableligne
+		Alliances.py %nc(affiliable(self, perf, Guru, G_perf, conservative=True))
+	%tableligne
+		Individual.py %nc(aging(self, step=1))
+	%tableligne
+		Curves.py %nc(Avg(self, start=0))
+	%tableligne
+		Evolife_Graphic.py %nc(axes(self))
+	%tableligne
+		Evolife_Graphic.py %nc(axes(self))
+	%tableligne
+		Default_Scenario.py %nc(behaviour(self, best_individual, avg_individual))
+	%tableligne
+		Alliances.py %nc(best(self))
+	%tableligne
+		Alliances.py %nc(best_friend(self))
+	%tableligne
+		Alliances.py %nc(best_friend(self))
+	%tableligne
+		Alliances.py %nc(best_friend_symmetry(self))
+	%tableligne
+		Tools.py %nc(boost())
+	%tableligne
+		Parameters.py %nc(cfg_to_txt(self, CfgTxtFile))
+	%tableligne
+		Tools.py %nc(chances(proba, N))
+	%tableligne
+		Plot_Area.py %nc(Changing(self, e))
+	%tableligne
+		Evolife_Window.py %nc(checkButtonState(self))
+	%tableligne
+		Tools.py %nc(ChildrenSlide(x, Start, Low, High, Slope))
+	%tableligne
+		Observer.py %nc(close_(self))
+	%tableligne
+		Observer.py %nc(close_(self))
+	%tableligne
+		Evolife_Graphic.py %nc(closeEvent(self, event))
+	%tableligne
+		Evolife_Graphic.py %nc(closeEvent(self, event))
+	%tableligne
+		Evolife_Window.py %nc(closeEvent(self, event))
+	%tableligne
+		Evolife_Window.py %nc(closeEvent(self, event))
+	%tableligne
+		Evolife_Window.py %nc(closeEvent(self, event))
+	%tableligne
+		Alliances.py %nc(consistency(self))
+	%tableligne
+		Plot_Area.py %nc(convert(self, (x,y)))
+	%tableligne
+		Plot_Area.py %nc(convert(self, Coord))
+	%tableligne
+		Plot_Area.py %nc(coordinates(self, Coord))
+	%tableligne
+		Default_Scenario.py %nc(couples(self, members))
+	%tableligne
+		Plot_Area.py %nc(create_agent(self, Name, Coord))
+	%tableligne
+		Plot_Area.py %nc(create_graphic_agent(self, Position))
+	%tableligne
+		Plot_Area.py %nc(create_graphic_segment(self, Position, Segment))
+	%tableligne
+		Population.py %nc(createGroup(self, ID=0, Size=0))
+	%tableligne
+		Population.py %nc(createGroup(self, ID=0, Size=0))
+	%tableligne
+		Group.py %nc(createIndividual(self, ID=None, Newborn=True))
+	%tableligne
+		Group.py %nc(createIndividual(self, Newborn=True))
+	%tableligne
+		Curves.py %nc(Curvenames(self, Names))
+	%tableligne
+		Individual.py %nc(dead(self))
+	%tableligne
+		Tools.py %nc(decrease(x, M, Selection))
+	%tableligne
+		Default_Scenario.py %nc(default_view(self))
+	%tableligne
+		Alliances.py %nc(detach(self))
+	%tableligne
+		Alliances.py %nc(detach(self))
+	%tableligne
+		Evolife_Graphic.py %nc(DeZoom(self))
+	%tableligne
+		Individual.py %nc(dies(self))
+	%tableligne
+		DNA.py %nc(display(self))
+	%tableligne
+		Evolife_Graphic.py %nc(display(self, HelpFilename))
+	%tableligne
+		Observer.py %nc(display(self, StorageName))
+	%tableligne
+		Default_Scenario.py %nc(display_(self))
+	%tableligne
+		Observer.py %nc(displayed(self))
+	%tableligne
+		Observer.py %nc(DisplayPeriod(self, Per=0))
+	%tableligne
+		Evolife_Window.py %nc(DisplayPeriodChanged(self, event))
+	%tableligne
+		Evolife_Window.py %nc(DisplayPeriodSet(self, Period, FlagForce=True))
+	%tableligne
+		DNA.py %nc(DNAfill(self, Nucleotides))
+	%tableligne
+		Plot_Area.py %nc(draw(self,oldpoint, newpoint, Width=3, ColorID=0, Tag=''))
+	%tableligne
+		Plot_Area.py %nc(draw_tailed_blob(self, Coord))
+	%tableligne
+		Plot_Area.py %nc(drawPoints(self))
+	%tableligne
+		Plot_Area.py %nc(drawTo(self, newpoint, Width=3, ColorID=0, Drawing=True, Tag=''))
+	%tableligne
+		Curves.py %nc(dump(self, ResultFileName=None, ResultHeader='', DumpStart=0))
+	%tableligne
+		Evolife_Graphic.py %nc(Dump_network(self, friends, CurrentFrame=-1, Prefix=''))
+	%tableligne
+		Alliances.py %nc(end_friendship(self, Partner))
+	%tableligne
+		Default_Scenario.py %nc(end_game(self, members))
+	%tableligne
+		Alliances.py %nc(enters(self, newMember, performance, conservative=True))
+	%tableligne
+		Curves.py %nc(erase(self))
+	%tableligne
+		Plot_Area.py %nc(erase(self))
+	%tableligne
+		Tools.py %nc(error(ErrMsg, Explanation=''))
+	%tableligne
+		Default_Scenario.py %nc(evaluation(self, indiv))
+	%tableligne
+		Curves.py %nc(EvolifeColourID(Colour_designation, default=(4,'red')))
+	%tableligne
+		Evolife_Window.py %nc(EvolifeWebSite(self, e))
+	%tableligne
+		Alliances.py %nc(exits(self, oldMember))
+	%tableligne
+		Learner.py %nc(explore(self, Feature, Speed))
+	%tableligne
+		Learner.py %nc(feature(self, F, Value=None))
+	%tableligne
+		Evolife_Graphic.py %nc(Field_display(self, Layout=None, Photo=False, CurrentFrame=-1, Ongoing=False, Prefix=''))
+	%tableligne
+		Evolife_Graphic.py %nc(Field_scroll(self))
+	%tableligne
+		Evolife_Window.py %nc(FieldButtonClick(self, event))
+	%tableligne
+		Tools.py %nc(FileAnalysis(FileName, Pattern, Flag=re.M))
+	%tableligne
+		Evolife_Window.py %nc(FilmButtonClick(self, event))
+	%tableligne
+		Alliances.py %nc(follow(self, F, F_perf, conservative=True, Quit=None))
+	%tableligne
+		Alliances.py %nc(follow(self, perf, G, G_perf, conservative=True))
+	%tableligne
+		Alliances.py %nc(follows(self, Friend))
+	%tableligne
+		Alliances.py %nc(forgetAll(self))
+	%tableligne
+		Tools.py %nc(fortune_wheel(Probabilities))
+	%tableligne
+		Group.py %nc(free_ID(self, Prefix=''))
+	%tableligne
+		Alliances.py %nc(friends(self))
+	%tableligne
+		Alliances.py %nc(Friends(self, ordered=True))
+	%tableligne
+		Plot_Area.py %nc(full(self))
+	%tableligne
+		File %nc(Function)
+	%tableligne
+		Genetic_map.py %nc(gene_boundaries(self, gene_name))
+	%tableligne
+		Genetic_map.py %nc(gene_pattern(self))
+	%tableligne
+		Genetic_map.py %nc(gene_range(self, gene_name))
+	%tableligne
+		Genome.py %nc(gene_relative_value(self, name))
+	%tableligne
+		Genome.py %nc(gene_value(self, name))
+	%tableligne
+		Default_Scenario.py %nc(genemap(self))
+	%tableligne
+		Genetic_map.py %nc(geneMap_length(self))
+	%tableligne
+		Evolife_Graphic.py %nc(genome_display(self, genome=None, gene_pattern=(), Photo=False, CurrentFrame=-1, Prefix=''))
+	%tableligne
+		Evolife_Window.py %nc(GenomeButtonClick(self, event))
+	%tableligne
+		Group.py %nc(get_average(self))
+	%tableligne
+		Group.py %nc(get_best(self))
+	%tableligne
+		Genetic_map.py %nc(get_coding(self, locus))
+	%tableligne
+		Observer.py %nc(get_data(self))
+	%tableligne
+		Observer.py %nc(get_data(self, Slot))
+	%tableligne
+		Observer.py %nc(get_data(self, Slot))
+	%tableligne
+		Observer.py %nc(get_data(self,Slot))
+	%tableligne
+		Observer.py %nc(get_data(self,Slot))
+	%tableligne
+		DNA.py %nc(get_DNA(self))
+	%tableligne
+		Alliances.py %nc(get_friend(self, Offer, Partner, PartnerOffer))
+	%tableligne
+		Alliances.py %nc(get_friend(self, Offer, Partner, Return=None))
+	%tableligne
+		Genetic_map.py %nc(get_gene(self,locus))
+	%tableligne
+		Genetic_map.py %nc(get_gene_boundaries(self,locus))
+	%tableligne
+		Genetic_map.py %nc(get_gene_name(self, locus))
+	%tableligne
+		Genetic_map.py %nc(get_gene_names(self))
+	%tableligne
+		Observer.py %nc(get_info(self, Slot))
+	%tableligne
+		Observer.py %nc(get_info(self, Slot))
+	%tableligne
+		Observer.py %nc(get_info(self, Slot))
+	%tableligne
+		Genetic_map.py %nc(get_locus(self, gene_name))
+	%tableligne
+		Observer.py %nc(GetPlotOrders(self))
+	%tableligne
+		EvolifeGray.py %nc(Gray2Int(self, GrayIndex))
+	%tableligne
+		Plot_Area.py %nc(grid(self))
+	%tableligne
+		Plot_Area.py %nc(grid(self))
+	%tableligne
+		Plot_Area.py %nc(grid(self))
+	%tableligne
+		Population.py %nc(group_splitting(self))
+	%tableligne
+		DNA.py %nc(hamming(self, alter))
+	%tableligne
+		Evolife_Window.py %nc(HelpButtonClick(self, event=None))
+	%tableligne
+		DNA.py %nc(hybrid(self, mother, father, number_crossover = -1))
+	%tableligne
+		Evolife_Graphic.py %nc(image_display(self, Image, windowResize=True))
+	%tableligne
+		Learner.py %nc(imitate(self, models, Feature))
+	%tableligne
+		Observer.py %nc(inform(self, Info))
+	%tableligne
+		Genetic_map.py %nc(init_genes(self,gene_list))
+	%tableligne
+		Plot_Area.py %nc(init_Pens(self))
+	%tableligne
+		EvolifeGray.py %nc(InitGrayTable(self, Length))
+	%tableligne
+		Default_Scenario.py %nc(initialization(self))
+	%tableligne
+		EvolifeGray.py %nc(Int2Gray(self,i))
+	%tableligne
+		Default_Scenario.py %nc(interaction(self, indiv, partner))
+	%tableligne
+		Evolife_Graphic.py %nc(keyPressEvent(self, e))
+	%tableligne
+		Evolife_Graphic.py %nc(keyPressEvent(self, e))
+	%tableligne
+		Evolife_Graphic.py %nc(keyPressEvent(self, e))
+	%tableligne
+		Evolife_Window.py %nc(keyPressEvent(self, e))
+	%tableligne
+		Evolife_Window.py %nc(keyPressEvent(self, e))
+	%tableligne
+		Group.py %nc(kill(self, memberNbr))
+	%tableligne
+		Group.py %nc(kill(self, memberNbr))
+	%tableligne
+		Curves.py %nc(last(self))
+	%tableligne
+		Tools.py %nc(last(self))
+	%tableligne
+		Learner.py %nc(Learns(self, neighbours, hot=True))
+	%tableligne
+		Curves.py %nc(length(self))
+	%tableligne
+		Tools.py %nc(Length(self))
+	%tableligne
+		Alliances.py %nc(lessening_friendship(self, Factor=0.9))
+	%tableligne
+		Alliances.py %nc(lessening_friendship(self, Factor=0.9))
+	%tableligne
+		Group.py %nc(life_game(self))
+	%tableligne
+		Population.py %nc(life_game(self))
+	%tableligne
+		Default_Scenario.py %nc(life_game(self, members))
+	%tableligne
+		Population.py %nc(limit(self))
+	%tableligne
+		Plot_Area.py %nc(lineTo(self, Point))
+	%tableligne
+		Tools.py %nc(List2File(L, FileName))
+	%tableligne
+		Default_Scenario.py %nc(lives(self, members))
+	%tableligne
+		Default_Scenario.py %nc(local_display(self, ToBeDisplayed))
+	%tableligne
+		Evolife_Window.py %nc(LocalButton(self, ParentFrame, ButtonType, Text, Tip, ClickFunction, ShortCutKey=None))
+	%tableligne
+		Genetic_map.py %nc(locus_range(self, Locus))
+	%tableligne
+		Genome.py %nc(locus_relative_value(self, locus))
+	%tableligne
+		Genome.py %nc(locus_value(self, locus))
+	%tableligne
+		Evolife_Window.py %nc(LogButtonClick(self, event))
+	%tableligne
+		Population.py %nc(lottery(self))
+	%tableligne
+		Alliances.py %nc(maximal(self))
+	%tableligne
+		Alliances.py %nc(members(self))
+	%tableligne
+		Population.py %nc(members(self))
+	%tableligne
+		Tools.py %nc(middle(x))
+	%tableligne
+		Population.py %nc(migration(self))
+	%tableligne
+		Alliances.py %nc(minimal(self))
+	%tableligne
+		Plot_Area.py %nc(move(self, Curve_designation, newpoint))
+	%tableligne
+		Plot_Area.py %nc(move_agent(self, Name, Coord))
+	%tableligne
+		DNA.py %nc(mutate(self, mutation_rate = -1))
+	%tableligne
+		Curves.py %nc(name(self, N = ))
+	%tableligne
+		Alliances.py %nc(names(self))
+	%tableligne
+		Alliances.py %nc(names(self))
+	%tableligne
+		Tools.py %nc(Nb2A(Nb))
+	%tableligne
+		Tools.py %nc(Nb2A0(Nb))
+	%tableligne
+		Alliances.py %nc(nbFollowers(self))
+	%tableligne
+		Alliances.py %nc(nbFriends(self))
+	%tableligne
+		Alliances.py %nc(nbFriends(self))
+	%tableligne
+		Evolife_Graphic.py %nc(Network_display(self, Layout, network=None, Photo=False, CurrentFrame=-1, Prefix=''))
+	%tableligne
+		Evolife_Window.py %nc(NetworkButtonClick(self, event))
+	%tableligne
+		Default_Scenario.py %nc(new_agent(self, child, parents))
+	%tableligne
+		Curves.py %nc(next(self))
+	%tableligne
+		Tools.py %nc(noise_add(x, range_))
+	%tableligne
+		Tools.py %nc(noise_mult(x, range_))
+	%tableligne
+		Parameters.py %nc(None2Default(self, ParamName, Default=0))
+	%tableligne
+		Parameters.py %nc(Num(x))
+	%tableligne
+		Individual.py %nc(observation(self, GroupExaminer))
+	%tableligne
+		Individual.py %nc(observation(self, GroupExaminer))
+	%tableligne
+		Plot_Area.py %nc(on_ground(self))
+	%tableligne
+		Tools.py %nc(one_value(x))
+	%tableligne
+		Population.py %nc(one_year(self))
+	%tableligne
+		Population.py %nc(one_year(self))
+	%tableligne
+		Evolife_Window.py %nc(OneStep(self))
+	%tableligne
+		Observer.py %nc(open_(self, length = -1))
+	%tableligne
+		Observer.py %nc(open_(self, length=-1))
+	%tableligne
+		Alliances.py %nc(ordered(self, ordered=True))
+	%tableligne
+		Observer.py %nc(Over(self))
+	%tableligne
+		EvolifeGray.py %nc(PaddedGray(self, i))
+	%tableligne
+		Plot_Area.py %nc(paintEvent(self, e))
+	%tableligne
+		Parameters.py %nc(Param(self, ParamName))
+	%tableligne
+		Observer.py %nc(Parameter(self, ParamName))
+	%tableligne
+		Parameters.py %nc(Parameter(self,ParamName, Silent=False, Optional=False))
+	%tableligne
+		Parameters.py %nc(ParamNames(self))
+	%tableligne
+		Parameters.py %nc(ParamValues(self))
+	%tableligne
+		Default_Scenario.py %nc(parents(self, candidates))
+	%tableligne
+		Default_Scenario.py %nc(partner(self, indiv, members))
+	%tableligne
+		Tools.py %nc(percent(x))
+	%tableligne
+		Alliances.py %nc(performance(self, Member))
+	%tableligne
+		Alliances.py %nc(performances(self))
+	%tableligne
+		Phenotype.py %nc(Phene_relative_value(self, name))
+	%tableligne
+		Phenotype.py %nc(Phene_value(self, name, Value = -1, Levelling = False))
+	%tableligne
+		Default_Scenario.py %nc(phenemap(self))
+	%tableligne
+		Plot_Area.py %nc(photo(self, Name, FrameNumber=-1, outputDir='.', extension='png'))
+	%tableligne
+		Evolife_Window.py %nc(PhotoButtonClick(self, event))
+	%tableligne
+		Plot_Area.py %nc(plot(self, Curve_designation, newpoint, Width=3))
+	%tableligne
+		Plot_Area.py %nc(plot(self, Curve_id, newpoint))
+	%tableligne
+		Curves.py %nc(point(self))
+	%tableligne
+		Group.py %nc(positions(self))
+	%tableligne
+		Default_Scenario.py %nc(prepare(self, indiv))
+	%tableligne
+		Alliances.py %nc(present(self, (Member, Perf)))
+	%tableligne
+		Evolife_Window.py %nc(Process_graph_orders(self))
+	%tableligne
+		Evolife_Window.py %nc(Process_graph_orders(self))
+	%tableligne
+		Evolife_Window.py %nc(Process_graph_orders(self))
+	%tableligne
+		Tools.py %nc(pull(self))
+	%tableligne
+		Tools.py %nc(push(self, Item))
+	%tableligne
+		Plot_Area.py %nc(Q_Convert(self, Point))
+	%tableligne
+		Alliances.py %nc(quit_(self, Friend=None))
+	%tableligne
+		Alliances.py %nc(quit_(self, Guru))
+	%tableligne
+		Evolife_Window.py %nc(QuitButtonClick(self, event))
+	%tableligne
+		Evolife_Graphic.py %nc(Raise(self))
+	%tableligne
+		Evolife_Graphic.py %nc(Raise(self))
+	%tableligne
+		Evolife_Window.py %nc(Raise(self))
+	%tableligne
+		Alliances.py %nc(rank(self, Member))
+	%tableligne
+		DNA.py %nc(read_DNA(self, start, end, coding = None))
+	%tableligne
+		Group.py %nc(receive(self, newcomer))
+	%tableligne
+		Observer.py %nc(recordInfo(self, Slot, Value))
+	%tableligne
+		Plot_Area.py %nc(redraw(self))
+	%tableligne
+		Plot_Area.py %nc(redraw(self))
+	%tableligne
+		Plot_Area.py %nc(redraw(self))
+	%tableligne
+		Plot_Area.py %nc(reframe(self,(x,y), Anticipation=False))
+	%tableligne
+		Phenotype.py %nc(relative_value(self))
+	%tableligne
+		Parameters.py %nc(Relevant(self, ParamName))
+	%tableligne
+		Parameters.py %nc(RelevantParamNames(self))
+	%tableligne
+		Group.py %nc(remove_(self, memberNbr))
+	%tableligne
+		Group.py %nc(remove_(self, memberNbr))
+	%tableligne
+		Default_Scenario.py %nc(remove_agent(self, agent))
+	%tableligne
+		Plot_Area.py %nc(remove_agent(self, Name))
+	%tableligne
+		Plot_Area.py %nc(remove_segment(self, Name))
+	%tableligne
+		Group.py %nc(reproduction(self))
+	%tableligne
+		Population.py %nc(reproduction(self))
+	%tableligne
+		Plot_Area.py %nc(rescale(Scale, coord))
+	%tableligne
+		Learner.py %nc(Reset(self))
+	%tableligne
+		Tools.py %nc(reset(self))
+	%tableligne
+		Observer.py %nc(reset(self, length = -1))
+	%tableligne
+		Observer.py %nc(reset(self, length=-1))
+	%tableligne
+		Plot_Area.py %nc(resize(self, w, h))
+	%tableligne
+		Plot_Area.py %nc(resizeEvent(self,e))
+	%tableligne
+		Plot_Area.py %nc(restore_agent(self, Name))
+	%tableligne
+		Alliances.py %nc(restore_symmetry(self))
+	%tableligne
+		Observer.py %nc(ResultHeader(self))
+	%tableligne
+		Tools.py %nc(retrieve(self))
+	%tableligne
+		Evolife_Window.py %nc(ReturnFromThread(self))
+	%tableligne
+		Evolife_Window.py %nc(ReturnFromThread(self))
+	%tableligne
+		Simulation_Thread.py %nc(run(self))
+	%tableligne
+		Evolife_Window.py %nc(RunButtonClick(self, event=None))
+	%tableligne
+		DNA.py %nc(save(self))
+	%tableligne
+		Individual.py %nc(score(self, bonus=0, FlagSet=False))
+	%tableligne
+		Curves.py %nc(scroll(self))
+	%tableligne
+		Plot_Area.py %nc(scroll(self))
+	%tableligne
+		Population.py %nc(season(self))
+	%tableligne
+		Group.py %nc(season(self, year))
+	%tableligne
+		Group.py %nc(season(self, year))
+	%tableligne
+		Default_Scenario.py %nc(season(self, year, members))
+	%tableligne
+		Observer.py %nc(season(self, year=None))
+	%tableligne
+		Population.py %nc(selectIndividual(self))
+	%tableligne
+		Plot_Area.py %nc(set_margins(self, Left, Right, Bottom, Top))
+	%tableligne
+		Observer.py %nc(setOutputDir(self, ResultDir))
+	%tableligne
+		Plot_Area.py %nc(setToric(self, Toric=True))
+	%tableligne
+		Alliances.py %nc(signature(self))
+	%tableligne
+		Alliances.py %nc(signature(self))
+	%tableligne
+		Individual.py %nc(signature(self))
+	%tableligne
+		Phenotype.py %nc(signature(self))
+	%tableligne
+		Genome.py %nc(signature(self))
+	%tableligne
+		Evolife_Window.py %nc(Simulation_launch(self,continuous_mode))
+	%tableligne
+		Evolife_Window.py %nc(Simulation_resume(self))
+	%tableligne
+		Evolife_Window.py %nc(Simulation_stop(self))
+	%tableligne
+		Alliances.py %nc(size(self))
+	%tableligne
+		Alliances.py %nc(size(self))
+	%tableligne
+		Alliances.py %nc(sizeMax(self))
+	%tableligne
+		Alliances.py %nc(social_signature(self))
+	%tableligne
+		Alliances.py %nc(social_signature(self))
+	%tableligne
+		Plot_Area.py %nc(speck(self, Curve_id, newpoint, Size=3))
+	%tableligne
+		Curves.py %nc(start(self,StartPos))
+	%tableligne
+		Evolife_Window.py %nc(Start(SimulationStep, Obs, Capabilities='C', Options=[]))
+	%tableligne
+		Curves.py %nc(start_Curve(self, Curve_id, location))
+	%tableligne
+		Default_Scenario.py %nc(start_game(self, members))
+	%tableligne
+		Group.py %nc(statistics(self))
+	%tableligne
+		Observer.py %nc(statistics(self))
+	%tableligne
+		Observer.py %nc(statistics(self))
+	%tableligne
+		Observer.py %nc(statistics(self))
+	%tableligne
+		Observer.py %nc(statistics(self))
+	%tableligne
+		Population.py %nc(statistics(self, Complete=True))
+	%tableligne
+		Evolife_Window.py %nc(StepButtonClick(self, event=None))
+	%tableligne
+		Simulation_Thread.py %nc(stop(self))
+	%tableligne
+		Observer.py %nc(store(self, StorageName, vector, Numeric=True))
+	%tableligne
+		Observer.py %nc(store(self, vector))
+	%tableligne
+		Evolife_Window.py %nc(SWDestroyed(self, SW))
+	%tableligne
+		Evolife_Window.py %nc(SWDestroyed(self, SW))
+	%tableligne
+		Observer.py %nc(TextDisplay(self, Str=))
+	%tableligne
+		Observer.py %nc(TextDisplay(self, Str=))
+	%tableligne
+		Observer.py %nc(TextErase(self))
+	%tableligne
+		Evolife_Window.py %nc(TrajectoryButtonClick(self, event))
+	%tableligne
+		Tools.py %nc(transpose(Matrix))
+	%tableligne
+		Parameters.py %nc(txt_to_cfg(self,CfgTxtFile))
+	%tableligne
+		Genome.py %nc(update(self))
+	%tableligne
+		Population.py %nc(update(self, flagRanking = False))
+	%tableligne
+		Group.py %nc(update_(self, flagRanking = False))
+	%tableligne
+		Group.py %nc(update_(self, flagRanking = False))
+	%tableligne
+		Default_Scenario.py %nc(update_positions(self, members, groupLocation))
+	%tableligne
+		Plot_Area.py %nc(updateScene(self, L))
+	%tableligne
+		Group.py %nc(uploadDNA(self, Start))
+	%tableligne
+		Phenotype.py %nc(value(self, Value=-1, Levelling = False))
+	%tableligne
+		Observer.py %nc(Visible(self))
+	%tableligne
+		Default_Scenario.py %nc(wallpaper(self, Window))
+	%tableligne
+		Alliances.py %nc(weakening(self, Factor = 0.9))
+	%tableligne
+		Group.py %nc(whoIs(self, Number))
+	%tableligne
+		Learner.py %nc(wins(self, Points))
+	%tableligne
+		Alliances.py %nc(worst(self))
+	%tableligne
+		Curves.py %nc(X_coord(self))
+	%tableligne
+		Curves.py %nc(Y_coord(self))
+	%tableligne
+		Evolife_Graphic.py %nc(Zoom(self))
+	%tableligne
+
+
+
+
+
+<HR WIDTH="100%" ALIGN="LEFT">
+
+
+	
+

@@ -1,0 +1,1402 @@
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"><HEAD>
+<TITLE>JL Dessalles - Evolife
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFCC00">
+<br>
+<!-- []
+<a href="http://www.telecom-paristech.fr" target="_blank"><IMG SRC="http://www.telecom-paristech.fr/fileadmin/maquette/images/logo-haut-droit.png" ALIGN="LEFT" Width="90" style="padding-right: 15px"></a>
+<a href="http://www.telecom-paristech.fr" target="_blank">
+Telecom ParisTech
+</a>
+ -->
+<HR WIDTH="100%" ALIGN="LEFT">
+<P>
+<font size="+2"><p align="center"><font face="Comic Sans MS"><a href="http://evolife.dessalles.fr">Evolife</a></font></p></font>
+<p align="center"><a href="http://www.dessalles.fr" target="_blank">Jean-Louis Dessalles</a></p>
+<HR WIDTH="100%" ALIGN="LEFT">
+<IMG SRC="Images/Courbes.jpg" ALIGN="RIGHT"  style="padding-left: 15px">
+<ol><li><a href="http://evolife.dessalles.fr/Description.html">Overall description</a></li>
+<li><a href="http://evolife.dessalles.fr/Execution.html">How to execute Evolife</a> (+ download)</li>
+<li><a href="http://evolife.dessalles.fr/Sources.html">Evolife source files</a></li>
+<li><a href="http://evolife.dessalles.fr/Classes.html">Evolife classes</a></li>
+<li><a href="http://evolife.dessalles.fr/Functions.html">Evolife functions</a></li>
+<li><a href="http://evolife.dessalles.fr/Working.html">How Evolife works</a></li>
+<li><a href="http://evolife.dessalles.fr/Create_Scenario.html">Create your own Evolife scenario</a></li>
+<li><a href="http://evolife.dessalles.fr/Components.html">Use Evolife&rsquo;s components separately (graphics, ecology, genetic algorithm)</a></li></ol>
+<P>
+
+<HR WIDTH="100%" ALIGN="LEFT">
+<br>
+ 
+<h2><div id="H0">
+5. <font face="Comic Sans MS">Evolife</font> Functions (in alphabetic order)
+</div></h2>
+<table border="1" bgcolor="#FFD077" width="60%"><caption><i>File & function</i></caption>
+<TR>
+<TD>Alliances.py </TD>
+<TD>accepts(self, F_perf)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>accepts(self, performance, conservative=True)</TD>
+</TR>
+<TR>
+<TD>Individual.py </TD>
+<TD>accident(self)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>acquaintable(self, Offer, Partner, PartnerOffer)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>acquaintable(self, Partner, Deal)</TD>
+</TR>
+<TR>
+<TD>Evolife_Graphic.py </TD>
+<TD>adaptscale(self, Layout)</TD>
+</TR>
+<TR>
+<TD>Curves.py </TD>
+<TD>add(self, Pos, Draw=True)</TD>
+</TR>
+<TR>
+<TD>Parameters.py </TD>
+<TD>addParameter(self, Param, Value)</TD>
+</TR>
+<TR>
+<TD>Learner.py </TD>
+<TD>adult(self)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>affiliable(self, F_perf, conservative=True)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>affiliable(self, perf, Guru, G_perf, conservative=True)</TD>
+</TR>
+<TR>
+<TD>Individual.py </TD>
+<TD>aging(self, step=1)</TD>
+</TR>
+<TR>
+<TD>Curves.py </TD>
+<TD>Avg(self, start=0)</TD>
+</TR>
+<TR>
+<TD>Evolife_Graphic.py </TD>
+<TD>axes(self)</TD>
+</TR>
+<TR>
+<TD>Evolife_Graphic.py </TD>
+<TD>axes(self)</TD>
+</TR>
+<TR>
+<TD>Default_Scenario.py </TD>
+<TD>behaviour(self, best_individual, avg_individual)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>best(self)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>best_friend(self)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>best_friend(self)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>best_friend_symmetry(self)</TD>
+</TR>
+<TR>
+<TD>Tools.py </TD>
+<TD>boost()</TD>
+</TR>
+<TR>
+<TD>Parameters.py </TD>
+<TD>cfg_to_txt(self, CfgTxtFile)</TD>
+</TR>
+<TR>
+<TD>Tools.py </TD>
+<TD>chances(proba, N)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>Changing(self, e)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>checkButtonState(self)</TD>
+</TR>
+<TR>
+<TD>Tools.py </TD>
+<TD>ChildrenSlide(x, Start, Low, High, Slope)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>close_(self)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>close_(self)</TD>
+</TR>
+<TR>
+<TD>Evolife_Graphic.py </TD>
+<TD>closeEvent(self, event)</TD>
+</TR>
+<TR>
+<TD>Evolife_Graphic.py </TD>
+<TD>closeEvent(self, event)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>closeEvent(self, event)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>closeEvent(self, event)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>closeEvent(self, event)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>consistency(self)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>convert(self, (x,y))</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>convert(self, Coord)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>coordinates(self, Coord)</TD>
+</TR>
+<TR>
+<TD>Default_Scenario.py </TD>
+<TD>couples(self, members)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>create_agent(self, Name, Coord)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>create_graphic_agent(self, Position)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>create_graphic_segment(self, Position, Segment)</TD>
+</TR>
+<TR>
+<TD>Population.py </TD>
+<TD>createGroup(self, ID=0, Size=0)</TD>
+</TR>
+<TR>
+<TD>Population.py </TD>
+<TD>createGroup(self, ID=0, Size=0)</TD>
+</TR>
+<TR>
+<TD>Group.py </TD>
+<TD>createIndividual(self, ID=None, Newborn=True)</TD>
+</TR>
+<TR>
+<TD>Group.py </TD>
+<TD>createIndividual(self, Newborn=True)</TD>
+</TR>
+<TR>
+<TD>Curves.py </TD>
+<TD>Curvenames(self, Names)</TD>
+</TR>
+<TR>
+<TD>Individual.py </TD>
+<TD>dead(self)</TD>
+</TR>
+<TR>
+<TD>Tools.py </TD>
+<TD>decrease(x, M, Selection)</TD>
+</TR>
+<TR>
+<TD>Default_Scenario.py </TD>
+<TD>default_view(self)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>detach(self)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>detach(self)</TD>
+</TR>
+<TR>
+<TD>Evolife_Graphic.py </TD>
+<TD>DeZoom(self)</TD>
+</TR>
+<TR>
+<TD>Individual.py </TD>
+<TD>dies(self)</TD>
+</TR>
+<TR>
+<TD>DNA.py </TD>
+<TD>display(self)</TD>
+</TR>
+<TR>
+<TD>Evolife_Graphic.py </TD>
+<TD>display(self, HelpFilename)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>display(self, StorageName)</TD>
+</TR>
+<TR>
+<TD>Default_Scenario.py </TD>
+<TD>display_(self)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>displayed(self)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>DisplayPeriod(self, Per=0)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>DisplayPeriodChanged(self, event)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>DisplayPeriodSet(self, Period, FlagForce=True)</TD>
+</TR>
+<TR>
+<TD>DNA.py </TD>
+<TD>DNAfill(self, Nucleotides)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>draw(self,oldpoint, newpoint, Width=3, ColorID=0, Tag=&rsquo;&rsquo;)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>draw_tailed_blob(self, Coord)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>drawPoints(self)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>drawTo(self, newpoint, Width=3, ColorID=0, Drawing=True, Tag=&rsquo;&rsquo;)</TD>
+</TR>
+<TR>
+<TD>Curves.py </TD>
+<TD>dump(self, ResultFileName=None, ResultHeader=&rsquo;&rsquo;, DumpStart=0)</TD>
+</TR>
+<TR>
+<TD>Evolife_Graphic.py </TD>
+<TD>Dump_network(self, friends, CurrentFrame=-1, Prefix=&rsquo;&rsquo;)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>end_friendship(self, Partner)</TD>
+</TR>
+<TR>
+<TD>Default_Scenario.py </TD>
+<TD>end_game(self, members)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>enters(self, newMember, performance, conservative=True)</TD>
+</TR>
+<TR>
+<TD>Curves.py </TD>
+<TD>erase(self)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>erase(self)</TD>
+</TR>
+<TR>
+<TD>Tools.py </TD>
+<TD>error(ErrMsg, Explanation=&rsquo;&rsquo;)</TD>
+</TR>
+<TR>
+<TD>Default_Scenario.py </TD>
+<TD>evaluation(self, indiv)</TD>
+</TR>
+<TR>
+<TD>Curves.py </TD>
+<TD>EvolifeColourID(Colour_designation, default=(4,&rsquo;red&rsquo;))</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>EvolifeWebSite(self, e)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>exits(self, oldMember)</TD>
+</TR>
+<TR>
+<TD>Learner.py </TD>
+<TD>explore(self, Feature, Speed)</TD>
+</TR>
+<TR>
+<TD>Learner.py </TD>
+<TD>feature(self, F, Value=None)</TD>
+</TR>
+<TR>
+<TD>Evolife_Graphic.py </TD>
+<TD>Field_display(self, Layout=None, Photo=False, CurrentFrame=-1, Ongoing=False, Prefix=&rsquo;&rsquo;)</TD>
+</TR>
+<TR>
+<TD>Evolife_Graphic.py </TD>
+<TD>Field_scroll(self)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>FieldButtonClick(self, event)</TD>
+</TR>
+<TR>
+<TD>Tools.py </TD>
+<TD>FileAnalysis(FileName, Pattern, Flag=re.M)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>FilmButtonClick(self, event)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>follow(self, F, F_perf, conservative=True, Quit=None)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>follow(self, perf, G, G_perf, conservative=True)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>follows(self, Friend)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>forgetAll(self)</TD>
+</TR>
+<TR>
+<TD>Tools.py </TD>
+<TD>fortune_wheel(Probabilities)</TD>
+</TR>
+<TR>
+<TD>Group.py </TD>
+<TD>free_ID(self, Prefix=&rsquo;&rsquo;)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>friends(self)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>Friends(self, ordered=True)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>full(self)</TD>
+</TR>
+<TR>
+<TD>File </TD>
+<TD>Function</TD>
+</TR>
+<TR>
+<TD>Genetic_map.py </TD>
+<TD>gene_boundaries(self, gene_name)</TD>
+</TR>
+<TR>
+<TD>Genetic_map.py </TD>
+<TD>gene_pattern(self)</TD>
+</TR>
+<TR>
+<TD>Genetic_map.py </TD>
+<TD>gene_range(self, gene_name)</TD>
+</TR>
+<TR>
+<TD>Genome.py </TD>
+<TD>gene_relative_value(self, name)</TD>
+</TR>
+<TR>
+<TD>Genome.py </TD>
+<TD>gene_value(self, name)</TD>
+</TR>
+<TR>
+<TD>Default_Scenario.py </TD>
+<TD>genemap(self)</TD>
+</TR>
+<TR>
+<TD>Genetic_map.py </TD>
+<TD>geneMap_length(self)</TD>
+</TR>
+<TR>
+<TD>Evolife_Graphic.py </TD>
+<TD>genome_display(self, genome=None, gene_pattern=(), Photo=False, CurrentFrame=-1, Prefix=&rsquo;&rsquo;)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>GenomeButtonClick(self, event)</TD>
+</TR>
+<TR>
+<TD>Group.py </TD>
+<TD>get_average(self)</TD>
+</TR>
+<TR>
+<TD>Group.py </TD>
+<TD>get_best(self)</TD>
+</TR>
+<TR>
+<TD>Genetic_map.py </TD>
+<TD>get_coding(self, locus)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>get_data(self)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>get_data(self, Slot)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>get_data(self, Slot)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>get_data(self,Slot)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>get_data(self,Slot)</TD>
+</TR>
+<TR>
+<TD>DNA.py </TD>
+<TD>get_DNA(self)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>get_friend(self, Offer, Partner, PartnerOffer)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>get_friend(self, Offer, Partner, Return=None)</TD>
+</TR>
+<TR>
+<TD>Genetic_map.py </TD>
+<TD>get_gene(self,locus)</TD>
+</TR>
+<TR>
+<TD>Genetic_map.py </TD>
+<TD>get_gene_boundaries(self,locus)</TD>
+</TR>
+<TR>
+<TD>Genetic_map.py </TD>
+<TD>get_gene_name(self, locus)</TD>
+</TR>
+<TR>
+<TD>Genetic_map.py </TD>
+<TD>get_gene_names(self)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>get_info(self, Slot)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>get_info(self, Slot)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>get_info(self, Slot)</TD>
+</TR>
+<TR>
+<TD>Genetic_map.py </TD>
+<TD>get_locus(self, gene_name)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>GetPlotOrders(self)</TD>
+</TR>
+<TR>
+<TD>EvolifeGray.py </TD>
+<TD>Gray2Int(self, GrayIndex)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>grid(self)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>grid(self)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>grid(self)</TD>
+</TR>
+<TR>
+<TD>Population.py </TD>
+<TD>group_splitting(self)</TD>
+</TR>
+<TR>
+<TD>DNA.py </TD>
+<TD>hamming(self, alter)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>HelpButtonClick(self, event=None)</TD>
+</TR>
+<TR>
+<TD>DNA.py </TD>
+<TD>hybrid(self, mother, father, number_crossover = -1)</TD>
+</TR>
+<TR>
+<TD>Evolife_Graphic.py </TD>
+<TD>image_display(self, Image, windowResize=True)</TD>
+</TR>
+<TR>
+<TD>Learner.py </TD>
+<TD>imitate(self, models, Feature)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>inform(self, Info)</TD>
+</TR>
+<TR>
+<TD>Genetic_map.py </TD>
+<TD>init_genes(self,gene_list)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>init_Pens(self)</TD>
+</TR>
+<TR>
+<TD>EvolifeGray.py </TD>
+<TD>InitGrayTable(self, Length)</TD>
+</TR>
+<TR>
+<TD>Default_Scenario.py </TD>
+<TD>initialization(self)</TD>
+</TR>
+<TR>
+<TD>EvolifeGray.py </TD>
+<TD>Int2Gray(self,i)</TD>
+</TR>
+<TR>
+<TD>Default_Scenario.py </TD>
+<TD>interaction(self, indiv, partner)</TD>
+</TR>
+<TR>
+<TD>Evolife_Graphic.py </TD>
+<TD>keyPressEvent(self, e)</TD>
+</TR>
+<TR>
+<TD>Evolife_Graphic.py </TD>
+<TD>keyPressEvent(self, e)</TD>
+</TR>
+<TR>
+<TD>Evolife_Graphic.py </TD>
+<TD>keyPressEvent(self, e)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>keyPressEvent(self, e)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>keyPressEvent(self, e)</TD>
+</TR>
+<TR>
+<TD>Group.py </TD>
+<TD>kill(self, memberNbr)</TD>
+</TR>
+<TR>
+<TD>Group.py </TD>
+<TD>kill(self, memberNbr)</TD>
+</TR>
+<TR>
+<TD>Curves.py </TD>
+<TD>last(self)</TD>
+</TR>
+<TR>
+<TD>Tools.py </TD>
+<TD>last(self)</TD>
+</TR>
+<TR>
+<TD>Learner.py </TD>
+<TD>Learns(self, neighbours, hot=True)</TD>
+</TR>
+<TR>
+<TD>Curves.py </TD>
+<TD>length(self)</TD>
+</TR>
+<TR>
+<TD>Tools.py </TD>
+<TD>Length(self)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>lessening_friendship(self, Factor=0.9)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>lessening_friendship(self, Factor=0.9)</TD>
+</TR>
+<TR>
+<TD>Group.py </TD>
+<TD>life_game(self)</TD>
+</TR>
+<TR>
+<TD>Population.py </TD>
+<TD>life_game(self)</TD>
+</TR>
+<TR>
+<TD>Default_Scenario.py </TD>
+<TD>life_game(self, members)</TD>
+</TR>
+<TR>
+<TD>Population.py </TD>
+<TD>limit(self)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>lineTo(self, Point)</TD>
+</TR>
+<TR>
+<TD>Tools.py </TD>
+<TD>List2File(L, FileName)</TD>
+</TR>
+<TR>
+<TD>Default_Scenario.py </TD>
+<TD>lives(self, members)</TD>
+</TR>
+<TR>
+<TD>Default_Scenario.py </TD>
+<TD>local_display(self, ToBeDisplayed)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>LocalButton(self, ParentFrame, ButtonType, Text, Tip, ClickFunction, ShortCutKey=None)</TD>
+</TR>
+<TR>
+<TD>Genetic_map.py </TD>
+<TD>locus_range(self, Locus)</TD>
+</TR>
+<TR>
+<TD>Genome.py </TD>
+<TD>locus_relative_value(self, locus)</TD>
+</TR>
+<TR>
+<TD>Genome.py </TD>
+<TD>locus_value(self, locus)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>LogButtonClick(self, event)</TD>
+</TR>
+<TR>
+<TD>Population.py </TD>
+<TD>lottery(self)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>maximal(self)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>members(self)</TD>
+</TR>
+<TR>
+<TD>Population.py </TD>
+<TD>members(self)</TD>
+</TR>
+<TR>
+<TD>Tools.py </TD>
+<TD>middle(x)</TD>
+</TR>
+<TR>
+<TD>Population.py </TD>
+<TD>migration(self)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>minimal(self)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>move(self, Curve_designation, newpoint)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>move_agent(self, Name, Coord)</TD>
+</TR>
+<TR>
+<TD>DNA.py </TD>
+<TD>mutate(self, mutation_rate = -1)</TD>
+</TR>
+<TR>
+<TD>Curves.py </TD>
+<TD>name(self, N = )</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>names(self)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>names(self)</TD>
+</TR>
+<TR>
+<TD>Tools.py </TD>
+<TD>Nb2A(Nb)</TD>
+</TR>
+<TR>
+<TD>Tools.py </TD>
+<TD>Nb2A0(Nb)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>nbFollowers(self)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>nbFriends(self)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>nbFriends(self)</TD>
+</TR>
+<TR>
+<TD>Evolife_Graphic.py </TD>
+<TD>Network_display(self, Layout, network=None, Photo=False, CurrentFrame=-1, Prefix=&rsquo;&rsquo;)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>NetworkButtonClick(self, event)</TD>
+</TR>
+<TR>
+<TD>Default_Scenario.py </TD>
+<TD>new_agent(self, child, parents)</TD>
+</TR>
+<TR>
+<TD>Curves.py </TD>
+<TD>next(self)</TD>
+</TR>
+<TR>
+<TD>Tools.py </TD>
+<TD>noise_add(x, range_)</TD>
+</TR>
+<TR>
+<TD>Tools.py </TD>
+<TD>noise_mult(x, range_)</TD>
+</TR>
+<TR>
+<TD>Parameters.py </TD>
+<TD>None2Default(self, ParamName, Default=0)</TD>
+</TR>
+<TR>
+<TD>Parameters.py </TD>
+<TD>Num(x)</TD>
+</TR>
+<TR>
+<TD>Individual.py </TD>
+<TD>observation(self, GroupExaminer)</TD>
+</TR>
+<TR>
+<TD>Individual.py </TD>
+<TD>observation(self, GroupExaminer)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>on_ground(self)</TD>
+</TR>
+<TR>
+<TD>Tools.py </TD>
+<TD>one_value(x)</TD>
+</TR>
+<TR>
+<TD>Population.py </TD>
+<TD>one_year(self)</TD>
+</TR>
+<TR>
+<TD>Population.py </TD>
+<TD>one_year(self)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>OneStep(self)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>open_(self, length = -1)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>open_(self, length=-1)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>ordered(self, ordered=True)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>Over(self)</TD>
+</TR>
+<TR>
+<TD>EvolifeGray.py </TD>
+<TD>PaddedGray(self, i)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>paintEvent(self, e)</TD>
+</TR>
+<TR>
+<TD>Parameters.py </TD>
+<TD>Param(self, ParamName)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>Parameter(self, ParamName)</TD>
+</TR>
+<TR>
+<TD>Parameters.py </TD>
+<TD>Parameter(self,ParamName, Silent=False, Optional=False)</TD>
+</TR>
+<TR>
+<TD>Parameters.py </TD>
+<TD>ParamNames(self)</TD>
+</TR>
+<TR>
+<TD>Parameters.py </TD>
+<TD>ParamValues(self)</TD>
+</TR>
+<TR>
+<TD>Default_Scenario.py </TD>
+<TD>parents(self, candidates)</TD>
+</TR>
+<TR>
+<TD>Default_Scenario.py </TD>
+<TD>partner(self, indiv, members)</TD>
+</TR>
+<TR>
+<TD>Tools.py </TD>
+<TD>percent(x)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>performance(self, Member)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>performances(self)</TD>
+</TR>
+<TR>
+<TD>Phenotype.py </TD>
+<TD>Phene_relative_value(self, name)</TD>
+</TR>
+<TR>
+<TD>Phenotype.py </TD>
+<TD>Phene_value(self, name, Value = -1, Levelling = False)</TD>
+</TR>
+<TR>
+<TD>Default_Scenario.py </TD>
+<TD>phenemap(self)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>photo(self, Name, FrameNumber=-1, outputDir=&rsquo;.&rsquo;, extension=&rsquo;png&rsquo;)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>PhotoButtonClick(self, event)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>plot(self, Curve_designation, newpoint, Width=3)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>plot(self, Curve_id, newpoint)</TD>
+</TR>
+<TR>
+<TD>Curves.py </TD>
+<TD>point(self)</TD>
+</TR>
+<TR>
+<TD>Group.py </TD>
+<TD>positions(self)</TD>
+</TR>
+<TR>
+<TD>Default_Scenario.py </TD>
+<TD>prepare(self, indiv)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>present(self, (Member, Perf))</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>Process_graph_orders(self)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>Process_graph_orders(self)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>Process_graph_orders(self)</TD>
+</TR>
+<TR>
+<TD>Tools.py </TD>
+<TD>pull(self)</TD>
+</TR>
+<TR>
+<TD>Tools.py </TD>
+<TD>push(self, Item)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>Q_Convert(self, Point)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>quit_(self, Friend=None)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>quit_(self, Guru)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>QuitButtonClick(self, event)</TD>
+</TR>
+<TR>
+<TD>Evolife_Graphic.py </TD>
+<TD>Raise(self)</TD>
+</TR>
+<TR>
+<TD>Evolife_Graphic.py </TD>
+<TD>Raise(self)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>Raise(self)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>rank(self, Member)</TD>
+</TR>
+<TR>
+<TD>DNA.py </TD>
+<TD>read_DNA(self, start, end, coding = None)</TD>
+</TR>
+<TR>
+<TD>Group.py </TD>
+<TD>receive(self, newcomer)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>recordInfo(self, Slot, Value)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>redraw(self)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>redraw(self)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>redraw(self)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>reframe(self,(x,y), Anticipation=False)</TD>
+</TR>
+<TR>
+<TD>Phenotype.py </TD>
+<TD>relative_value(self)</TD>
+</TR>
+<TR>
+<TD>Parameters.py </TD>
+<TD>Relevant(self, ParamName)</TD>
+</TR>
+<TR>
+<TD>Parameters.py </TD>
+<TD>RelevantParamNames(self)</TD>
+</TR>
+<TR>
+<TD>Group.py </TD>
+<TD>remove_(self, memberNbr)</TD>
+</TR>
+<TR>
+<TD>Group.py </TD>
+<TD>remove_(self, memberNbr)</TD>
+</TR>
+<TR>
+<TD>Default_Scenario.py </TD>
+<TD>remove_agent(self, agent)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>remove_agent(self, Name)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>remove_segment(self, Name)</TD>
+</TR>
+<TR>
+<TD>Group.py </TD>
+<TD>reproduction(self)</TD>
+</TR>
+<TR>
+<TD>Population.py </TD>
+<TD>reproduction(self)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>rescale(Scale, coord)</TD>
+</TR>
+<TR>
+<TD>Learner.py </TD>
+<TD>Reset(self)</TD>
+</TR>
+<TR>
+<TD>Tools.py </TD>
+<TD>reset(self)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>reset(self, length = -1)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>reset(self, length=-1)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>resize(self, w, h)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>resizeEvent(self,e)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>restore_agent(self, Name)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>restore_symmetry(self)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>ResultHeader(self)</TD>
+</TR>
+<TR>
+<TD>Tools.py </TD>
+<TD>retrieve(self)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>ReturnFromThread(self)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>ReturnFromThread(self)</TD>
+</TR>
+<TR>
+<TD>Simulation_Thread.py </TD>
+<TD>run(self)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>RunButtonClick(self, event=None)</TD>
+</TR>
+<TR>
+<TD>DNA.py </TD>
+<TD>save(self)</TD>
+</TR>
+<TR>
+<TD>Individual.py </TD>
+<TD>score(self, bonus=0, FlagSet=False)</TD>
+</TR>
+<TR>
+<TD>Curves.py </TD>
+<TD>scroll(self)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>scroll(self)</TD>
+</TR>
+<TR>
+<TD>Population.py </TD>
+<TD>season(self)</TD>
+</TR>
+<TR>
+<TD>Group.py </TD>
+<TD>season(self, year)</TD>
+</TR>
+<TR>
+<TD>Group.py </TD>
+<TD>season(self, year)</TD>
+</TR>
+<TR>
+<TD>Default_Scenario.py </TD>
+<TD>season(self, year, members)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>season(self, year=None)</TD>
+</TR>
+<TR>
+<TD>Population.py </TD>
+<TD>selectIndividual(self)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>set_margins(self, Left, Right, Bottom, Top)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>setOutputDir(self, ResultDir)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>setToric(self, Toric=True)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>signature(self)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>signature(self)</TD>
+</TR>
+<TR>
+<TD>Individual.py </TD>
+<TD>signature(self)</TD>
+</TR>
+<TR>
+<TD>Phenotype.py </TD>
+<TD>signature(self)</TD>
+</TR>
+<TR>
+<TD>Genome.py </TD>
+<TD>signature(self)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>Simulation_launch(self,continuous_mode)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>Simulation_resume(self)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>Simulation_stop(self)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>size(self)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>size(self)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>sizeMax(self)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>social_signature(self)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>social_signature(self)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>speck(self, Curve_id, newpoint, Size=3)</TD>
+</TR>
+<TR>
+<TD>Curves.py </TD>
+<TD>start(self,StartPos)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>Start(SimulationStep, Obs, Capabilities=&rsquo;C&rsquo;, Options=[])</TD>
+</TR>
+<TR>
+<TD>Curves.py </TD>
+<TD>start_Curve(self, Curve_id, location)</TD>
+</TR>
+<TR>
+<TD>Default_Scenario.py </TD>
+<TD>start_game(self, members)</TD>
+</TR>
+<TR>
+<TD>Group.py </TD>
+<TD>statistics(self)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>statistics(self)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>statistics(self)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>statistics(self)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>statistics(self)</TD>
+</TR>
+<TR>
+<TD>Population.py </TD>
+<TD>statistics(self, Complete=True)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>StepButtonClick(self, event=None)</TD>
+</TR>
+<TR>
+<TD>Simulation_Thread.py </TD>
+<TD>stop(self)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>store(self, StorageName, vector, Numeric=True)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>store(self, vector)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>SWDestroyed(self, SW)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>SWDestroyed(self, SW)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>TextDisplay(self, Str=)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>TextDisplay(self, Str=)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>TextErase(self)</TD>
+</TR>
+<TR>
+<TD>Evolife_Window.py </TD>
+<TD>TrajectoryButtonClick(self, event)</TD>
+</TR>
+<TR>
+<TD>Tools.py </TD>
+<TD>transpose(Matrix)</TD>
+</TR>
+<TR>
+<TD>Parameters.py </TD>
+<TD>txt_to_cfg(self,CfgTxtFile)</TD>
+</TR>
+<TR>
+<TD>Genome.py </TD>
+<TD>update(self)</TD>
+</TR>
+<TR>
+<TD>Population.py </TD>
+<TD>update(self, flagRanking = False)</TD>
+</TR>
+<TR>
+<TD>Group.py </TD>
+<TD>update_(self, flagRanking = False)</TD>
+</TR>
+<TR>
+<TD>Group.py </TD>
+<TD>update_(self, flagRanking = False)</TD>
+</TR>
+<TR>
+<TD>Default_Scenario.py </TD>
+<TD>update_positions(self, members, groupLocation)</TD>
+</TR>
+<TR>
+<TD>Plot_Area.py </TD>
+<TD>updateScene(self, L)</TD>
+</TR>
+<TR>
+<TD>Group.py </TD>
+<TD>uploadDNA(self, Start)</TD>
+</TR>
+<TR>
+<TD>Phenotype.py </TD>
+<TD>value(self, Value=-1, Levelling = False)</TD>
+</TR>
+<TR>
+<TD>Observer.py </TD>
+<TD>Visible(self)</TD>
+</TR>
+<TR>
+<TD>Default_Scenario.py </TD>
+<TD>wallpaper(self, Window)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>weakening(self, Factor = 0.9)</TD>
+</TR>
+<TR>
+<TD>Group.py </TD>
+<TD>whoIs(self, Number)</TD>
+</TR>
+<TR>
+<TD>Learner.py </TD>
+<TD>wins(self, Points)</TD>
+</TR>
+<TR>
+<TD>Alliances.py </TD>
+<TD>worst(self)</TD>
+</TR>
+<TR>
+<TD>Curves.py </TD>
+<TD>X_coord(self)</TD>
+</TR>
+<TR>
+<TD>Curves.py </TD>
+<TD>Y_coord(self)</TD>
+</TR>
+<TR>
+<TD>Evolife_Graphic.py </TD>
+<TD>Zoom(self)</TD>
+</TR>
+<TR>
+<TD>
+</TD>
+</TR>
+</table>
+<P>
+
+<P>
+<HR WIDTH="100%" ALIGN="LEFT">
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;</div></BODY></HTML>

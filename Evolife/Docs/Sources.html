@@ -1,0 +1,216 @@
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"><HEAD>
+<TITLE>JL Dessalles - Evolife
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFCC00">
+<br>
+<!-- []
+<a href="http://www.telecom-paristech.fr" target="_blank"><IMG SRC="http://www.telecom-paristech.fr/fileadmin/maquette/images/logo-haut-droit.png" ALIGN="LEFT" Width="90" style="padding-right: 15px"></a>
+<a href="http://www.telecom-paristech.fr" target="_blank">
+Telecom ParisTech
+</a>
+ -->
+<HR WIDTH="100%" ALIGN="LEFT">
+<P>
+<font size="+2"><p align="center"><font face="Comic Sans MS"><a href="http://evolife.dessalles.fr">Evolife</a></font></p></font>
+<p align="center"><a href="http://www.dessalles.fr" target="_blank">Jean-Louis Dessalles</a></p>
+<HR WIDTH="100%" ALIGN="LEFT">
+<IMG SRC="Images/Courbes.jpg" ALIGN="RIGHT"  style="padding-left: 15px">
+<ol><li><a href="http://evolife.dessalles.fr/Description.html">Overall description</a></li>
+<li><a href="http://evolife.dessalles.fr/Execution.html">How to execute Evolife</a> (+ download)</li>
+<li><a href="http://evolife.dessalles.fr/Sources.html">Evolife source files</a></li>
+<li><a href="http://evolife.dessalles.fr/Classes.html">Evolife classes</a></li>
+<li><a href="http://evolife.dessalles.fr/Functions.html">Evolife functions</a></li>
+<li><a href="http://evolife.dessalles.fr/Working.html">How Evolife works</a></li>
+<li><a href="http://evolife.dessalles.fr/Create_Scenario.html">Create your own Evolife scenario</a></li>
+<li><a href="http://evolife.dessalles.fr/Components.html">Use Evolife&rsquo;s components separately (graphics, ecology, genetic algorithm)</a></li></ol>
+<P>
+
+<HR WIDTH="100%" ALIGN="LEFT">
+<br>
+ 
+<h2><div id="H0">
+3. <font face="Comic Sans MS">Evolife</font> Source files
+</div></h2>
+The package contains:
+<ul><li>Python sources (*.py)</li>
+<li>Configuration files (<font size="-1"><font face="Courier">*.evo</font></font>). These files simply contain parameter-value pairs. The best way to edit them is to open them from the configuration editor that you get by executing <font size="-1"><font face="Courier">Starter.bat</font></font> (or <font size="-1"><font face="Courier">starter.sh</font></font>). Each configuration file corresponds to a scenario.</li>
+<li>A few scenarios (<font size="-1"><font face="Courier">Scenarii/S_*.py</font></font>) that implement specific problems.</li></ul>
+<P>
+<p align="center"><IMG SRC="Images/Sources.gif" ></p>
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+<h3><div id="H1">
+Python source files
+</div></h3>
+<table border="0" width="700"><caption><i> </i></caption><TR>
+<TD><font color="blue"><b>Alliances.py</b></font>: </TD>
+<TD>Defines social links between individuals. Useful for certain scenarios.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Curves.py</b></font>: </TD>
+<TD>Stores points to be displayed on curves</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Default_Scenario.py</b></font>: </TD>
+<TD>Implements a default scenario from which actual scenarios are derived.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>DNA.py</b></font>: </TD>
+<TD>Where the hereditary binary string is defined, and crossover and mutation are implemented.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Evolife_Batch.py</b></font>: </TD>
+<TD>A silent (no graphic) version of <font face="Comic Sans MS">Evolife</font> for batch mode.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Evolife_Graphic.py</b></font>: </TD>
+<TD>A few displays specific to <font face="Comic Sans MS">Evolife</font>.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Evolife_Main.py</b></font>: </TD>
+<TD><font face="Comic Sans MS">Evolife</font> main file.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Evolife_Window.py</b></font>: </TD>
+<TD>Window system for <font face="Comic Sans MS">Evolife</font>. The 2012 version and later are based on QT (previous versions used Tk).</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Genetic_map.py</b></font>: </TD>
+<TD>Defines the location of genes on the DNA string.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Genome.py</b></font>: </TD>
+<TD>Defines the genome of individuals as a set of genes.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Group.py</b></font>: </TD>
+<TD>Defines groups, where reproduction and interactions take place.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Individual.py</b></font>: </TD>
+<TD>Defines the individual&rsquo;s properties, which bring together a genome, a phenome and social relations.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>MyScenario.py</b></font>: </TD>
+<TD>This file is used to instantiate the scenario and make it accessible to all other modules.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Observer.py</b></font>: </TD>
+<TD>Stores simulation results and performs statistics.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Parameters.py</b></font>: </TD>
+<TD>Interface with configuration file <font size="-1"><font face="Courier"><font face="Comic Sans MS">Evolife</font>.evo</font></font></TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Phenotype.py</b></font>: </TD>
+<TD>Defines a set of non-inheritable characteristics called &lsquo;phenes&rsquo;.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Plot_Area.py</b></font>: </TD>
+<TD>Defines a zone to display graphics. Can be used independently from <font face="Comic Sans MS">Evolife</font>.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Population.py</b></font>: </TD>
+<TD>Defines the whole population as a set of groups.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>S_*.py</b></font>: </TD>
+<TD>Specific scenarios.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Simulation_Thread.py</b></font>: </TD>
+<TD>Interface with <font face="Comic Sans MS">Evolife</font>&rsquo;s window system.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Tools.py</b></font>: </TD>
+<TD>A few useful functions.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>TxtWin.py</b></font>: </TD>
+<TD>Defines a zone to display texts. Can be used independently from <font face="Comic Sans MS">Evolife</font>.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Void_Scenario.py</b></font>: </TD>
+<TD>A scenario that can be customized. Its execution launches <font face="Comic Sans MS">Evolife</font>&rsquo;s window system directly, thus bypassing <font size="-1"><font face="Courier">Evolife_Main.py</font></font>.</TD>
+</TR>
+</table>
+<h3><div id="H2">
+Other files
+</div></h3>
+<table border="0" width="700"><caption><i> </i></caption><TR>
+<TD><font color="blue"><b>labyr.gif</b></font>: </TD>
+<TD> Image of the labyrinth (used in one basic scenario).</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>*.csv</b></font>: </TD>
+<TD> Files created by <font face="Comic Sans MS">Evolife</font>. They contain evolution curve coordinates (as they are displayed). These files can be opened with MS-Excel.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>*.res</b></font>: </TD>
+<TD> Files created by <font face="Comic Sans MS">Evolife</font>. They contain coordinates for each curve, averaged over time. Such files may be concatenated to average over several experiments (useful in batch mode).</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>EvoStart.gen</b></font>: </TD>
+<TD> This file contains (in text format) the genome of an entire population to start from (if that option is chosen).</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Readme.html</b></font>: </TD>
+<TD><font face="Comic Sans MS">Evolife</font> documentation.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Readme.txt</b></font>: </TD>
+<TD> A text version of this file.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Evolife.html</b></font>: </TD>
+<TD> Homepage for the <font face="Comic Sans MS">Evolife</font> package.</TD>
+</TR>
+</table>
+<h3><div id="H3">
+Applications
+</div></h3>
+<table border="0" width="700"><caption><i> </i></caption><TR>
+<TD><font color="blue"><b>Antnet.py</b></font>: </TD>
+<TD>Ant system for message routing.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Ants.py</b></font>: </TD>
+<TD>Foraging ant colony.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>CellularAutomaton.py</b></font>: </TD>
+<TD>Illustrates one-dimensional cellular automata.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Cocktail.py</b></font>: </TD>
+<TD>Illustrates the &lsquo;cocktail party&rsquo; effect.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Morphogenesis.py</b></font>: </TD>
+<TD>Illustrates Turing&rsquo;s morphogenesis theory.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>PathFinder.py</b></font>: </TD>
+<TD>Illustrates path formation.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Segregationism.py</b></font>: </TD>
+<TD>Illustrates Thomas Schelling&rsquo;s famous experiment.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>SocialNetwork.py</b></font>: </TD>
+<TD>Emergence of optimal social signals.</TD>
+</TR>
+<TR>
+<TD><font color="blue"><b>Swallows.py</b></font>: </TD>
+<TD>Illustrates collective decision.</TD>
+</TR>
+</table>
+ 
+<P>
+<HR WIDTH="100%" ALIGN="LEFT">
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;</div></BODY></HTML>

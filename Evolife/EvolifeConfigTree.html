@@ -1,0 +1,382 @@
+<html>
+<h3><a href="http://www.dessalles.fr/Evolife">Goto Evolife documentation</a></h3>
+
+<h1>Parameters</h1>
+<p style="color: blue; font-family: courier">This is a configuration file editor designed to choose parameter values before launching Evolife simulations.<br><br>Its use is rather intuitive. You may click directly on values you want to change, or navigate with arrows and use the [F2] key to edit values.<br><br>Pay attention to explanations displayed in this panel.</p>
+
+<h1>Scenarios</h1>
+<p style="color: blue; font-family: courier">Available scenarios:<br>==============<br>&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;Test&nbsp;&nbsp;&nbsp;&nbsp;# a scenario that does nothing, but that you may customize<br><br>Genetic algorithm<br>-----------------<br>&nbsp;&nbsp;&nbsp;&nbsp;SumBits&nbsp;&nbsp;&nbsp;&nbsp; # maximizes the number of 1 in the DNA<br>&nbsp;&nbsp;&nbsp;&nbsp;Labyrinth&nbsp;&nbsp; # tries to escape from a labyrinth<br>&nbsp;&nbsp;&nbsp;&nbsp;WernerDyer&nbsp;&nbsp;# emergence of a communication code<br>&nbsp;&nbsp;&nbsp;&nbsp;Zip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # tries to make the DNA (un)compressible<br><br>Behavioural Ecology<br>-------------------<br>> Solitary games<br>&nbsp;&nbsp;&nbsp;&nbsp;Favourable&nbsp;&nbsp;# favourable mutation: basic Darwinian principle<br>&nbsp;&nbsp;&nbsp;&nbsp;GroupAltruist&nbsp;&nbsp; # group selection<br>&nbsp;&nbsp;&nbsp;&nbsp;Parthenogenesis # females beget clones of themselves<br>&nbsp;&nbsp;&nbsp;&nbsp;SexRatio&nbsp;&nbsp;&nbsp;&nbsp;# parents control the sex ratio among their children<br><br>> Dyadic games<br>&nbsp;&nbsp;&nbsp;&nbsp;Altruist&nbsp;&nbsp;&nbsp;&nbsp;# provides help at own's expense<br>&nbsp;&nbsp;&nbsp;&nbsp;KinAltruist # provides help towards kin<br>&nbsp;&nbsp;&nbsp;&nbsp;Cooperation&nbsp;&nbsp;&nbsp;&nbsp;# evolution of reciprocal cooperation<br>&nbsp;&nbsp;&nbsp;&nbsp;GreenBeard&nbsp;&nbsp;# provides help to other cariers of the same mutation<br>&nbsp;&nbsp;&nbsp;&nbsp;Signalling&nbsp;&nbsp; # individuals form coalitions<br>&nbsp;&nbsp;&nbsp;&nbsp;StagHunt&nbsp;&nbsp;&nbsp;&nbsp;# individuals play a 'stag hunt' game<br>&nbsp;&nbsp;&nbsp;&nbsp;Ethnocentrism<br>&nbsp;&nbsp;&nbsp;&nbsp;Bargaining<br>&nbsp;&nbsp;&nbsp;&nbsp;Coordination<br><br></p>
+
+<h2>Scenarios ==> CurrentScenario</h2>
+<p style="color: blue; font-family: courier"></p>
+
+<h3>Scenarios ==> CurrentScenario ==> ScenarioName --> Gazelle</h3>
+<p style="color: blue; font-family: courier"></p>
+
+<h3>Scenarios ==> CurrentScenario ==> ScenarioFileName --> Expe\Gazelle.evo</h3>
+<p style="color: blue; font-family: courier"></p>
+
+<h2>Scenarios ==> MyScenario</h2>
+<p style="color: blue; font-family: courier">A void scenario that may be customized.<br>You may try the (F2)(Esc)(F2) sequence to edit the scenario name. Otherwise, you have to exit this programme and edit the XML configuration file with your favourite editor.</p>
+
+<h3>Scenarios ==> MyScenario ==> Parameter1 --> 0</h3>
+<p style="color: blue; font-family: courier">First parameter</p>
+
+<h3>Scenarios ==> MyScenario ==> Parameter2 --> 0</h3>
+<p style="color: blue; font-family: courier">Second parameter</p>
+
+<h3>Scenarios ==> MyScenario ==> Parameter3 --> 0</h3>
+<p style="color: blue; font-family: courier">Third parameter</p>
+
+<h3>Scenarios ==> MyScenario ==> Parameter4 --> 0</h3>
+<p style="color: blue; font-family: courier">Fourth parameter</p>
+
+<h2>Scenarios ==> Genetic Algorithms</h2>
+<p style="color: blue; font-family: courier"></p>
+
+<h3>Scenarios ==> Genetic Algorithms ==> SumBits</h3>
+<p style="color: blue; font-family: courier">This example is meant as a didactic approach to genetic algorithms (and certainly not as a realistic application, as the problem is much too simple for a GA). The problem is to maximize the number of bits set to 1 in a binary vector. Starting from a random population, in which individuals have only roughly half of the bits equals to 1 in their genome, evolution through natural selection should rapidly produce 'perfect' individuals whose genome is uniformly made of 1s.</p>
+
+<h3>Scenarios ==> Genetic Algorithms ==> Labyrinth</h3>
+<p style="color: blue; font-family: courier">Scenario Labyrinth:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The individuals' DNA guides a 'robot' through a labyrinth,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with the hope of getting out of it</p>
+
+<h4>Scenarios ==> Genetic Algorithms ==> Labyrinth ==> Evaluation</h4>
+<p style="color: blue; font-family: courier">" Evaluation reads: " <br>Evaluation = PenaltyWall * (MaxSteps - walls) \<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + PenaltyU_turn * (MaxSteps - u_turns)\<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + PenaltyPoison * (MaxPheromon * MaxSteps +1&nbsp;&nbsp;- poison) \<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + RewardExit * (MaxSteps - step -1)</p>
+
+<h5>Scenarios ==> Genetic Algorithms ==> Labyrinth ==> Evaluation ==> MaxSteps --> 55</h5>
+<p style="color: blue; font-family: courier">Maximum number of steps</p>
+
+<h5>Scenarios ==> Genetic Algorithms ==> Labyrinth ==> Evaluation ==> PenaltyPoison --> 1</h5>
+<p style="color: blue; font-family: courier">Penalty for encountering poisonous pheromon<br></p>
+
+<h5>Scenarios ==> Genetic Algorithms ==> Labyrinth ==> Evaluation ==> MaxPoison --> 15</h5>
+<p style="color: blue; font-family: courier">Maximal quantity of poison that an individual absorbs</p>
+
+<h5>Scenarios ==> Genetic Algorithms ==> Labyrinth ==> Evaluation ==> PenaltyU_turn --> 0</h5>
+<p style="color: blue; font-family: courier">Penalty for making a u-turn</p>
+
+<h5>Scenarios ==> Genetic Algorithms ==> Labyrinth ==> Evaluation ==> PenaltyWall --> 0</h5>
+<p style="color: blue; font-family: courier">Penalty for bumping into a wall</p>
+
+<h5>Scenarios ==> Genetic Algorithms ==> Labyrinth ==> Evaluation ==> RewardExiting --> 10</h5>
+<p style="color: blue; font-family: courier">Reward for saving steps when exiting</p>
+
+<h3>Scenarios ==> Genetic Algorithms ==> WernerDyer</h3>
+<p style="color: blue; font-family: courier">EVOLIFE: Scenario WernerDyer :<br>&nbsp;&nbsp;&nbsp;&nbsp;see:&nbsp;&nbsp;&nbsp;&nbsp; http://www.telecom-paristech.fr/~icc/IC/projects/P06121815.html&nbsp;&nbsp;(in English)<br>&nbsp;&nbsp;&nbsp;&nbsp;see:&nbsp;&nbsp;&nbsp;&nbsp;http://www.dessalles.fr/outgoing/P05013107.html (in French, more detailed)<br><br>Relevant parameters are:<br>&nbsp;&nbsp;&nbsp;&nbsp;- Compass (if set to 1, individuals orient themselves along absolute directions, N,E,W,S)<br>&nbsp;&nbsp;&nbsp;&nbsp;- WDGridSize: size of the toric world in which individuals move<br>&nbsp;&nbsp;&nbsp;&nbsp;- PopulationSize: how crowdy the world is<br>&nbsp;&nbsp;&nbsp;&nbsp;- Selectivity: how many children are given to a successful couple<br>&nbsp;&nbsp;&nbsp;&nbsp;- Noise: defines in % how often a random direction is taken</p>
+
+<h4>Scenarios ==> Genetic Algorithms ==> WernerDyer ==> Compass --> 0</h4>
+<p style="color: blue; font-family: courier">Indicates whether the female part of the DNA codes for absolute directions (East, North, West, South) (Compass==1)<br>or codes for direction change (straight on, left, right, u-turn) (Compass==0).<br></p>
+
+<h4>Scenarios ==> Genetic Algorithms ==> WernerDyer ==> WDGridSize --> 100</h4>
+<p style="color: blue; font-family: courier"></p>
+
+<h3>Scenarios ==> Genetic Algorithms ==> Zip</h3>
+<p style="color: blue; font-family: courier">This scenario uses a genetic algorithm to simplify a string, or conversely make it more complex. <br>Here, complexity is assessed by the size of its compressed length (using compressor gzip or bzip2). <br>The point is to show that simplification produces quasi-periodic strings and that it is difficult <br>for standard genetic algorithms to escape from local optima.<br><br>When the 'Simplify' parameter is set to 0, the programme ideally attempts to <br>generate a random (i.e. incompressible) sequence.<br><br>In the not-BitString mode, the evolution gets more obviously trapped in many local optima.<br></p>
+
+<h4>Scenarios ==> Genetic Algorithms ==> Zip ==> BitString --> 0</h4>
+<p style="color: blue; font-family: courier">If BitString is set to 0, the DNA is translated into a string of charaters '0' and '1'<br>Otherwise it is translated into a binary string</p>
+
+<h4>Scenarios ==> Genetic Algorithms ==> Zip ==> bz2 --> 0</h4>
+<p style="color: blue; font-family: courier">If set to 0, uses gzip as compressor.<br>Otherwise, uses bzip2.</p>
+
+<h4>Scenarios ==> Genetic Algorithms ==> Zip ==> Simplify --> 0</h4>
+<p style="color: blue; font-family: courier">If set to 0, tries to make genomes more complex.<br>Otherwise, tries to make genomes simpler.</p>
+
+<h2>Scenarios ==> Behavioural Ecology</h2>
+<p style="color: blue; font-family: courier"></p>
+
+<h3>Scenarios ==> Behavioural Ecology ==> Favourable</h3>
+<p style="color: blue; font-family: courier">Simple Darwinian scenario: carriers of gene named 'Favourable' get life points.<br>The gene is expected to invade the population.<br>Alternatively, individuals get some collective benefit from the fact that<br>there are carriers of the 'Favourable' gene in the group. In that case,<br>the fate of the gene is no longer obvious, even if the collective benefit is high!</p>
+
+<h4>Scenarios ==> Behavioural Ecology ==> Favourable ==> IndividualBenefit --> 10</h4>
+<p style="color: blue; font-family: courier"></p>
+
+<h4>Scenarios ==> Behavioural Ecology ==> Favourable ==> CollectiveBenefit --> 0</h4>
+<p style="color: blue; font-family: courier"></p>
+
+<h4>Scenarios ==> Behavioural Ecology ==> Favourable ==> Cumulative --> 0</h4>
+<p style="color: blue; font-family: courier">Indicates whether scores are accumulated or are reset every year</p>
+
+<h3>Scenarios ==> Behavioural Ecology ==> GreenBeard</h3>
+<p style="color: blue; font-family: courier"></p>
+
+<h4>Scenarios ==> Behavioural Ecology ==> GreenBeard ==> GB_Gift --> 10</h4>
+<p style="color: blue; font-family: courier"></p>
+
+<h4>Scenarios ==> Behavioural Ecology ==> GreenBeard ==> GB_Cost --> 3</h4>
+<p style="color: blue; font-family: courier"></p>
+
+<h3>Scenarios ==> Behavioural Ecology ==> SexRatio</h3>
+<p style="color: blue; font-family: courier">If the sex ratio in the progeny is genetically controlled, a 50-50 ratio <br>emerges, despite the fact that males consume resources without investing<br>in offspring. <br>However, in hymenoptera (wasps, bees, ants), in which males are haploid <br>(one exemplar for each chomosome) whereas females are diploid (two exemplars<br>of each chromosome), sex ratio is expected to converge toward 25-75 whenever <br>it is controlled by genes expressed in sisters (workers).<br></p>
+
+<h4>Scenarios ==> Behavioural Ecology ==> SexRatio ==> SelectiveDeath --> 0</h4>
+<p style="color: blue; font-family: courier">Proportion (in percentage) of males killed at birth<br></p>
+
+<h4>Scenarios ==> Behavioural Ecology ==> SexRatio ==> Hymenoptera --> 0</h4>
+<p style="color: blue; font-family: courier">To mimic hymenoptera reproduction, the child is further hybrided with one of its parents (same sex or opposite sex, systematically), so as to increase the relatedness with the parent.<br></p>
+
+<h3>Scenarios ==> Behavioural Ecology ==> HeteroclineCycle</h3>
+<p style="color: blue; font-family: courier">After <br> Sigmund, K. (1998). <i> The population dynamics of conflict and cooperation </i> . <br> We suppose that we observe three species, such as bacteria in the gut. Suppose that in the absence of the third species, species 2 dominates 1, 3 dominates 2 and 1, in turn, dominates 3. For example, species 2 develops both a substance that is poisonous for 1 and a substance that makes itself immune to the poison. Species 3 develops the antidote but avoids the burden of synthesizing the poison. Species 1 devotes no energy to synthesizing either the poison or the antidote. <P> The purpose of the study is to observe the dynamics of the three species. Some reasonable diffusion delays, possibly implemented through spatial diffusion, might be necessary for the phenomenon to occur.</p>
+
+<h4>Scenarios ==> Behavioural Ecology ==> HeteroclineCycle ==> EmittedPoison --> 200</h4>
+<p style="color: blue; font-family: courier">Individual contribution to environmental pollution by polluting individuals</p>
+
+<h4>Scenarios ==> Behavioural Ecology ==> HeteroclineCycle ==> PoisonCost --> 2</h4>
+<p style="color: blue; font-family: courier">Cost for generating poison</p>
+
+<h4>Scenarios ==> Behavioural Ecology ==> HeteroclineCycle ==> AntidoteCost --> 5</h4>
+<p style="color: blue; font-family: courier">Cost for generating antidote</p>
+
+<h4>Scenarios ==> Behavioural Ecology ==> HeteroclineCycle ==> Absorption --> 10</h4>
+<p style="color: blue; font-family: courier">Fraction <b>per thousand</b> of the total poison quantity that an individual absorbs</p>
+
+<h3>Scenarios ==> Behavioural Ecology ==> Beehive</h3>
+<p style="color: blue; font-family: courier">This scenario does not exist yet !&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+<h2>Scenarios ==> Dyadic games</h2>
+<p style="color: blue; font-family: courier"></p>
+
+<h3>Scenarios ==> Dyadic games ==> Bargaining</h3>
+<p style="color: blue; font-family: courier"></p>
+
+<h3>Scenarios ==> Dyadic games ==> Cooperation</h3>
+<p style="color: blue; font-family: courier">Cooperation Scenario:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Individual A cooperates with individual B with the hope that<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B will reciprocate. A remembers B if it is the case.</p>
+
+<h4>Scenarios ==> Dyadic games ==> Cooperation ==> FirstStep --> 10</h4>
+<p style="color: blue; font-family: courier">Indicates the maximal number of score points <br>that can be granted by the first player to its partner.<br>This amount is modulated by the value of the first player's<br>corresponding gene.</p>
+
+<h4>Scenarios ==> Dyadic games ==> Cooperation ==> FirstStepCost --> 30</h4>
+<p style="color: blue; font-family: courier">Proportional price, IN PERCENTAGE, payed by the first player.</p>
+
+<h4>Scenarios ==> Dyadic games ==> Cooperation ==> SecondStep --> 55</h4>
+<p style="color: blue; font-family: courier"></p>
+
+<h4>Scenarios ==> Dyadic games ==> Cooperation ==> SecondStepCost --> 30</h4>
+<p style="color: blue; font-family: courier"></p>
+
+<h4>Scenarios ==> Dyadic games ==> Cooperation ==> Erosion --> 0</h4>
+<p style="color: blue; font-family: courier">Rate, in percentage, at which friendship is wearing down with time.</p>
+
+<h3>Scenarios ==> Dyadic games ==> SocialClasses</h3>
+<p style="color: blue; font-family: courier">Social classes Scenario:<br> Consider agents with two possible tags, Red and Blue. They play an ultimatum game, in which if the share of the pie claimed by the two players exceeds 100%, they get nothing. Each agent holds in two separate memory arrays its previous encounters with red agents and with blue agents. For certain values of the parameters, the system may remain some time in a situation in which one class of agents 'dominates' the other, as a result of the amplification of random initial departure from uniformity.</p>
+
+<h4>Scenarios ==> Dyadic games ==> SocialClasses ==> MemorySpan --> 8</h4>
+<p style="color: blue; font-family: courier">How many previous interactions are remembered, for both individuals of same colour (or badge) and individuals with opposite badge.</p>
+
+<h4>Scenarios ==> Dyadic games ==> SocialClasses ==> SecurityMargin --> 10</h4>
+<p style="color: blue; font-family: courier">If partner is expected to demand x, then demand 100 -x -SecurityMargin.</p>
+
+<h3>Scenarios ==> Dyadic games ==> Coordination</h3>
+<p style="color: blue; font-family: courier"></p>
+
+<h4>Scenarios ==> Dyadic games ==> Coordination ==> Nb_signaux --> 8</h4>
+<p style="color: blue; font-family: courier"></p>
+
+<h3>Scenarios ==> Dyadic games ==> HawkDove</h3>
+<p style="color: blue; font-family: courier">Hawk-Dove scenario - Two players confront each other over a resource whose full value is V to either of them. Each player may play one of two strategies: H (Hawk) or D (Dove). Doves signal that they wish to share the resource equally. Hawks signal they are willing to fight to get the resource. When two Doves meet, each gives the characteristic sharing signal and the resource is divided equally, or, perhaps, a fair coin is tossed and the winner gets all. In any case, the expected return to each of the two Doves is V/2. When a Hawk meets a Dove, the Hawk (as it always does) signals fight, the Dove (as it always does) signals share, then the Dove retreats and the Hawk takes the entire resource. Finally, when two Hawks meet, each signal fight, neither retreats, both fight at a cost of C. In the end, the resource is shared equally, minus the cost, or, perhaps, half the time one Hawk gets the entire resource and half the time the other Hawk gets it. In any case, the expected return to each of the Hawks is (V - C)/2.</p>
+
+<h4>Scenarios ==> Dyadic games ==> HawkDove ==> PieToShare --> 10</h4>
+<p style="color: blue; font-family: courier"></p>
+
+<h4>Scenarios ==> Dyadic games ==> HawkDove ==> BattleCost --> 60</h4>
+<p style="color: blue; font-family: courier"></p>
+
+<h3>Scenarios ==> Dyadic games ==> Gazelle</h3>
+<p style="color: blue; font-family: courier">Imagine two species, call them gazelles and lions. Gazelles have the genetically choice to invest energy in jumping vertically when lions approach. Of course, this somewhat reduces their ability to run away in case of pursuit. If lions prefer to chase non jumping gazelles, and poorly jumping ones among those who are jumping, show that investment in jumping evolves, at least for healthy individuals.</p>
+
+<h4>Scenarios ==> Dyadic games ==> Gazelle ==> GazelleToLionRatio --> 80</h4>
+<p style="color: blue; font-family: courier">Percentage of gazelles (G/(G+L))</p>
+
+<h4>Scenarios ==> Dyadic games ==> Gazelle ==> JumpEnergy --> 40</h4>
+<p style="color: blue; font-family: courier">Handicap of jumping in the presence of lions (betwenn 0 and 100). This strength cannot be used to run away.</p>
+
+<h4>Scenarios ==> Dyadic games ==> Gazelle ==> JumpCost --> 0</h4>
+<p style="color: blue; font-family: courier">Remaining cost for having jumped.</p>
+
+<h4>Scenarios ==> Dyadic games ==> Gazelle ==> HunterReward --> 30</h4>
+<p style="color: blue; font-family: courier">Reward for a successful hunt.</p>
+
+<h4>Scenarios ==> Dyadic games ==> Gazelle ==> LostPreyCost --> 10</h4>
+<p style="color: blue; font-family: courier">A lion that chases a healthy gazelle does not catch it and pays the cost of an unsuccessful hunt.</p>
+
+<h4>Scenarios ==> Dyadic games ==> Gazelle ==> HuntingRatio --> 10</h4>
+<p style="color: blue; font-family: courier">Proportion of chasing attempts per hunting opportunities (in %). A low value allows lions to be choosy.</p>
+
+<h3>Scenarios ==> Dyadic games ==> CostlySignal</h3>
+<p style="color: blue; font-family: courier">EVOLIFE: Costly Signal Scenario:<br>&nbsp;&nbsp;&nbsp;&nbsp;Individuals may emit a signal in relation with their quality.<br>&nbsp;&nbsp;&nbsp;&nbsp;Emitting this signal involves a cost.<br>&nbsp;&nbsp;&nbsp;&nbsp;Receivers read the signal and decide to associate or not with the emitter.<br>&nbsp;&nbsp;&nbsp;&nbsp;Association provides benefit to emitters.<br>&nbsp;&nbsp;&nbsp;&nbsp;Association provides benefit to receivers only if emitter is of high quality.<br>&nbsp;&nbsp;&nbsp;&nbsp;Evolution leads to a situation in which communication is honest,<br>&nbsp;&nbsp;&nbsp;&nbsp;i.e. individuals signal their true quality.<br>&nbsp;&nbsp;&nbsp;&nbsp;This is due to the fact that liars (l-q signalling individuals) cannot<br>&nbsp;&nbsp;&nbsp;&nbsp;afford the cost of high signals.<br></p>
+
+<h4>Scenarios ==> Dyadic games ==> CostlySignal ==> BottomQuality --> 50</h4>
+<p style="color: blue; font-family: courier">Minimal quality that adds to the signalled quality</p>
+
+<h4>Scenarios ==> Dyadic games ==> CostlySignal ==> CostlySignalCost --> 50</h4>
+<p style="color: blue; font-family: courier"></p>
+
+<h4>Scenarios ==> Dyadic games ==> CostlySignal ==> FollowerBenefit --> 100</h4>
+<p style="color: blue; font-family: courier"></p>
+
+<h4>Scenarios ==> Dyadic games ==> CostlySignal ==> FollowerSupport --> 40</h4>
+<p style="color: blue; font-family: courier"></p>
+
+<h3>Scenarios ==> Dyadic games ==> Ethnocentrism</h3>
+<p style="color: blue; font-family: courier"></p>
+
+<h3>Scenarios ==> Dyadic games ==> Signalling</h3>
+<p style="color: blue; font-family: courier">Signalling Scenario:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Individual A signals its competence<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other individuals may choose to join A based on that competence.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A benefits from their joining (e.g. protection)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;correlated with their&nbsp;&nbsp;competence <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(think of it as an ability to anticipate danger)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signalling is thus a way of attracting competent individuals</p>
+
+<h4>Scenarios ==> Dyadic games ==> Signalling ==> BottomCompetence --> 50</h4>
+<p style="color: blue; font-family: courier">Minimal competence that adds to the signalled competence<br><br>Typical value: 50</p>
+
+<h4>Scenarios ==> Dyadic games ==> Signalling ==> CompetenceImpact --> 100</h4>
+<p style="color: blue; font-family: courier">Maximal reduction of risk that an individual A gives to another B (in %).<br>B's risk probability is multiplied by (1 - CompetenceImpact * RankEffect ** R * A's_competence / G)<br>where R is B's rank in A's address book, and G is a function of the number of A's friends.<br><br>Typical value: 100</p>
+
+<h4>Scenarios ==> Dyadic games ==> Signalling ==> CompetenceSignificance --> 100</h4>
+<p style="color: blue; font-family: courier">Significance of recruting competent individuals as friends,<br>as compared to other qualities like physical strength, in %<br>(0% means that competence is not taken into account when making friends,<br>100% means that only competence is taken into account).<br><br>Typical value: 100</p>
+
+<h4>Scenarios ==> Dyadic games ==> Signalling ==> RankEffect --> 60</h4>
+<p style="color: blue; font-family: courier">Multiplicative decrease (in %) of friendly support.<br>If the signaller has rank R in its friend's list of contacts, the signaller gets<br><br>&nbsp;&nbsp;&nbsp;&nbsp;Friend's Competence * (RankEffect/100) ** R<br><br>Typical value: 60</p>
+
+<h4>Scenarios ==> Dyadic games ==> Signalling ==> SignallingCost --> 20</h4>
+<p style="color: blue; font-family: courier">Cost of producing signals.<br>Signals may indirectly reveal the signaller's competence.<br>This is only true if individuals invest in signalling.<br>Signalling investments are genetically controlled.<br><br>Typical value: 20</p>
+
+<h4>Scenarios ==> Dyadic games ==> Signalling ==> SocialOverlap --> 30</h4>
+<p style="color: blue; font-family: courier">Controls the facts that available social time may be spent with several friends simultaneously.<br>(between 0: no overlap, and 100: maximal natural overlap).<br>When no overlap, introducing a new friend diminish old friends' share significantly.<br><br>Typical value: 30</p>
+
+<h3>Scenarios ==> Dyadic games ==> StagHunt</h3>
+<p style="color: blue; font-family: courier">Stag Hunt Scenario (after Brian Skyrms, "The stag hunt",<br>&nbsp;&nbsp;&nbsp;&nbsp;Cambridge University Press 2004, pp. 67-70)<br>&nbsp;&nbsp;&nbsp;&nbsp;In the stag hunt scenario, two players have the choice:<br>&nbsp;&nbsp;&nbsp;&nbsp;- either to cooperate to hunt a stag (S)<br>&nbsp;&nbsp;&nbsp;&nbsp;- or to defect and hunt a hare (H) for themselves.<br>&nbsp;&nbsp;&nbsp;&nbsp;The payoff matrix is as follows:<br>&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opponent<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S&nbsp;&nbsp; H<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S&nbsp;&nbsp; 9&nbsp;&nbsp; 1<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;player&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H&nbsp;&nbsp; 8&nbsp;&nbsp; 7<br><br>&nbsp;&nbsp;&nbsp;&nbsp;This is a particular case of stag hunt in which it is better to<br>&nbsp;&nbsp;&nbsp;&nbsp;hunt hare against a stag hunter rather than against a hare hunter.<br>&nbsp;&nbsp;&nbsp;&nbsp;Such game is also called "assurance game".<br>&nbsp;&nbsp;&nbsp;&nbsp;In the absence of any signalling, there are two equilibria:<br>&nbsp;&nbsp;&nbsp;&nbsp;everyone hunts stag or everyone hunts hare.<br>&nbsp;&nbsp;&nbsp;&nbsp;If individuals are given the possibility of sending a binary signal before<br>&nbsp;&nbsp;&nbsp;&nbsp;acting, then the new situation creates one equilibrium in which<br>&nbsp;&nbsp;&nbsp;&nbsp;half of the population sends signal 0 and hunts stag with those having sent<br>&nbsp;&nbsp;&nbsp;&nbsp;1 and hunts hare otherwise, and conversely for the other half.</p>
+
+<h4>Scenarios ==> Dyadic games ==> StagHunt ==> PayoffMatrix</h4>
+<p style="color: blue; font-family: courier"></p>
+
+<h5>Scenarios ==> Dyadic games ==> StagHunt ==> PayoffMatrix ==> StagStag --> 9</h5>
+<p style="color: blue; font-family: courier"></p>
+
+<h5>Scenarios ==> Dyadic games ==> StagHunt ==> PayoffMatrix ==> StagHare --> 0</h5>
+<p style="color: blue; font-family: courier"></p>
+
+<h5>Scenarios ==> Dyadic games ==> StagHunt ==> PayoffMatrix ==> HareStag --> 8</h5>
+<p style="color: blue; font-family: courier"></p>
+
+<h5>Scenarios ==> Dyadic games ==> StagHunt ==> PayoffMatrix ==> HareHare --> 7</h5>
+<p style="color: blue; font-family: courier"></p>
+
+<h1>Ecology</h1>
+<p style="color: blue; font-family: courier"><br></p>
+
+<h2>Ecology ==> PopulationSize --> 200</h2>
+<p style="color: blue; font-family: courier">The size of the population is maintained constant <br><br></p>
+
+<h2>Ecology ==> MigrationRate --> 5</h2>
+<p style="color: blue; font-family: courier">Each year, a fraction (in %) of individuals migrate between groups.</p>
+
+<h2>Ecology ==> ReproductionRate --> 20</h2>
+<p style="color: blue; font-family: courier">Proportion of the population that is replaced with newborns each year (in %)<br></p>
+
+<h2>Ecology ==> SelectionPressure --> 0</h2>
+<p style="color: blue; font-family: courier">Defines how individual survival depends on score:<br><br>0 -->&nbsp;&nbsp; no bias<br>12 -->&nbsp;&nbsp;Highest scores may have 12 times less chance to be eliminated<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;than individuals with lowest scores<br><br>(Note that selection may also be achieved through differential reproduction<br>(see parameter Selectivity))<br><br>Important: For selection pressure to operate properly, scores should always be positive<br><br>Warning: This selection method tends to "saturate": when most scores reach high values,<br>the method is blind to slight differences among individuals. However, it might be less<br>violent than the selectivity method, which has converse qualities.<br><br>At the beginning of the 'Selection pressure' process, scores are linearly converted into life points (from 0 to SelectionPressure). Then individuals are repeatedly exposed to random accidents that cost them a life point. The process is repeated until the size of the population is brought back to its maximal value.</p>
+
+<h2>Ecology ==> Selectivity --> 5</h2>
+<p style="color: blue; font-family: courier">Defines how parenthood is biased toward individuals with high scores<br><br>S == 0 --> no bias<br>S == 1 --> elitism is roughly linear<br>S == 20 --> strong elitism<br>S == 40 --> very strong elitism<br><br>(Note that selection may also be achieved through differential mortality <br>(see parameter SelectionPressure))<br><br> Warning: This selection method is elitist. It amplifies small differences among top inidividuals, <br>but fails to discriminate among the crowd. It favours extreme (or lucky) behaviour. The SelectionPressure method has converse <br>qualities.<br><br>At the beginning of the 'selectivity' process, individuals are ranked, based on their score. They are given a number of children that depends on their rank (which depends non-linearly on their score). Parents are repeatedly drawn from the set of individuals that still have children to beget.</p>
+
+<h2>Ecology ==> NumberOfGroups --> 1</h2>
+<p style="color: blue; font-family: courier">The population is split in groups.<br>Groups are an ecological entity: reproductions and interactions take place within the group.<br>"NumberOfGroups" indicates the desired number of groups. Groups that are too big are split in two.<br>Expect actual groups to be only approximatively in that number.<br></p>
+
+<h2>Ecology ==> GroupMinSize --> 0</h2>
+<p style="color: blue; font-family: courier">Group minimal size<br>Groups that are too small are dissolved: their members must emigrate to other existing groups<br></p>
+
+<h2>Ecology ==> Rounds --> 30</h2>
+<p style="color: blue; font-family: courier">Numbers of times each individual interacts with others each year</p>
+
+<h2>Ecology ==> AgeMax --> 10</h2>
+<p style="color: blue; font-family: courier">Above that age, individuals die. Set to 0 if no maximum age.</p>
+
+<h2>Ecology ==> Noise --> 20</h2>
+<p style="color: blue; font-family: courier">Amplitude of a multiplicative noise<br>in % between 0 and 100<br>that may affect interactions in some<br>scenarios.<br></p>
+
+<h1>Sociology</h1>
+<p style="color: blue; font-family: courier"></p>
+
+<h2>Sociology ==> SocialSymmetry --> 1</h2>
+<p style="color: blue; font-family: courier">This flag indicates whether the amount of time devoted to a social relation is<br>equal between the two parties. If set to 0, fans may loose time in the anteroom<br>of their idol.</p>
+
+<h2>Sociology ==> MaxGurus --> 1</h2>
+<p style="color: blue; font-family: courier">Maximum number of output links from a node in the affiliation graph.<br>Typically between 1 and a few.</p>
+
+<h2>Sociology ==> MaxFollowers --> 3</h2>
+<p style="color: blue; font-family: courier">Maximum number of input links to a node in the affiliation graph.<br>Typically between 1 and many.<br>This may be a crucial parameter: if it is significantly larger<br>than 'MaxGurus', then a star system&nbsp;&nbsp;may evolve in which only<br>best individuals signal.</p>
+
+<h1>Genetics</h1>
+<p style="color: blue; font-family: courier"></p>
+
+<h2>Genetics ==> MutationRate --> 5</h2>
+<p style="color: blue; font-family: courier">Mutation rate in xxx/1000 <br></p>
+
+<h2>Genetics ==> NbCrossover --> 1</h2>
+<p style="color: blue; font-family: courier">Indicates the number of cut points when performing crossover</p>
+
+<h2>Genetics ==> GeneCoding --> 0</h2>
+<p style="color: blue; font-family: courier">Indicates the way portions of DNA should ne interpreted<br>- Weighted: standard integer binary coding<br>- Unweighted: all bits play symmertrical roles <br>- Gray: Gray code<br>- Nocoding: genome is not decoded<br><br>Note: the WEIGHTED method may provoke sudden changes in gene expression. This may be good to escape from local <br>optima, since in the UNWEIGHTED condition, several mutations must be accumulated in the same individuals for significant change to occur.</p>
+
+<h3>Genetics ==> GeneCoding ==> Weighted --> 0</h3>
+<p style="color: blue; font-family: courier">Genes interpreted as standard integer coding.<br>Advantage: many available values;<br>&nbsp;&nbsp;&nbsp;&nbsp;variable selection pressure on loci:<br>&nbsp;&nbsp;&nbsp;&nbsp;important loci evolve first.<br>&nbsp;&nbsp;&nbsp;&nbsp;Mutations on low bits have local effects<br>Caveat: getting from&nbsp;&nbsp;011111 to 100000 requires<br>&nbsp;&nbsp;&nbsp;&nbsp;six mutations, though the values are adjacent.</p>
+
+<h3>Genetics ==> GeneCoding ==> Unweighted --> 1</h3>
+<p style="color: blue; font-family: courier">Genes interpreted as the sum of their bits<br>Advantage: all puncutal mutation have local effects<br>Caveat: only few values allowed if gene length is small, <br>&nbsp;&nbsp;&nbsp;&nbsp;and very slow evolution and high sensitivity to noise<br>&nbsp;&nbsp;&nbsp;&nbsp;if gene length is large</p>
+
+<h3>Genetics ==> GeneCoding ==> Gray --> 2</h3>
+<p style="color: blue; font-family: courier">Genes are interpreted using a Gray code.<br>In a Gray code, neighbouring integers differ by only one bit.<br>Advantage: neighbouring values are reachable by punctual mutations <br>Caveat: most punctual mutations have non-local effects</p>
+
+<h3>Genetics ==> GeneCoding ==> NoCoding --> -1</h3>
+<p style="color: blue; font-family: courier"></p>
+
+<h2>Genetics ==> GeneLength --> 8</h2>
+<p style="color: blue; font-family: courier">Some scenarios don't specify gene length (by setting it to zero).<br>The value indicated here is taken as default value in this case.</p>
+
+<h2>Genetics ==> DNAFill --> -1</h2>
+<p style="color: blue; font-family: courier">DNA created from scratch may be random (DNAFill = -1) <br>or filled withl 0s (DNAFill = 0) or with 1s (DNAFill =1)</p>
+
+<h2>Genetics ==> StartFromFile --> 0</h2>
+<p style="color: blue; font-family: courier">Binary flag indicating if the population should be generated from<br>the genomes stored in the text file 'EvoStart.gen'<br>1 = reads 'EvoStart.gen'<br>0 = creates a new population from scratch (see parameter DNAFill)</p>
+
+<h2>Genetics ==> ControlGeneNumber --> 6</h2>
+<p style="color: blue; font-family: courier">Functions of one parameter are difficult to code genetically.<br>The easiest way is to code for a step function.<br><br>Example: code for a "signal" that depends on a parameter called "competence".<br>When emitting the signal, an individual "reads" her competence and<br>depending on its range, mutliplies it by the relative value of<br>her corresponding control gene.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; competence&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Max<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [--------------------------------------------------]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;-----------&gt;&lt;-----------&gt;&lt;-----------&gt;&lt;-----------&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CG1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CG2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CG3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CG4<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br>Typical value: 6</p>
+
+<h1>Display</h1>
+<p style="color: blue; font-family: courier"></p>
+
+<h2>Display ==> DisplayPeriod --> 10</h2>
+<p style="color: blue; font-family: courier">Period between successive plots <br>0:&nbsp;&nbsp;no plot<br>1:&nbsp;&nbsp;plot every year<br>10: typical<br><br></p>
+
+<h2>Display ==> TimeLimit --> 10000</h2>
+<p style="color: blue; font-family: courier">Maximum number of steps before simulation stops. Set to 0 if no limit.<br>If DisplayPeriod == 0, Evolife will automatically exit after TimeLimit.<br>Otherwise, it will switch to stepwise mode. It is thus ready to <br>run until another TimeLimit is reached again.<br></p>
+
+<h2>Display ==> DumpStart --> 100</h2>
+<p style="color: blue; font-family: courier">Points located below this x-value are discarded from the computation of average values.<br>Average values thus reflect the stable regime.</p>
+
+<h1>Run Settings</h1>
+<p style="color: blue; font-family: courier"></p>
+
+<h2>Run Settings ==> BatchMode --> 0</h2>
+<p style="color: blue; font-family: courier">If set to 1, no display occurs. Useful to launch experiments in batch mode, e.g. on several machines. <br>Results are still stored in .csv files. In batch mode, these files are given unique names, so that different experiments can be run simultaneously.</p>
+
+<h2>Run Settings ==> ApplicationDir --> .</h2>
+<p style="color: blue; font-family: courier">Path to Evolife</p>
+
+<h2>Run Settings ==> ResultDir --> ./___Results</h2>
+<p style="color: blue; font-family: courier">Path to location where results are stored</p>
+
+<h2>Run Settings ==> Target --> Main.py</h2>
+<p style="color: blue; font-family: courier">File that should be executed when the [Run] button is clicked</p>
+
+<h2>Run Settings ==> RunConfigFile --> Evolife.evo</h2>
+<p style="color: blue; font-family: courier">Parameter file that will be read by the programme</p>
+
+<h2>Run Settings ==> Title --> Evolife</h2>
+<p style="color: blue; font-family: courier">Name of the present Configuration Editor</p>
+
+<h2>Run Settings ==> Icon --> QtGraphics/EvolifeIcon.png</h2>
+<p style="color: blue; font-family: courier">local path to window icon</p>
+
+<h1>GroupMaxSize --> 301</h1>
+<p style="color: blue; font-family: courier">GroupMaxSize</p>
+
+<h2></h2></html>

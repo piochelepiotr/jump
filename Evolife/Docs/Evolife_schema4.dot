@@ -1,0 +1,13 @@
+digraph Evolife {
+bgcolor="#FFCF80";
+node  [shape=ellipse,style=filled,fillcolor="Red",fontname=Helvetica,fontcolor=White]; 
+subgraph clusterWindow { 
+	Evolife_Frame [shape=tripleoctagon]
+	Simulation_Control -> Simulation_Control_Frame -> Simulation_Display_Control_Frame -> Simulation_Frame -> Evolife_Frame;
+	Active_Frame -> Simulation_Control_Frame 
+	Plot_Area -> Simulation_Frame [style=dotted];
+/*	Simulation_Control -> Evolife_Batch
+	{rank=same; Simulation; Simulation_Control}	
+	{rank=same; Evolife_Batch; Evolife_Frame} */
+}
+}

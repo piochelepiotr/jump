@@ -1,0 +1,11 @@
+ApplicationDir	.
+DisplayPeriod	5
+Icon	ElementaryCARule030_700.gif
+Rule	254
+RunConfigFile	_Params.evo
+ScenarioFileName	CellularAutomaton.evo
+ScenarioName	CellularAutomaton
+StartingPattern	P='0'*127+'1'+'0'*128
+Target	CellularAutomaton.py
+TimeLimit	256
+Title	Evolife_Cellular_Automaton

@@ -1,0 +1,17 @@
+ApplicationDir	.
+Attenuation	0
+DisplayPeriod	1
+DotSize	7
+Icon	cocktailparty.gif
+Influence	100
+LandSize	100
+NoiseDisplay	1
+PopulationSize	44
+ResultDir	./___Results
+RunConfigFile	_Params.evo
+SNR	20
+ScenarioFileName	Cocktail.evo
+ScenarioName	Cocktail
+Target	Cocktail.py
+TimeLimit	10000
+Title	Cocktail_Party

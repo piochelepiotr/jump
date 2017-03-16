@@ -1,0 +1,22 @@
+%include(header.xjl)
+ 
+%h2
+	Evolife colours
+%code
+	
+	EvolifeColourNames = ['grey', 'black', 'white', 'blue', 'red', 'yellow', 'brown', 'blue02', 'pink', 'lightblue', 
+				'green', 'green1', 'green2', 'green3', 'green4', 'green5', 'green6', 'green7', 'green8', 'green9', 'green10', 'green11',  # 21
+				'red0', 'red1', 'red2', 'red3', 'red4', 'red5', 'red6', 'red7', 'red8', 'red9', 'red10', 'red11', # 33
+				'blue0', 'blue1', 'blue2', 'blue3', 'blue4', 'blue5', 'blue6', 'blue7', 'blue8', 'blue9', 'blue10', 'blue11',
+				]
+	
+
+These colours are displayed vertically as small coloured dots, to the right, on the Evolife window. They can be designated by their name or their rank in the list.
+The function:
+
+
+%code
+	Shade(x, BaseColour='green', Min=0, Max=1, darkToLight=True, invisible='white')
+
+
+returns gradual colours in the greens, the reds or the blues, depending on the value of %code(x) between %code(Min) and %code(Max).

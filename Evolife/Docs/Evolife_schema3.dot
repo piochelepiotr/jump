@@ -1,0 +1,22 @@
+digraph Evolife {
+bgcolor="#FFCF80";
+compound=true
+node  [shape=ellipse,style=filled,fillcolor="Red",fontname=Helvetica,fontcolor=White]; 
+subgraph clusterGraphics { 
+	Image_Area -> Draw_Area -> Plot_Area; 
+	Draw_Area -> Ground;
+	AreaView -> Active_Frame -> Satellite_window -> Genome_window;
+	Image_Area -> AreaView [style=dotted];
+	Draw_Area -> AreaView [style=dotted];
+	Plot_Area -> AreaView [style=dotted];
+	Ground -> AreaView [style=dotted];
+	Satellite_window -> Network_window;
+	Satellite_window -> Field_window;
+	Image_Area -> Genome_window [style=dotted];
+	Draw_Area -> Network_window [style=dotted];
+	Ground -> Field_window [style=dotted];
+	Curves -> Draw_Area;
+	Curve -> Curves [style=dotted];
+	}
+/*Evolife_Observer -> Image_Area [ltail=clusterObserver, lhead=clusterGraphics, color="#FFCF80"];*/
+}

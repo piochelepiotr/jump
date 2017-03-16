@@ -1,0 +1,100 @@
+<html>
+<h3><a href="http://www.dessalles.fr/Evolife">Goto Evolife documentation</a></h3>
+
+<h1>Scenario</h1>
+<p style="color: blue; font-family: courier">This is a configuration file editor designed to choose parameter values before launching Evolife simulations.<br><br>Its use is rather intuitive. You may click directly on values you want to change, or navigate with arrows and use the [F2] key to edit values.<br><br>Pay attention to explanations displayed in this panel.</p>
+
+<h2>Scenario ==> CurrentScenario</h2>
+<p style="color: blue; font-family: courier"></p>
+
+<h3>Scenario ==> CurrentScenario ==> ScenarioName --> Path</h3>
+<p style="color: blue; font-family: courier">Simulmates emerging path formation</p>
+
+<h3>Scenario ==> CurrentScenario ==> ScenarioFileName --> Walker.evo</h3>
+<p style="color: blue; font-family: courier"></p>
+
+<h1>Simulation</h1>
+<p style="color: blue; font-family: courier"></p>
+
+<h2>Simulation ==> DisplayPeriod --> 5</h2>
+<p style="color: blue; font-family: courier">Display period</p>
+
+<h2>Simulation ==> TimeLimit --> 10000</h2>
+<p style="color: blue; font-family: courier">Max number of simulation steps</p>
+
+<h2>Simulation ==> ApplicationDir --> .</h2>
+<p style="color: blue; font-family: courier">Directory where the simulation can be found</p>
+
+<h2>Simulation ==> Target --> Walker.py</h2>
+<p style="color: blue; font-family: courier">Programme to be executed</p>
+
+<h2>Simulation ==> RunConfigFile --> _Params.evo</h2>
+<p style="color: blue; font-family: courier">Parameter values that will be read by the programme</p>
+
+<h2>Simulation ==> Title --> Evolife_Walker</h2>
+<p style="color: blue; font-family: courier">Name of the present Configuration Editor</p>
+
+<h2>Simulation ==> Icon --> Walker.gif</h2>
+<p style="color: blue; font-family: courier">local path to window icon</p>
+
+<h1>Ecology</h1>
+<p style="color: blue; font-family: courier"></p>
+
+<h2>Ecology ==> PopulationSize --> 1</h2>
+<p style="color: blue; font-family: courier">total number of walkers</p>
+
+<h2>Ecology ==> Landscape</h2>
+<p style="color: blue; font-family: courier">Landscape on which path will be found</p>
+
+<h3>Ecology ==> Landscape ==> Ground --> Landscape_2.png</h3>
+<p style="color: blue; font-family: courier">Image showing ground</p>
+
+<h3>Ecology ==> Landscape ==> Altitudes --> landscape_2.dat</h3>
+<p style="color: blue; font-family: courier">Array giving altitudes on ground (may have lower resolution than ground image</p>
+
+<h3>Ecology ==> Landscape ==> Startpoint --> 5x5</h3>
+<p style="color: blue; font-family: courier">Start point with format 20x30 where 20 and 30 are in % of width and height</p>
+
+<h3>Ecology ==> Landscape ==> Endpoint --> 95x95</h3>
+<p style="color: blue; font-family: courier">End point with format 20x30 where 20 and 30 are in % of width and height</p>
+
+<h2>Ecology ==> Behaviour</h2>
+<p style="color: blue; font-family: courier">Agents' behaviour depends on three parameters. <li>Target attractiveness (TA)</li><li>Pheromon attractiveness (PA)</li><li>Slope aversion (SA)</li><br>Preference = TA + PA*pheromone - SA*slope</br></p>
+
+<h3>Ecology ==> Behaviour ==> TargetAttractiveness --> 6</h3>
+<p style="color: blue; font-family: courier">Target attractiveness</p>
+
+<h3>Ecology ==> Behaviour ==> PheromoneAttractiveness --> 4</h3>
+<p style="color: blue; font-family: courier">Pheromone attractiveness</p>
+
+<h3>Ecology ==> Behaviour ==> SlopeAversion --> 3</h3>
+<p style="color: blue; font-family: courier">Aversion to slope</p>
+
+<h3>Ecology ==> Behaviour ==> SniffingDistance --> 3</h3>
+<p style="color: blue; font-family: courier">distance from which pheromone is perceived</p>
+
+<h3>Ecology ==> Behaviour ==> Exploration --> 2</h3>
+<p style="color: blue; font-family: courier">Probability (in %) that the walker moves randomly</p>
+
+<h2>Ecology ==> Noise --> 0</h2>
+<p style="color: blue; font-family: courier">Additive noise (in %)</p>
+
+<h2>Ecology ==> Pheromone</h2>
+<p style="color: blue; font-family: courier">Pheromon is laid down eventually along the path, depending on two parameters: <li>Global path distance (GD)</li><li>Cumulative slope (CS)</li></p>
+
+<h3>Ecology ==> Pheromone ==> Deposit --> 10000</h3>
+<p style="color: blue; font-family: courier">amount of pheromone that is laid down on the path after completion</p>
+
+<h3>Ecology ==> Pheromone ==> ForwardDeposit --> 10</h3>
+<p style="color: blue; font-family: courier">amount of pheromone that is laid down when going forward</p>
+
+<h3>Ecology ==> Pheromone ==> DepositVariation --> 80</h3>
+<p style="color: blue; font-family: courier">Variation of deposit when path is longer or shorter than previous one (in %)</p>
+
+<h3>Ecology ==> Pheromone ==> Evaporation --> 1</h3>
+<p style="color: blue; font-family: courier">absolute amount of pheromone decrease per time unit</p>
+
+<h3>Ecology ==> Pheromone ==> Saturation --> 60000</h3>
+<p style="color: blue; font-family: courier">maximum amount of pheromon that a cell can carry</p>
+
+<h2></h2></html>

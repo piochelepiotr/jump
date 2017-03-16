@@ -1,0 +1,111 @@
+%include(header.xjl)
+ 
+%h2
+	3. %f+Comic Sans MS(Evolife) Source files
+The package contains:
+%liste
+	Python sources (*.py)
+	Configuration files (%code(*.evo)). These files simply contain parameter-value pairs. The best way to edit them is to open them from the configuration editor that you get by executing %code(Starter.bat) (or %code(starter.sh)). Each configuration file corresponds to a scenario.
+	A few scenarios (%code(Scenarii/S_*.py)) that implement specific problems.
+
+
+%ic(Sources.gif)
+
+
+		
+
+%h3
+	Python source files
+%table+ +700+0
+	%tableligne
+		%f+blue(%b(Alliances.py)): %nc(Defines social links between individuals. Useful for certain scenarios.)
+	%tableligne
+		%f+blue(%b(Curves.py)): %nc(Stores points to be displayed on curves)
+	%tableligne
+		%f+blue(%b(Default_Scenario.py)): %nc(Implements a default scenario from which actual scenarios are derived.)
+	%tableligne
+		%f+blue(%b(DNA.py)): %nc(Where the hereditary binary string is defined, and crossover and mutation are implemented.)
+	%tableligne
+		%f+blue(%b(Evolife_Batch.py)): %nc(A silent (no graphic) version of %f+Comic Sans MS(Evolife) for batch mode.)
+	%tableligne
+		%f+blue(%b(Evolife_Graphic.py)): %nc(A few displays specific to %f+Comic Sans MS(Evolife).)
+	%tableligne
+		%f+blue(%b(Evolife_Main.py)): %nc(%f+Comic Sans MS(Evolife) main file.)
+	%tableligne
+		%f+blue(%b(Evolife_Window.py)): %nc(Window system for %f+Comic Sans MS(Evolife). The 2012 version and later are based on QT (previous versions used Tk).)
+	%tableligne
+		%f+blue(%b(Genetic_map.py)): %nc(Defines the location of genes on the DNA string.)
+	%tableligne
+		%f+blue(%b(Genome.py)): %nc(Defines the genome of individuals as a set of genes.)
+	%tableligne
+		%f+blue(%b(Group.py)): %nc(Defines groups, where reproduction and interactions take place.)
+	%tableligne
+		%f+blue(%b(Individual.py)): %nc(Defines the individual's properties, which bring together a genome, a phenome and social relations.)
+	%tableligne
+		%f+blue(%b(MyScenario.py)): %nc(This file is used to instantiate the scenario and make it accessible to all other modules.)
+	%tableligne
+		%f+blue(%b(Observer.py)): %nc(Stores simulation results and performs statistics.)
+	%tableligne
+		%f+blue(%b(Parameters.py)): %nc(Interface with configuration file %code(%f+Comic Sans MS(Evolife).evo))
+	%tableligne
+		%f+blue(%b(Phenotype.py)): %nc(Defines a set of non-inheritable characteristics called 'phenes'.)
+	%tableligne
+		%f+blue(%b(Plot_Area.py)): %nc(Defines a zone to display graphics. Can be used independently from %f+Comic Sans MS(Evolife).)
+	%tableligne
+		%f+blue(%b(Population.py)): %nc(Defines the whole population as a set of groups.)
+	%tableligne
+		%f+blue(%b(S_*.py)): %nc(Specific scenarios.)
+	%tableligne
+		%f+blue(%b(Simulation_Thread.py)): %nc(Interface with %f+Comic Sans MS(Evolife)'s window system.)
+	%tableligne
+		%f+blue(%b(Tools.py)): %nc(A few useful functions.)
+	%tableligne
+		%f+blue(%b(TxtWin.py)): %nc(Defines a zone to display texts. Can be used independently from %f+Comic Sans MS(Evolife).)
+	%tableligne
+		%f+blue(%b(Void_Scenario.py)): %nc(A scenario that can be customized. Its execution launches %f+Comic Sans MS(Evolife)'s window system directly, thus bypassing %code(Evolife_Main.py).)
+%h3
+	Other files
+%table+ +700+0
+	%tableligne
+		%f+blue(%b(labyr.gif)): %nc( Image of the labyrinth (used in one basic scenario).)
+	%tableligne
+		%f+blue(%b(*.csv)): %nc( Files created by %f+Comic Sans MS(Evolife). They contain evolution curve coordinates (as they are displayed). These files can be opened with MS-Excel.)
+	%tableligne
+		%f+blue(%b(*.res)): %nc( Files created by %f+Comic Sans MS(Evolife). They contain coordinates for each curve, averaged over time. Such files may be concatenated to average over several experiments (useful in batch mode).)
+	%tableligne
+		%f+blue(%b(EvoStart.gen)): %nc( This file contains (in text format) the genome of an entire population to start from (if that option is chosen).)
+	%tableligne
+		%f+blue(%b(Readme.html)): %nc(%f+Comic Sans MS(Evolife) documentation.)
+	%tableligne
+		%f+blue(%b(Readme.txt)): %nc( A text version of this file.)
+	%tableligne
+		%f+blue(%b(Evolife.html)): %nc( Homepage for the %f+Comic Sans MS(Evolife) package.)
+%h3
+	Applications
+%table+ +700+0
+	%tableligne
+		%f+blue(%b(Antnet.py)): %nc(Ant system for message routing.)
+	%tableligne
+		%f+blue(%b(Ants.py)): %nc(Foraging ant colony.)
+	%tableligne
+		%f+blue(%b(CellularAutomaton.py)): %nc(Illustrates one-dimensional cellular automata.)
+	%tableligne
+		%f+blue(%b(Cocktail.py)): %nc(Illustrates the 'cocktail party' effect.)
+	%tableligne
+		%f+blue(%b(Morphogenesis.py)): %nc(Illustrates Turing's morphogenesis theory.)
+	%tableligne
+		%f+blue(%b(PathFinder.py)): %nc(Illustrates path formation.)
+	%tableligne
+		%f+blue(%b(Segregationism.py)): %nc(Illustrates Thomas Schelling's famous experiment.)
+	%tableligne
+		%f+blue(%b(SocialNetwork.py)): %nc(Emergence of optimal social signals.)
+	%tableligne
+		%f+blue(%b(Swallows.py)): %nc(Illustrates collective decision.)
+ 
+
+
+<HR WIDTH="100%" ALIGN="LEFT">
+
+
+	
+

@@ -1,0 +1,63 @@
+______________________________________________
+EVOLIFE - 2015
+Jean-Louis Dessalles
+Telecom ParisTech - www.dessalles.fr/Evolife       
+______________________________________________
+
+
+The Evolife simulation main window displays curves showing the evolution in time of gene, phene or score average values. The order of colours is indicated by small coloured dots on the right (from bottom to top: black, white, blue, red, ...)
+
+
+
+Buttons
+======
+
+[Genome]:	Displays the genomes of the population
+	- Each horizontal line represents the genome of one individual
+	- Vertical patterns result from correlations between individuals
+
+[Photo]:	Enters Photo Mode: 
+	- Prints a few data on the console
+	- Saves a screenshot for each opened window. 
+	  Screenshots are saved in %code(.png) files (format can be changed on demand).
+	  If you enter Film mode (by pressing key 'v'), photos are taken automatically at each display period. 
+	  These files can be assembled into animated gifs, e.g. using ImageMagick.
+	- Saves the current plots in 'Evolife.csv' (which may be opened with Excel).
+	  This file is also created when exiting Evolife.
+
+[Run]:	Runs the simulation in continuous mode
+[Step]:	Runs the simulation stepwise
+[T]:	Displays trajectories when applicable
+[N]:	Displays social links (network) when applicable
+[F]:	Displays agents' positions on a 2-D field
+[L]:	Log messages (not implemented)
+[Help]:	Displays this help file
+	
+
+
+
+Shortcuts:
+======
+
+<Esc>:	quits the active window (and the application if main window is active) (like 'q')
+<F1>:	displays this help file
+a:	displays alliances (social links between individuals, sorted by competence) (when applicable)
+c:	runs the simulation in continuous mode (like 'r')
+d:	displays legend
+f:	displays a 2-D field on which agents may be located
+g:	displays genomes 
+h:	displays this help file
+l:	displays log messages (not implemented)
+m:	alternatively brings main window or satellite windows to foreground
+q:	quits the active window (and the application if main window is active) (like <Esc>)
+r:	runs the simulation in continuous mode (like 'c')
+s:	runs the simulation one step forward (like <space>)
+t:	displays trajectories (when applicable)
+v:	enters film mode. One picture per opened window is recorded
+z:	shrinks satellite windows (genomes, alliances, labyrinth...) (dezoom)
+-:	shrinks satellite windows (genomes, alliances, labyrinth...) (dezoom)
++:	expands satellite windows (genomes, alliances, labyrinth...) (zoom)
+
+(shortcuts also work from satellite windows)
+
+More on www.dessalles.fr/Evolife

@@ -1,0 +1,140 @@
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"><HEAD>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<TITLE>JL Dessalles - Evolife
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFCC00">
+<br>
+<!-- []
+<a href="http://www.telecom-paristech.fr" target="_blank"><IMG SRC="http://www.telecom-paristech.fr/fileadmin/maquette/images/logo-haut-droit.png" ALIGN="LEFT" Width="90" style="padding-right: 15px"></a>
+<a href="http://www.telecom-paristech.fr" target="_blank">
+Telecom ParisTech
+</a>
+ -->
+<HR WIDTH="100%" ALIGN="LEFT">
+<P>
+<font size="+2"><p align="center"><font face="Comic Sans MS"><a href="http://evolife.dessalles.fr">Evolife</a></font></p></font>
+<p align="center"><a href="http://www.dessalles.fr" target="_blank">Jean-Louis Dessalles</a></p>
+<HR WIDTH="100%" ALIGN="LEFT">
+<IMG SRC="Images/Courbes.jpg" ALIGN="RIGHT"  style="padding-left: 15px">
+<ol><li><a href="http://evolife.dessalles.fr/Description.html">Overall description</a></li>
+<li><a href="http://evolife.dessalles.fr/Execution.html">How to execute Evolife</a> (+ download)</li>
+<li><a href="http://evolife.dessalles.fr/Sources.html">Evolife source files</a></li>
+<li><a href="http://evolife.dessalles.fr/Classes.html">Evolife classes</a></li>
+<li><a href="http://evolife.dessalles.fr/Functions.html">Evolife functions</a></li>
+<li><a href="http://evolife.dessalles.fr/Working.html">How Evolife works</a></li>
+<li><a href="http://evolife.dessalles.fr/Create_Scenario.html">Create your own Evolife scenario</a></li>
+<li><a href="http://evolife.dessalles.fr/Components.html">Use Evolife&rsquo;s components separately (graphics, ecology, genetic algorithm)</a></li></ol>
+<P>
+
+<HR WIDTH="100%" ALIGN="LEFT">
+<br>
+ 
+<h2><div id="H0">
+2. How to execute <font face="Comic Sans MS">Evolife</font>
+</div></h2>
+<h3><div id="H1">
+Installation
+</div></h3>
+The latest version of <font face="Comic Sans MS">Evolife</font> can be downloaded from: <font size="+2"><a href="Evolife.zip">Evolife.zip</a></font>
+<br>
+<!-- []
+<font size="-1">(older versions: <a href="Evolife-2014-4.zip">Evolife-2014-11.zip</a> <a href="Evolife-2014-4.zip">Evolife-2014-4.zip</a> )</font>
+ -->
+<ul><li>You may extract the <font face="Comic Sans MS">Evolife</font> directory into an appropriate location.</li>
+<li>If you don&rsquo;t know how to extract files from the archive (normally, you do it by merely clicking on it), you may copy-paste the following lines into a terminal window at the appropriate location:<br><font size="-1"><font face="Courier">python</font></font><br><font size="-1"><font face="Courier">import zipfile, sys</font></font><br> <font size="-1"><font face="Courier">zipfile.ZipFile(&#39;Evolife.zip&#39;).extractall()</font></font><br><font size="-1"><font face="Courier">exit()</font></font><br><br></li></ul>
+<P>
+<font face="Comic Sans MS">Evolife</font> is written in Python (<a href="http://www.python.org/" target="_blank">http://www.python.org/</a>) and should therefore run on various platforms. You should install Python first. The current version of <font face="Comic Sans MS">Evolife</font> should run without too much trouble with old versions of Python (Python 2.6 or 2.7). It is however designed to run with <b>Python 3</b> (tested with Python 3.4) (please report any problem you may notice).
+<P>
+<font face="Comic Sans MS">Evolife</font>&rsquo;s graphics uses the <a href="http://www.riverbankcomputing.co.uk/software/pyqt/download" target="_blank">PyQT4 package</a>.
+<br>
+<!-- []
+<font size="-1">
+Optional, but useful: library <a href="http://psyco.sourceforge.net/" target="_blank">psyco</a>, once installed, makes <font face="Comic Sans MS">Evolife</font> run three time faster on certain versions of Python. For python 2.6, you get psyco from <a href="http://www.voidspace.org.uk/python/modules.shtml#psyco" target="_blank">there</a>. Psyco does not seem to be available for higher versions of python.
+</font>
+ -->
+<h3><div id="H2">
+Execution
+</div></h3>
+<ul><li><font color="red"><b>On Unix or Linux: The first time, execute the command: <font size="-1"><font face="Courier">python first.py</font></font> from <font face="Comic Sans MS">Evolife</font>&rsquo;s folder.</b></font></li>
+<li>Then, <font face="Comic Sans MS">Evolife</font> is launched by executing the command <font size="-1"><font face="Courier">./starter</font></font> from <font face="Comic Sans MS">Evolife</font>&rsquo;s directory.</li>
+<li>On MsWindows: Run <font size="-1"><font face="Courier">Starter.bat</font></font> from <font face="Comic Sans MS">Evolife</font>&rsquo;s directory.</li></ul>
+<P>
+<font size="-1"><font face="Courier">Starter</font></font> shows a configuration editor that allows you to choose a scenario and to modify parameters, before running <font face="Comic Sans MS">Evolife</font> by clicking the <font size="-1"><font face="Courier">[Run]</font></font> button.
+<br>
+<p align="center"><IMG SRC="Images/TreeExplore.jpg" ></p>
+<p align="center">
+<i>The <font face="Comic Sans MS">Evolife</font> Configuration Editor</i>
+</p>
+<P>
+The configuration editor provides a short description of each parameter at the bottom of the window.
+<br>
+The <font size="-1"><font face="Courier">[Load]</font></font> button loads an existing scenario. You may modify any parameter value. It is recommended to start from an existing scenario when creating a new one. If you need to add new parameters or modify the names of existing ones, simply edit the <font size="-1"><font face="Courier">EvolifeConfigTree.xml</font></font> file before executing <font size="-1"><font face="Courier">Stater.bat</font></font>.
+<br>
+The <font size="-1"><font face="Courier">[Run]</font></font> button executes <font face="Comic Sans MS">Evolife</font>. To do so, parameter values are stored in <font size="-1"><font face="Courier">Evolife.evo</font></font>, and <font size="-1"><font face="Courier">Main.py</font></font> is executed (or any program specified as <font size="-1"><font face="Courier">Target</font></font> in the <font size="-1"><font face="Courier">Run Settings</font></font> section of <font size="-1"><font face="Courier">Starter</font></font>). If you execute <font size="-1"><font face="Courier">Main.py</font></font> directly (sometimes useful to display an error when you customize <font face="Comic Sans MS">Evolife</font>), it will read Evolife.evo.
+<br>
+Configuration files (<font size="-1"><font face="Courier">.evo</font></font> files) are text files containing parameter-value pairs (one pair per line, separated by tab). 
+<P>
+<IMG SRC="Images/PuceRouge.jpg" ALIGN="LEFT"  style="padding-right: 15px">
+You may modify any Python source under <font face="Comic Sans MS">Evolife</font>&rsquo;s directory, but you will most probably start by modifying the scenarios (see below).
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If you experience difficulties with <b>tabs</b> in your Python editor, you may execute <font size="-1"><font face="Courier">./Detabify.py</font></font> (located in <font face="Comic Sans MS">Evolife</font>&rsquo;s directory) to replace all tabs by four spaces in all Python source files.
+<P>
+<IMG SRC="Images/PuceRouge.jpg" ALIGN="LEFT"  style="padding-right: 15px">
+Predefined scenarios are located in the <font size="-1"><font face="Courier">Scenarii</font></font> directory. You may choose to add your own scenario in this directory. Alternatively, you may rename and modify <font size="-1"><font face="Courier">S_Void.py</font></font>. When writing your scenario, you can redefine any of the functions found in <font size="-1"><font face="Courier">Default_Scenario.py</font></font>. To do so, you may cut and paste functions from various scenarios in the Scenarii directory into your scenario.
+<P>
+<IMG SRC="Images/PuceRouge.jpg" ALIGN="LEFT"  style="padding-right: 15px">
+As it stands, <font size="-1"><font face="Courier">Main.py</font></font> gives control to the <font face="Comic Sans MS">Evolife</font> main window and the simulation is run from there. However, the simulation is kept separate from the window system. For specific applications or tests, you may prefer to run the simulation without any graphic visualization. To do so, set the <font size="-1"><font face="Courier">BatchMode</font></font> parameter in the Configuration Editor (<font size="-1"><font face="Courier">Starter</font></font>). In that case, no display takes place and results are stored in unique files in the directory <font size="-1"><font face="Courier">___Results</font></font>.
+<P>
+
+<IMG SRC="Images/PuceRouge.jpg" ALIGN="LEFT"  style="padding-right: 15px">
+Output results of <font face="Comic Sans MS">Evolife</font> are stored in the following files, placed by default in the <font size="-1"><font face="Courier">___Results</font></font> directory:
+<ul><li><font size="-1"><font face="Courier"><font size="-1"><font face="Courier"><</font></font>scen<font size="-1"><font face="Courier">></font></font>.csv</font></font> or <font size="-1"><font face="Courier"><font size="-1"><font face="Courier"><</font></font>scen<font size="-1"><font face="Courier">></font></font>_081016235225.csv</font></font> (where <font size="-1"><font face="Courier"><font size="-1"><font face="Courier"><</font></font>Scen<font size="-1"><font face="Courier">></font></font></font></font> is the name of the scenario): contains the results of a single experiment. The longer name appears in batch mode only, indicating that the simulation was launched on October 16<sup>th</sup>, 2008, at 11h52 pm. This file contains the coordinates of the various curves that would have been displayed by <font face="Comic Sans MS">Evolife</font> if not in batch mode. This file can be executed using Microsoft-Excel or equivalent.</li>
+<li><font size="-1"><font face="Courier"><font size="-1"><font face="Courier"><</font></font>scen<font size="-1"><font face="Courier">></font></font>.res</font></font> or <font size="-1"><font face="Courier"><font size="-1"><font face="Courier"><</font></font>scen<font size="-1"><font face="Courier">></font></font>_081016235225.res</font></font> (where <font size="-1"><font face="Courier"><font size="-1"><font face="Courier"><</font></font>Scen<font size="-1"><font face="Courier">></font></font></font></font> is the name of the scenario): contains the average results of a single experiment. Such files may be concatenated to average over several experiments.</li>
+<li>Images generated when you click on the <font size="-1"><font face="Courier">[Photo]</font></font> button or when in Film mode (shortcut <font size="-1"><font face="Courier">v</font></font>) are stored in the <font size="-1"><font face="Courier">___Results</font></font> directory as well.</li></ul>
+When <i>not</i> in batch mode, running several instances of <font face="Comic Sans MS">Evolife</font> simultaneously will cause these output files to be overwritten by the last terminating instance.
+<P>
+You may visualize a stored curve file (<font size="-1"><font face="Courier"><scen>.csv</font></font> or <font size="-1"><font face="Courier"><scen>_081016235225.csv</font></font>) using the <font size="-1"><font face="Courier">Plot.py</font></font> program (on the <font size="-1"><font face="Courier">Evolife</font></font> directory).
+<br>
+Type <font size="-1"><font face="Courier">Plot.py</font></font> from the <font size="-1"><font face="Courier">Evolife</font></font> directory to redisplay the last experiment.
+<P>
+The file <font size="-1"><font face="Courier">Evolife_.evo</font></font> (on the Evolife directory) contains the values of parameters <i>actually used</i> in the simulation (note the trailing underscore).
+<P>
+<IMG SRC="Images/PuceRouge.jpg" ALIGN="LEFT"  style="padding-right: 15px">
+Buttons
+<ul><li><font size="-1"><font face="Courier">[Genome]</font></font>: Displays the genomes of the population<ul>- Each horizontal line represents the genome of one individual<br>- Vertical patterns result from correlations between individuals</ul> </li>
+<li><font size="-1"><font face="Courier">[Photo]</font></font>: Enters Photo Mode:<ul>- Prints a few data on the console<br>- Saves a screenshot for each opened window. Screenshots are saved automatically depending on Display Period, in <font size="-1"><font face="Courier">.png</font></font> files. These files can be assembled into animated gifs e.g. using ImageMagick. If you enter Film mode (by pressing key <font size="-1"><font face="Courier">v</font></font>), photos are taken automatically at each display period.<br>- Saves the current plots in <font size="-1"><font face="Courier">Evolife.csv</font></font> (which may be opened with Excel). This file is also created when exiting <font face="Comic Sans MS">Evolife</font>.</ul></li>
+<li><font size="-1"><font face="Courier">[Run]</font></font>: Runs the simulation in continuous mode</li>
+<li><font size="-1"><font face="Courier">[Step]</font></font>: Runs the simulation stepwise</li>
+<li><font size="-1"><font face="Courier">[T]</font></font>: Displays trajectories (when applicable)</li>
+<li><font size="-1"><font face="Courier">[A]</font></font>: Displays alliances (social links between individuals, sorted by competence) (when applicable)</li>
+<li><font size="-1"><font face="Courier">[F]</font></font>: Displays agents&rsquo; positions on a 2-D field</li>
+<li><font size="-1"><font face="Courier">[L]</font></font>: Log messages (not implemented)</li>
+<li><font size="-1"><font face="Courier">[Help]</font></font>: Displays this help file</li>
+<li><font size="-1"><font face="Courier">[Legend]</font></font>: Displays legend for curves</li></ul>
+<IMG SRC="Images/PuceRouge.jpg" ALIGN="LEFT"  style="padding-right: 15px">
+Shortcuts
+<ul><li><font size="-1"><font face="Courier"><font size="-1"><font face="Courier"><</font></font>Esc<font size="-1"><font face="Courier">></font></font></font></font>: quits the active window (and the application if main window is active) (like <font size="-1"><font face="Courier">q</font></font>)</li>
+<li><font size="-1"><font face="Courier"><font size="-1"><font face="Courier"><</font></font>F1<font size="-1"><font face="Courier">></font></font></font></font>: displays this help file</li>
+<li><font size="-1"><font face="Courier"><font size="-1"><font face="Courier"><</font></font>space<font size="-1"><font face="Courier">></font></font></font></font>: runs the simulation one step forward (like <font size="-1"><font face="Courier">s</font></font>)</li>
+<li><font size="-1"><font face="Courier">a</font></font>:displays alliances (social links between individuals, sorted by competence) (when applicable)</li>
+<li><font size="-1"><font face="Courier">c</font></font>: runs the simulation in continuous mode (like <font size="-1"><font face="Courier">r</font></font>)</li>
+<li><font size="-1"><font face="Courier">d</font></font>: displays legend for curves</li>
+<li><font size="-1"><font face="Courier">f</font></font>: displays a 2-D field on which agents may be located</li>
+<li><font size="-1"><font face="Courier">g</font></font>: displays genomes</li>
+<li><font size="-1"><font face="Courier">h</font></font>: displays this help file</li>
+<li><font size="-1"><font face="Courier">l</font></font>: displays log messages (not implemented)</li>
+<li><font size="-1"><font face="Courier">m</font></font>: alternatively brings main window or satellite windows to foreground</li>
+<li><font size="-1"><font face="Courier">q</font></font>: quits the active window (and the application if main window is active) (like <font size="-1"><font face="Courier"><</font></font>Esc<font size="-1"><font face="Courier">></font></font>)</li>
+<li><font size="-1"><font face="Courier">r</font></font>: runs the simulation in continuous mode (like <font size="-1"><font face="Courier">c</font></font>)</li>
+<li><font size="-1"><font face="Courier">s</font></font>: runs the simulation one step forward (like <font size="-1"><font face="Courier"><font size="-1"><font face="Courier"><</font></font>space<font size="-1"><font face="Courier">></font></font></font></font>)</li>
+<li><font size="-1"><font face="Courier">t</font></font>: displays trajectories (when applicable)</li>
+<li><font size="-1"><font face="Courier">v</font></font>: enters film mode. One picture per opened window is recorded</li>
+<li><font size="-1"><font face="Courier">z</font></font>: shrinks satellite windows (genomes, alliances, labyrinth...) (dezoom)</li>
+<li><font size="-1"><font face="Courier">-</font></font>: shrinks satellite windows (genomes, alliances, labyrinth...) (dezoom)</li>
+<li><font size="-1"><font face="Courier">+</font></font>: expands satellite windows (genomes, alliances, labyrinth...) (zoom)</li></ul>
+(These shortcuts are available from any window of the application.)
+<P>
+<HR WIDTH="100%" ALIGN="LEFT">
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;</div></BODY></HTML>
