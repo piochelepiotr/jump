@@ -2,36 +2,50 @@
 """
 Created on Tue Mar 14 15:38:00 2017
 
-@author: antoi
+@author: antoi and piochelepiotr
 """
+import sys
+sys.path.append('')
 
 import numpy as np
+import time
 import random
 import math
-
+import Evolife.QtGraphics.Evolife_Window as EW
+import Evolife.Ecology.Observer as EO
 
 ######
 # Actions : 
 #    0 : duck, 1 : do nothing 2 : jump
 
+
 # constants
-number_kept = 10
-grid_length = 50
+Obs = EO.Generic_Observer()
+pop_size = 100
+number_kept = 1
+grid_length = 150
+big_grid_length = 50
 grid_width = 3
-turns_predict = 3
+turns_predict = 2
 n_inputs = grid_width*turns_predict + 1
 n_outputs = 3
 n_hidden = 10
 first_pow = 0
-number_grids = 10
+number_grids = 1
 
-gene_size = 10
+gene_size = 3
 dna_size = gene_size * (n_inputs + n_outputs )*n_hidden
-mutation_rate = 0.08
+mutation_rate = 0.005
 crossover_ratio = 0.5
 cst_genome = list(range(0,dna_size+1,gene_size))
-number_crossover = 40
+number_crossover = 5
 
+## USER INTERFACE
+grid_display = 15
+block_size = 100
+window_width = grid_display*block_size
+window_height = grid_width*block_size
+generation = 0
 
 class Grid:
     def __init__(self, grid_width,grid_length):
@@ -170,23 +184,26 @@ class Individual:
         # the child's DNA will be read alternatively from parent1 and parent2
         parent1 = mother.DNA
         parent2 = father.DNA
-        if np.random.randint(0,1):    # starting indifferently from mother or father
+        if np.random.randint(0,2):    # starting indifferently from mother or father
             parent1, parent2 = parent2, parent1     # swapping parents
         self.DNA = []
         for cut_point in range(len(Loci_crossover)-1):
             self.DNA += list(parent1[Loci_crossover[cut_point]:Loci_crossover[cut_point+1]])
             parent1, parent2 = parent2, parent1     # swapping parents        
             
-    def make_score_one_grid(self,grid):
+    def make_score_one_grid(self,grid,W1=None,W2=None):
         i = 0
+        list_pos = []
         pos = int(grid.width/2)
         go_on = True
-        (W1,W2) = genome_to_weights(self.DNA,self.genome)
-        arg = grid.cells[i]
+        if W1 == None or W2 == None:
+            (W1,W2) = genome_to_weights(self.DNA,self.genome)
+        arg = grid.cells[0]
         for j in range(turns_predict-1):
             arg = np.concatenate([arg,grid.cells[j]])
         while(go_on):
-            arg = np.concatenate([arg[grid.width:],grid.cells[i+turns_predict]])
+            list_pos += [pos]
+            arg = np.concatenate([arg[grid.width:],grid.cells[i+turns_predict-1]])
             action = predict(np.concatenate([arg,np.array([pos])]), W1, W2)-1
             pos = pos + action
             if pos < 0 or pos >= grid.width:
@@ -199,12 +216,15 @@ class Individual:
                 i+=1
                 if i >= grid.length-turns_predict:
                     go_on = False
-        return i
+        self.score = i
+        return i,list_pos
 
     def make_score(self,grids):
+        (W1,W2) = genome_to_weights(self.DNA,self.genome)
         score = 0
         for grid in grids:
-            score += self.make_score_one_grid(grid)
+            (sc,L) = self.make_score_one_grid(grid,W1,W2)
+            score += sc
         self.score = score
         
 class Population:
@@ -224,7 +244,7 @@ class Population:
         print_dna(self.runner_list[0].DNA.tolist())
         print()
 
-    def evolve(self):
+    def evolve(self,generation):
         new_pop = []
         for i in range(number_kept):
             new_pop.append(self.runner_list[i])
@@ -258,13 +278,61 @@ class Population:
         r.mutate()
         return r
 
+#initiate population
 grids = []
+big_grid = Grid(grid_width,big_grid_length)
 for i in range(number_grids):
     grids += [Grid(grid_width,grid_length)]
-pop = Population(100,grids)
-for i in range(1500):
-    pop.evolve()
-print()
-grid.display()
-        
+pop = Population(pop_size,grids)
 
+def display_result(grid,i,pos):
+    for j in range(grid_display):
+        if j+i >= grid.length:
+            return
+        for k in range(grid.width):
+            if j == 0 and k == pos:
+                Obs.record(('obstacle_'+str(j)+'_'+str(k), (j*block_size,(k+1)*block_size, -1, block_size, 'shape=rectangle')), Window='Field')
+            elif grid.cells[j+i][k] == 1:
+                Obs.record(('obstacle_'+str(j)+'_'+str(k), (j*block_size,(k+1)*block_size, 1, block_size, 'shape=rectangle')), Window='Field')
+            else:
+                Obs.record(('obstacle_'+str(j)+'_'+str(k), (j*block_size,(k+1)*block_size, 2, block_size, 'shape=rectangle')), Window='Field')
+        
+    Obs.record(('player', (0,(pos+1)*block_size, 3, block_size, 'shape=rectangle')), Window='Field')
+
+pos_in_solution = 0
+solution_pos = []
+
+def one_generation():
+    global pos_in_solution
+    global generation
+    global solution_pos
+    global big_grid
+    global grid_width
+    global grid_length
+    if pos_in_solution == 0:
+        grids[0] = Grid(grid_width,grid_length)
+        pop.evolve(generation)
+        generation = generation + 1
+        (pos_in_solution,solution_pos) = pop.runner_list[0].make_score_one_grid(grids[0])
+        return True
+    #print("pos : %d et len = %d" %(pop.runner_list[0].
+    display_result(grids[0],pop.runner_list[0].score - pos_in_solution,solution_pos[pop.runner_list[0].score - pos_in_solution])
+    pos_in_solution -= 1
+    Obs.StepId += 1
+    time.sleep(0.1)
+    return True
+
+def Start():
+    pos_in_solution = 0
+    Obs.setOutputDir('___Results')    # curves, average values and screenshots will be stored there
+    Obs.recordInfo('Background', 'grey')    # windows will have this background by default
+
+    Obs.recordInfo('DefaultViews',    [('Field',window_width,window_height)])    # Evolife should start with these windows open
+    Obs.record(('point', (window_width,window_height, 2, 1, 'shape=rectangle')), Window='Field')
+
+    EW.Start(
+        one_generation, 
+        Obs, 
+        Capabilities='FG'
+    )
+Start() 
