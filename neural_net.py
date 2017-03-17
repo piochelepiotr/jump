@@ -285,7 +285,7 @@ pop = Population(pop_size,grids)
 
 def display_result(grid,i,pos):
     pos_player = int(grid_display/2)
-    Obs.record(('player', (pos_player*block_size,(pos+1)*block_size, 3, block_size, 'shape=monstre.jpg')), Window='Field')
+    Obs.record(('player', (pos_player*block_size,(pos+1)*block_size, 3, block_size, 'shape=monstre2.png')), Window='Field')
     for j in range(grid_display):
         for k in range(grid.width):
             if j+i-pos_player >= grid.length-turns_predict or j+i-pos_player < 0:
@@ -326,7 +326,7 @@ def Start():
     generation = 0
     pos_in_solution = 0
     Obs.setOutputDir('___Results')    # curves, average values and screenshots will be stored there
-    Obs.recordInfo('Background', 'grey')    # windows will have this background by default
+    Obs.recordInfo('Background', 'white')    # windows will have this background by default
 
     Obs.recordInfo('DefaultViews',    [('Field',window_width,window_height)])    # Evolife should start with these windows open
     Obs.record(('point', (window_width,window_height, 2, 1, 'shape=rectangle')), Window='Field')
